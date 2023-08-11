@@ -11,8 +11,11 @@ class Base extends StatefulWidget {
   final dynamic analytics;
   final dynamic observer;
   final String routeName;
+  String email;
 
-  Base({this.analytics, this.observer, this.routeName});
+  Base({this.analytics, this.observer, this.routeName, this.email});
+
+  get emailValue => this.email;
 
   @override
   BaseState createState() => BaseState();

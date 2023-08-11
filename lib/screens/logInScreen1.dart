@@ -7,12 +7,14 @@ import 'package:pet_user_app/screens/signUpScreen.dart';
 class LogInScreen1 extends BaseRoute {
   // LogInScreen1() : super();
   LogInScreen1({a, o}) : super(a: a, o: o, r: 'LogInScreen1');
+
   @override
   _LogInScreen1State createState() => new _LogInScreen1State();
 }
 
 class _LogInScreen1State extends BaseRouteState {
   _LogInScreen1State() : super();
+  final TextEditingController _emailController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -38,8 +40,9 @@ class _LogInScreen1State extends BaseRouteState {
                     padding: EdgeInsets.only(top: 80),
                     child: TextFormField(
                       // controller: _cForgotEmail,
+                      controller: _emailController,
                       decoration: InputDecoration(
-                        hintText: 'Enter address or mobile number',
+                        hintText: 'Enter your email address',
                         // prefixIcon: Icon(Icons.mail),
                         contentPadding: EdgeInsets.only(top: 5, left: 10),
                       ),
@@ -132,6 +135,7 @@ class _LogInScreen1State extends BaseRouteState {
                           builder: (context) => LogInScreen2(
                                 a: widget.analytics,
                                 o: widget.observer,
+                                email: _emailController.text,
                               )));
                     },
                     child: Text(
