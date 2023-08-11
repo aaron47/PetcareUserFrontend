@@ -42,8 +42,8 @@ ThemeData nativeTheme() {
           fontWeight: FontWeight.w600),
     ),
 
-    iconTheme: IconThemeData(color: Color(0xFF3D4ED9), size: 18),
-    primaryColor: Color(0xFF3D4ED9),
+    iconTheme: IconThemeData(color: Color(0xFF1B5E20), size: 18),
+    primaryColor: Color(0xFF1B5E20),
     // primaryColorLight: Color.fromRGBO(255, 166, 146, .6), // Color(0xFFFFA692),
     // primaryColorDark: Color(0xFFFA692C),
     // primarySwatch: MaterialColor(0xFFFA692C, color),
@@ -51,6 +51,7 @@ ThemeData nativeTheme() {
     // iconTheme: IconThemeData(color: Color(0xFFFA692C)),
     // cardColor: Color(0xFFF8F1F7),
     primaryTextTheme: TextTheme(
+    // Color(0xFF3D4ED9)
       // button: TextStyle(color: Colors.white, fontSize: 17),
       headline1: TextStyle(
           fontSize: 18, color: Color(0xFF34385A), fontWeight: FontWeight.bold),
@@ -62,13 +63,13 @@ ThemeData nativeTheme() {
         fontSize: 16,
         color: Colors.white,
       ), //
-      headline4: TextStyle(fontSize: 15, color: Color(0xFF3D4ED9)), //
+      headline4: TextStyle(fontSize: 15, color: Color(0xFF1B5E20)), //
       headline5: TextStyle(
           fontSize: 21,
           color: Color(0xFF34385A),
           fontWeight: FontWeight.bold), //for title in intro
       headline6: TextStyle(
-        color: Color(0xFF3D4ED9),
+        color: Color(0xFF1B5E20),
         fontSize: 12.5,
       ), //
       subtitle1: TextStyle(
@@ -99,7 +100,7 @@ ThemeData nativeTheme() {
     textButtonTheme: TextButtonThemeData(
         style: ButtonStyle(
       padding: MaterialStateProperty.all(EdgeInsets.only(top: 10, bottom: 10)),
-      backgroundColor: MaterialStateProperty.all(Color(0xFF3D4ED9)),
+      backgroundColor: MaterialStateProperty.all(Color(0xFF1B5E20)),
       shadowColor: MaterialStateProperty.all(Colors.white),
       foregroundColor: MaterialStateProperty.all(Colors.white),
       shape: MaterialStateProperty.all(RoundedRectangleBorder(
@@ -169,7 +170,7 @@ ThemeData nativeTheme() {
         borderRadius: BorderRadius.all(Radius.circular(5.0)),
       ),
       focusedBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: Color(0xFF3D4ED9)),
+        borderSide: BorderSide(color: Color(0xFF1B5E20)),
         borderRadius: BorderRadius.all(Radius.circular(5.0)),
       ),
       filled: true,
