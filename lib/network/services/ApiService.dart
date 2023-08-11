@@ -26,10 +26,10 @@ class ApiService {
   );
 
   // dio instance
-  final Dio _dio = Dio(_options)..interceptors.add(LogInterceptor());
+  static final Dio _dio = Dio(_options)..interceptors.add(LogInterceptor());
 
   // AUTH
-  Future<User> login(LoginRequest loginRequest) {
+  static Future<User> login(LoginRequest loginRequest) {
     return _dio
         .post(
           ApiEndPoints.LOGIN_URL,
@@ -38,7 +38,7 @@ class ApiService {
         .then((value) => User.fromJson(value.data));
   }
 
-  Future<User> signUp(SignUpRequest signUpRequest) {
+  static Future<User> signUp(SignUpRequest signUpRequest) {
     return _dio
         .post(
           ApiEndPoints.SIGN_UP_URL,
@@ -47,7 +47,7 @@ class ApiService {
         .then((value) => User.fromJson(value.data));
   }
 
-  Future<User> getUser(String email) {
+  static Future<User> getUser(String email) {
     return _dio
         .get(
           ApiEndPoints.GET_USER_URL + email,
@@ -56,7 +56,7 @@ class ApiService {
   }
 
   // PETS
-  Future<Pet> addPet(CreatePetRequest createPetRequest) {
+  static Future<Pet> addPet(CreatePetRequest createPetRequest) {
     return _dio
         .post(
           ApiEndPoints.ADD_PET_URL,
@@ -65,7 +65,7 @@ class ApiService {
         .then((value) => Pet.fromJson(value.data));
   }
 
-  Future<List<Pet>> findAllUserPets(String userEmail) {
+  static Future<List<Pet>> findAllUserPets(String userEmail) {
     return _dio
         .get(
           ApiEndPoints.GET_PETS_URL + userEmail,
@@ -75,7 +75,7 @@ class ApiService {
   }
 
   // SERVICES
-  Future<Service> addService(CreateServiceRequest createServiceRequest) {
+  static Future<Service> addService(CreateServiceRequest createServiceRequest) {
     return _dio
         .post(
           ApiEndPoints.ADD_SERVICE_URL,
@@ -84,7 +84,7 @@ class ApiService {
         .then((value) => Service.fromJson(value.data));
   }
 
-  Future<Service> addOfferingUser(
+  static Future<Service> addOfferingUser(
       AddOfferingUserRequest addOfferingUserRequest) {
     return _dio
         .post(
@@ -94,7 +94,7 @@ class ApiService {
         .then((value) => Service.fromJson(value.data));
   }
 
-  Future<List<Service>> findUserServices(String userEmail) {
+  static Future<List<Service>> findUserServices(String userEmail) {
     return _dio
         .get(
           ApiEndPoints.FIND_USER_SERVICES_URL + userEmail,
@@ -103,7 +103,7 @@ class ApiService {
             List<Service>.from(value.data.map((x) => Service.fromJson(x))));
   }
 
-  Future<List<Service>> findAllServices(String userEmail) {
+  static Future<List<Service>> findAllServices(String userEmail) {
     return _dio
         .get(
           ApiEndPoints.GET_SERVICES_URL + userEmail,
