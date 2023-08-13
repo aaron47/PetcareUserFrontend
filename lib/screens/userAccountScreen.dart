@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:pet_user_app/models/baseRoute.dart';
+
+import '../controllers/ApiController.dart';
 
 class UserAccountScreen extends BaseRoute {
   // UserAccountScreen() : super();
   UserAccountScreen({a, o}) : super(a: a, o: o, r: 'UserAccountScreen');
+
   @override
   _UserAccountScreenState createState() => new _UserAccountScreenState();
 }
@@ -11,11 +15,17 @@ class UserAccountScreen extends BaseRoute {
 class _UserAccountScreenState extends BaseRouteState {
   _UserAccountScreenState() : super();
 
+  final ApiController apiController = Get.find<ApiController>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(Icons.arrow_back_ios),
+        leading: InkWell(
+            onTap: () {
+              Navigator.of(context).pop();
+            },
+            child: Icon(Icons.arrow_back_ios)),
         title: Text(
           'Account Settings',
           style: Theme.of(context).primaryTextTheme.headline1,
@@ -51,7 +61,7 @@ class _UserAccountScreenState extends BaseRouteState {
                                     MediaQuery.of(context).size.height * 0.17),
                               ),
                               image: DecorationImage(
-                                  image: AssetImage('assets/catimage2.png'),
+                                  image: AssetImage('assets/splashScreen.png'),
                                   fit: BoxFit.cover),
                               border: new Border.all(
                                 color: Theme.of(context).primaryColor,
@@ -91,7 +101,7 @@ class _UserAccountScreenState extends BaseRouteState {
                   child: Padding(
                 padding: const EdgeInsets.only(top: 8.0),
                 child: Text(
-                  'Tanki K.',
+                  apiController.user.value.fullName,
                   style: Theme.of(context).primaryTextTheme.headline5,
                 ),
               )),
@@ -110,7 +120,7 @@ class _UserAccountScreenState extends BaseRouteState {
                   child: TextFormField(
                     // controller: _cForgotEmail,
                     decoration: InputDecoration(
-                      hintText: 'Tanki K.',
+                      hintText: apiController.user.value.fullName,
                       // prefixIcon: Icon(Icons.mail),
 
                       contentPadding: EdgeInsets.only(top: 5, left: 10),
@@ -133,7 +143,7 @@ class _UserAccountScreenState extends BaseRouteState {
                   child: TextFormField(
                     // controller: _cForgotEmail,
                     decoration: InputDecoration(
-                      hintText: 'Email address',
+                      hintText: apiController.user.value.email,
                       // prefixIcon: Icon(Icons.mail),
 
                       contentPadding: EdgeInsets.only(top: 5, left: 10),
@@ -156,7 +166,7 @@ class _UserAccountScreenState extends BaseRouteState {
                   child: TextFormField(
                     // controller: _cForgotEmail,
                     decoration: InputDecoration(
-                      hintText: 'Mobile number',
+                      hintText: apiController.user.value.phone,
                       // prefixIcon: Icon(Icons.mail),
 
                       contentPadding: EdgeInsets.only(top: 5, left: 10),

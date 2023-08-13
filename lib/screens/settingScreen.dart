@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
+import 'package:pet_user_app/controllers/ApiController.dart';
 import 'package:pet_user_app/models/businessLayer/baseRoute.dart';
 import 'package:pet_user_app/screens/addRatingScreen.dart';
 import 'package:pet_user_app/screens/languageSelectionScreen.dart';
@@ -15,6 +17,7 @@ import 'package:pet_user_app/screens/userReviewScreen.dart';
 class SettingScreen extends BaseRoute {
   // SettingScreen() : super();
   SettingScreen({a, o}) : super(a: a, o: o, r: 'SettingScreen');
+
   @override
   _SettingScreenState createState() => new _SettingScreenState();
 }
@@ -22,23 +25,30 @@ class SettingScreen extends BaseRoute {
 class _SettingScreenState extends BaseRouteState {
   _SettingScreenState() : super();
 
+  final ApiController apiController = Get.find<ApiController>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          leading: Icon(Icons.arrow_back_ios),
-          title: Text(
-            'Settings',
-            style: Theme.of(context).primaryTextTheme.headline1,
-          ),
-          centerTitle: true,
-          backgroundColor: Colors.transparent,
-          elevation: 0,
+      appBar: AppBar(
+        leading: InkWell(
+            onTap: () {
+              Navigator.of(context).pop();
+            },
+            child: Icon(Icons.arrow_back_ios)),
+        title: Text(
+          'Settings',
+          style: Theme.of(context).primaryTextTheme.headline1,
         ),
-        body: Padding(
-          padding: EdgeInsets.only(left: 10, right: 10),
-          child: SingleChildScrollView(
-            child: Column(
+        centerTitle: true,
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+      ),
+      body: Padding(
+        padding: EdgeInsets.only(left: 10, right: 10),
+        child: SingleChildScrollView(
+          child: Obx(
+            () => Column(
               children: [
                 Container(
                   margin: EdgeInsets.only(top: 0),
@@ -52,7 +62,7 @@ class _SettingScreenState extends BaseRouteState {
                         child: CircleAvatar(
                             radius: 80,
                             backgroundImage:
-                                AssetImage('assets/catimage2.png')),
+                                AssetImage('assets/splashScreen.png')),
                       ),
                       Padding(
                         padding: EdgeInsets.only(left: 25),
@@ -60,7 +70,7 @@ class _SettingScreenState extends BaseRouteState {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Tanvi K.',
+                              apiController.user.value.fullName ?? "",
                               style:
                                   Theme.of(context).primaryTextTheme.headline5,
                             ),
@@ -68,7 +78,7 @@ class _SettingScreenState extends BaseRouteState {
                               padding:
                                   const EdgeInsets.only(top: 5, bottom: 10),
                               child: Text(
-                                'khar West,Mumbai',
+                                apiController.user.value.role ?? "",
                                 style: Theme.of(context)
                                     .primaryTextTheme
                                     .subtitle2,
@@ -91,7 +101,7 @@ class _SettingScreenState extends BaseRouteState {
                             )));
                   },
                   child: Container(
-                       color: Colors.transparent,
+                      color: Colors.transparent,
                       margin: EdgeInsets.only(bottom: 10, top: 35),
                       width: MediaQuery.of(context).size.width,
                       child: Row(
@@ -215,7 +225,7 @@ class _SettingScreenState extends BaseRouteState {
                             )));
                   },
                   child: Container(
-                    color: Colors.transparent,
+                      color: Colors.transparent,
                       margin: EdgeInsets.only(top: 10, bottom: 10),
                       // color: Colors.red,
                       width: MediaQuery.of(context).size.width,
@@ -260,7 +270,7 @@ class _SettingScreenState extends BaseRouteState {
                             )));
                   },
                   child: Container(
-                    color: Colors.transparent,
+                      color: Colors.transparent,
                       margin: EdgeInsets.only(top: 10, bottom: 10),
                       // color: Colors.red,
                       width: MediaQuery.of(context).size.width,
@@ -297,7 +307,7 @@ class _SettingScreenState extends BaseRouteState {
                       )),
                 ),
                 Container(
-                  color: Colors.transparent,
+                    color: Colors.transparent,
                     margin: EdgeInsets.only(top: 10, bottom: 10),
                     // color: Colors.red,
                     width: MediaQuery.of(context).size.width,
@@ -341,7 +351,7 @@ class _SettingScreenState extends BaseRouteState {
                             )));
                   },
                   child: Container(
-                    color: Colors.transparent,
+                      color: Colors.transparent,
                       margin: EdgeInsets.only(top: 10, bottom: 10),
                       // color: Colors.red,
                       width: MediaQuery.of(context).size.width,
@@ -386,7 +396,7 @@ class _SettingScreenState extends BaseRouteState {
                             )));
                   },
                   child: Container(
-                    color: Colors.transparent,
+                      color: Colors.transparent,
                       margin: EdgeInsets.only(top: 10, bottom: 10),
                       // color: Colors.red,
                       width: MediaQuery.of(context).size.width,
@@ -427,7 +437,7 @@ class _SettingScreenState extends BaseRouteState {
                     logOutDialog();
                   },
                   child: Container(
-                    color: Colors.transparent,
+                      color: Colors.transparent,
                       margin: EdgeInsets.only(top: 35, bottom: 10),
                       // color: Colors.red,
                       width: MediaQuery.of(context).size.width,
@@ -466,7 +476,9 @@ class _SettingScreenState extends BaseRouteState {
               ],
             ),
           ),
-        ));
+        ),
+      ),
+    );
   }
 
   @override

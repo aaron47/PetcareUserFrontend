@@ -7,15 +7,19 @@ import 'package:flutter/material.dart';
 import 'package:pet_user_app/models/businessLayer/apiHelper.dart';
 import 'package:pet_user_app/models/businessLayer/businessRule.dart';
 
+import '../pet.dart';
+
 class Base extends StatefulWidget {
   final dynamic analytics;
   final dynamic observer;
   final String routeName;
   String email;
+  Pet pet;
 
-  Base({this.analytics, this.observer, this.routeName, this.email});
+  Base({this.analytics, this.observer, this.routeName, this.email, this.pet});
 
   get emailValue => this.email;
+  get petValue => this.pet;
 
   @override
   BaseState createState() => BaseState();

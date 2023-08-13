@@ -15,6 +15,15 @@ class LogInScreen1 extends BaseRoute {
 class _LogInScreen1State extends BaseRouteState {
   _LogInScreen1State() : super();
   final TextEditingController _emailController = TextEditingController();
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>(); // Add this key
+
+  bool _isValidEmail(String value) {
+    // You can implement your own email validation logic here
+    // For simplicity, I'm using a basic pattern match
+    final pattern = r'^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$';
+    final regex = RegExp(pattern);
+    return regex.hasMatch(value);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -38,13 +47,28 @@ class _LogInScreen1State extends BaseRouteState {
                   ),
                   Padding(
                     padding: EdgeInsets.only(top: 80),
-                    child: TextFormField(
-                      // controller: _cForgotEmail,
-                      controller: _emailController,
-                      decoration: InputDecoration(
-                        hintText: 'Enter your email address',
-                        // prefixIcon: Icon(Icons.mail),
-                        contentPadding: EdgeInsets.only(top: 5, left: 10),
+                    child: Form(
+                      key: _formKey,
+                      child: Column(
+                        children: [
+                          TextFormField(
+                            // controller: _cForgotEmail,
+                            controller: _emailController,
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return 'Please enter your email';
+                              } else if (!_isValidEmail(value)) {
+                                return 'Please enter a valid email';
+                              }
+                              return null;
+                            },
+                            decoration: InputDecoration(
+                              hintText: 'Enter your email address',
+                              // prefixIcon: Icon(Icons.mail),
+                              contentPadding: EdgeInsets.only(top: 5, left: 10),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ),
@@ -130,13 +154,16 @@ class _LogInScreen1State extends BaseRouteState {
                 child: TextButton(
                     // style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Theme.of(context).primaryColor)),
                     onPressed: () {
-                      print('Hello');
-                      Navigator.of(context).push(MaterialPageRoute(
+                      if (_formKey.currentState.validate()) {
+                        // The form is valid, proceed with navigation
+                        Navigator.of(context).push(MaterialPageRoute(
                           builder: (context) => LogInScreen2(
-                                a: widget.analytics,
-                                o: widget.observer,
-                                email: _emailController.text,
-                              )));
+                            a: widget.analytics,
+                            o: widget.observer,
+                            email: _emailController.text,
+                          ),
+                        ));
+                      }
                     },
                     child: Text(
                       "Continue",

@@ -9,6 +9,7 @@ import 'package:pet_user_app/screens/myWalletScreen.dart';
 import 'package:pet_user_app/screens/notificationScreen.dart';
 import 'package:pet_user_app/screens/petProfileScreen.dart';
 import 'package:pet_user_app/screens/settingScreen.dart';
+import 'package:pet_user_app/screens/userAccountScreen.dart';
 import 'package:pet_user_app/screens/wishListScreen.dart';
 
 import '../controllers/ApiController.dart';
@@ -115,10 +116,21 @@ class _ProfileScreenState extends BaseRouteState {
                                 padding: EdgeInsets.all(6),
                                 width: 85,
                                 height: 30,
-                                child: Text(
-                                  'Edit Profile',
-                                  style: TextStyle(
-                                      color: Theme.of(context).primaryColor),
+                                child: InkWell(
+                                  onTap: () {
+                                    Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                UserAccountScreen(
+                                                  a: widget.analytics,
+                                                  o: widget.observer,
+                                                )));
+                                  },
+                                  child: Text(
+                                    'Edit Profile',
+                                    style: TextStyle(
+                                        color: Theme.of(context).primaryColor),
+                                  ),
                                 ),
                                 decoration: BoxDecoration(
                                     border: Border.all(
@@ -356,6 +368,7 @@ class _ProfileScreenState extends BaseRouteState {
                                   builder: (context) => PetProfileScreen(
                                     a: widget.analytics,
                                     o: widget.observer,
+                                    pet: pet,
                                   )));
                             },
                             child: Padding(

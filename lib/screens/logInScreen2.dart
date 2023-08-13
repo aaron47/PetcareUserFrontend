@@ -25,8 +25,8 @@ class _LogInScreen2State extends BaseRouteState {
   _LogInScreen2State() : super();
 
   final ApiController apiController = Get.put(ApiController());
-
   final TextEditingController _passwordController = TextEditingController();
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>(); // Add this key
 
   // void _handleLogin() {
   //   var loginRequest = new LoginRequest(
@@ -91,23 +91,35 @@ class _LogInScreen2State extends BaseRouteState {
                 ),
                 Padding(
                   padding: EdgeInsets.only(top: 5),
-                  child: TextFormField(
-                    obscureText: _showPassword,
-                    controller: _passwordController,
-                    // controller: _cForgotEmail,
-                    decoration: InputDecoration(
-                      suffixIcon: IconButton(
-                        icon: Icon(_showPassword
-                            ? Icons.visibility_off
-                            : Icons.visibility),
-                        onPressed: () {
-                          _showPassword = !_showPassword;
-                          setState(() {});
-                        },
+                  child: Form(
+                    key: _formKey,
+                    child: TextFormField(
+                      obscureText: _showPassword,
+                      controller: _passwordController,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter your password';
+                        }
+                        if (value.length < 6) {
+                          return 'Password must be at least 6 characters';
+                        }
+                        return null;
+                      },
+                      // controller: _cForgotEmail,
+                      decoration: InputDecoration(
+                        suffixIcon: IconButton(
+                          icon: Icon(_showPassword
+                              ? Icons.visibility_off
+                              : Icons.visibility),
+                          onPressed: () {
+                            _showPassword = !_showPassword;
+                            setState(() {});
+                          },
+                        ),
+                        hintText: 'Input text',
+                        // prefixIcon: Icon(Icons.mail),
+                        contentPadding: EdgeInsets.only(top: 5, left: 10),
                       ),
-                      hintText: 'Input text',
-                      // prefixIcon: Icon(Icons.mail),
-                      contentPadding: EdgeInsets.only(top: 5, left: 10),
                     ),
                   ),
                 ),
@@ -131,29 +143,32 @@ class _LogInScreen2State extends BaseRouteState {
                     ),
                   ],
                 ),
-                Padding(
-                  padding: EdgeInsets.only(top: 70),
-                  child: Container(
-                    // color: Colors.red,
-                    height: 45,
-                    // padding: EdgeInsets.only(left: 20, right: 20),
-                    width: MediaQuery.of(context).size.width,
-                    child: TextButton(
-                      // style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Theme.of(context).primaryColor)),
-                      onPressed: () {
-                        // print('Hello');
-                        apiController.loginUser(
-                            widget.email, _passwordController.text);
+                Obx(
+                  () => Padding(
+                    padding: EdgeInsets.only(top: 70),
+                    child: Container(
+                      // color: Colors.red,
+                      height: 45,
+                      // padding: EdgeInsets.only(left: 20, right: 20),
+                      width: MediaQuery.of(context).size.width,
+                      child: TextButton(
+                        // style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Theme.of(context).primaryColor)),
+                        onPressed: () {
+                          // print('Hello');
+                          if (_formKey.currentState.validate()) {
+                            apiController.loginUser(
+                                widget.email, _passwordController.text);
 
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) =>
-                                BottomNavigationWidget(
-                                  a: widget.analytics,
-                                  o: widget.observer,
-                                )));
-                      },
-                      child: Text(
-                        "Log In",
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => BottomNavigationWidget(
+                                      a: widget.analytics,
+                                      o: widget.observer,
+                                    )));
+                          }
+                        },
+                        child: apiController.isLoading.value
+                            ? Center(child: const CircularProgressIndicator())
+                            : Text("Log In"), // Show "Log In" button
                       ),
                     ),
                   ),
