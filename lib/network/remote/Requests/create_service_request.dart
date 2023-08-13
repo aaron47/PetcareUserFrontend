@@ -5,16 +5,16 @@ String createServiceRequestToJson(CreateServiceRequest data) =>
     json.encode(data.toJson());
 
 class CreateServiceRequest {
-  final String serviceId;
+  final String serviceName;
   final String userEmail;
 
   CreateServiceRequest({
-    @required this.serviceId,
+    @required this.serviceName,
     @required this.userEmail,
   });
 
   Map<String, dynamic> toJson() => {
-        "serviceId": serviceId,
+        "serviceName": serviceName,
         "userEmail": userEmail,
       };
 }

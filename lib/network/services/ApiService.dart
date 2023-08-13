@@ -65,13 +65,16 @@ class ApiService {
         .then((value) => Pet.fromJson(value.data));
   }
 
-  static Future<List<Pet>> findAllUserPets(String userEmail) {
-    return _dio
-        .get(
-          ApiEndPoints.GET_PETS_URL + userEmail,
-        )
-        .then(
-            (value) => List<Pet>.from(value.data.map((x) => Pet.fromJson(x))));
+  static Future<List<Pet>> findAllUserPets(String userEmail) async {
+    try {
+      final response = await _dio.get(ApiEndPoints.GET_PETS_URL + userEmail);
+      List<Pet> pets = (response.data as List)
+          .map((json) => Pet.fromJson(json))
+          .toList();
+      return pets;
+    } catch (error) {
+      throw Exception("Error fetching user pets: $error");
+    }
   }
 
   // SERVICES

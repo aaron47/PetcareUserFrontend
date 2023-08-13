@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:pet_user_app/Theme/nativeTheme.dart';
 import 'package:pet_user_app/models/businessLayer/baseRoute.dart';
 import 'package:pet_user_app/network/remote/Requests/signup_request.dart';
 import 'package:pet_user_app/network/services/ApiService.dart';
 import 'package:pet_user_app/screens/logInScreen1.dart';
 import 'package:pet_user_app/widgets/bottomNavigationBarWidget.dart';
+
+import '../controllers/ApiController.dart';
 
 class SIgnUpScreen extends BaseRoute {
   // SIgnUpScreen() : super();
@@ -16,6 +19,8 @@ class SIgnUpScreen extends BaseRoute {
 
 class _SIgnUpScreenState extends BaseRouteState {
   _SIgnUpScreenState() : super();
+
+  final ApiController apiController = Get.put(ApiController());
 
   final genders = ["Male", "Female"];
   final roles = ["Sitter", "Owner"];
@@ -37,18 +42,16 @@ class _SIgnUpScreenState extends BaseRouteState {
     super.initState();
   }
 
-  void _handleSignUp() {
-    var signUpRequest = new SignUpRequest(
-      fullName: _fullNameController.text,
-      email: _emailController.text,
-      phone: _phoneController.text,
-      password: _passwordController.text,
-      gender: _selectedGender,
-      role: _selectedRole,
-    );
-
-    ApiService.signUp(signUpRequest);
-  }
+  // void _handleSignUp() {
+  //   var signUpRequest = new SignUpRequest(
+  //     fullName: _fullNameController.text,
+  //     email: _emailController.text,
+  //     phone: _phoneController.text,
+  //     password: _passwordController.text,
+  //     gender: _selectedGender,
+  //     role: _selectedRole,
+  //   );
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -176,12 +179,19 @@ class _SIgnUpScreenState extends BaseRouteState {
                     // style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Theme.of(context).primaryColor)),
                     onPressed: () {
                       // print('Hello');
-                      _handleSignUp();
-                      // Navigator.of(context).push(MaterialPageRoute(
-                      //     builder: (context) => BottomNavigationWidget(
-                      //           a: widget.analytics,
-                      //           o: widget.observer,
-                      //         )));
+                      apiController.signUpUser(
+                        _fullNameController.text,
+                        _emailController.text,
+                        _selectedGender.toLowerCase(),
+                        _selectedRole.toLowerCase(),
+                        _phoneController.text,
+                        _passwordController.text,
+                      );
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => BottomNavigationWidget(
+                                a: widget.analytics,
+                                o: widget.observer,
+                              )));
                     },
                     child: Text(
                       "Sign Up",

@@ -14,7 +14,7 @@ class CreatePetRequest {
   final String petGender;
   final String petBloodPressure;
   final String petBoneDensity;
-  final int petWeight;
+  final String petWeight;
   final String petOwner;
 
   CreatePetRequest({

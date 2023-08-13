@@ -24,15 +24,12 @@ class _SplashScreenState extends BaseRouteState {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            CircleAvatar(
-              radius: 80,
-              backgroundColor: Colors.white,
-              child: CircleAvatar(
-                backgroundColor: Colors.white,
-                radius: 65,
-                backgroundImage: AssetImage('assets/splashLogo.png'),
-              ),
-            ),
+            // CircleAvatar(
+            //   backgroundColor: Colors.white,
+            //   radius: 65,
+            //   backgroundImage: AssetImage('assets/splashLogo.png'),
+            // ),
+            Image.asset("assets/splashLogo.png", height: 300, width: 300),
             Container(
               // color: Colors.red,
               padding: const EdgeInsets.only(top: 140),

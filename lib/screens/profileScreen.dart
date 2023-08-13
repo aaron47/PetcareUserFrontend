@@ -1,22 +1,40 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
 import 'package:pet_user_app/models/businessLayer/baseRoute.dart';
+import 'package:pet_user_app/network/services/ApiService.dart';
 import 'package:pet_user_app/screens/ReminderScreen.dart';
+import 'package:pet_user_app/screens/addPetScreen.dart';
 import 'package:pet_user_app/screens/myWalletScreen.dart';
 import 'package:pet_user_app/screens/notificationScreen.dart';
 import 'package:pet_user_app/screens/petProfileScreen.dart';
 import 'package:pet_user_app/screens/settingScreen.dart';
 import 'package:pet_user_app/screens/wishListScreen.dart';
 
+import '../controllers/ApiController.dart';
+import '../models/pet.dart';
+
 class ProfileScreen extends BaseRoute {
   // ProfileScreen() : super();
   ProfileScreen({a, o}) : super(a: a, o: o, r: 'ProfileScreen');
+
   @override
   _ProfileScreenState createState() => new _ProfileScreenState();
 }
 
 class _ProfileScreenState extends BaseRouteState {
   _ProfileScreenState() : super();
+
+  final ApiController apiController = Get.put(ApiController());
+
+  @override
+  void initState() {
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      await apiController.fetchUserPets(apiController.user.value
+          .email); // Replace 'userEmail' with the actual user's email
+    });
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -69,45 +87,48 @@ class _ProfileScreenState extends BaseRouteState {
                         child: CircleAvatar(
                             radius: 80,
                             backgroundImage:
-                                AssetImage('assets/catimage2.png')),
+                                AssetImage('assets/splashScreen.png')),
                       ),
                       Padding(
                         padding: EdgeInsets.only(left: 25),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              'Tanvi K.',
-                              style:
-                                  Theme.of(context).primaryTextTheme.headline5,
-                            ),
-                            Padding(
-                              padding:
-                                  const EdgeInsets.only(top: 5, bottom: 10),
-                              child: Text(
-                                'khar West,Mumbai',
+                        child: Obx(
+                          () => Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                apiController.user.value.fullName ?? "",
                                 style: Theme.of(context)
                                     .primaryTextTheme
-                                    .subtitle2,
+                                    .headline5,
                               ),
-                            ),
-                            Container(
-                              padding: EdgeInsets.all(6),
-                              width: 85,
-                              height: 30,
-                              child: Text(
-                                'Edit Profile',
-                                style: TextStyle(
-                                    color: Theme.of(context).primaryColor),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.only(top: 5, bottom: 10),
+                                child: Text(
+                                  apiController.user.value.role ?? "",
+                                  style: Theme.of(context)
+                                      .primaryTextTheme
+                                      .subtitle2,
+                                ),
                               ),
-                              decoration: BoxDecoration(
-                                  border: Border.all(
-                                      width: 1,
+                              Container(
+                                padding: EdgeInsets.all(6),
+                                width: 85,
+                                height: 30,
+                                child: Text(
+                                  'Edit Profile',
+                                  style: TextStyle(
                                       color: Theme.of(context).primaryColor),
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(5))),
-                            )
-                          ],
+                                ),
+                                decoration: BoxDecoration(
+                                    border: Border.all(
+                                        width: 1,
+                                        color: Theme.of(context).primaryColor),
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(5))),
+                              )
+                            ],
+                          ),
                         ),
                       )
                     ],
@@ -300,9 +321,18 @@ class _ProfileScreenState extends BaseRouteState {
                         'My Pets',
                         style: Theme.of(context).primaryTextTheme.bodyText1,
                       ),
-                      Text(
-                        '+ Add Pet',
-                        style: Theme.of(context).textTheme.subtitle2,
+                      InkWell(
+                        onTap: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => AddPetScreen(
+                                    a: widget.analytics,
+                                    o: widget.observer,
+                                  )));
+                        },
+                        child: Text(
+                          '+ Add Pet',
+                          style: Theme.of(context).textTheme.subtitle2,
+                        ),
                       )
                     ],
                   ),
@@ -310,166 +340,47 @@ class _ProfileScreenState extends BaseRouteState {
                 Container(
                   width: MediaQuery.of(context).size.width,
                   height: 132,
-                  child: ListView(
-                    shrinkWrap: true,
-                    scrollDirection: Axis.horizontal,
-                    children: [
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => PetProfileScreen(
+                  child: Obx(() {
+                    if (apiController.isLoading.value) {
+                      return Center(child: CircularProgressIndicator()); // Show loading indicator
+                    } else {
+                      return ListView.builder(
+                        shrinkWrap: true,
+                        scrollDirection: Axis.horizontal,
+                        itemCount: apiController.pets.length,
+                        itemBuilder: (context, index) {
+                          final pet = apiController.pets[index];
+                          return GestureDetector(
+                            onTap: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => PetProfileScreen(
                                     a: widget.analytics,
                                     o: widget.observer,
                                   )));
-                        },
-                        child: Padding(
-                          padding: const EdgeInsets.only(
-                              top: 10, left: 10, right: 10),
-                          child: Column(
-                            children: [
-                              CircleAvatar(
-                                backgroundImage: AssetImage('assets/home3.png'),
-                                radius: 45,
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.only(
+                                  top: 10, left: 10, right: 10),
+                              child: Column(
+                                children: [
+                                  CircleAvatar(
+                                    backgroundImage:
+                                        NetworkImage(pet.petImageLink),
+                                    radius: 45,
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(top: 15),
+                                    child: Text(pet.petName),
+                                  )
+                                ],
                               ),
-                              Padding(
-                                padding: const EdgeInsets.only(top: 15),
-                                child: Text('Cookie'),
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => PetProfileScreen(
-                                    a: widget.analytics,
-                                    o: widget.observer,
-                                  )));
+                            ),
+                          );
                         },
-                        child: Padding(
-                          padding:
-                              const EdgeInsets.only(top: 10, left: 5, right: 5),
-                          child: Column(
-                            children: [
-                              CircleAvatar(
-                                backgroundImage:
-                                    AssetImage('assets/catimage.png'),
-                                radius: 45,
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(top: 15),
-                                child: Text('Cuddles'),
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => PetProfileScreen(
-                                    a: widget.analytics,
-                                    o: widget.observer,
-                                  )));
-                        },
-                        child: Padding(
-                          padding: const EdgeInsets.only(
-                              top: 10, left: 10, right: 10),
-                          child: Column(
-                            children: [
-                              CircleAvatar(
-                                backgroundImage: AssetImage('assets/home3.png'),
-                                radius: 45,
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(top: 15),
-                                child: Text('Cookie'),
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => PetProfileScreen(
-                                    a: widget.analytics,
-                                    o: widget.observer,
-                                  )));
-                        },
-                        child: Padding(
-                          padding: const EdgeInsets.only(
-                              top: 10, left: 10, right: 10),
-                          child: Column(
-                            children: [
-                              CircleAvatar(
-                                backgroundImage:
-                                    AssetImage('assets/catimage.png'),
-                                radius: 45,
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(top: 15),
-                                child: Text('Cuddles'),
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => PetProfileScreen(
-                                    a: widget.analytics,
-                                    o: widget.observer,
-                                  )));
-                        },
-                        child: Padding(
-                          padding: const EdgeInsets.only(
-                              top: 10, left: 10, right: 10),
-                          child: Column(
-                            children: [
-                              CircleAvatar(
-                                backgroundImage: AssetImage('assets/home3.png'),
-                                radius: 45,
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(top: 15),
-                                child: Text('Cookie'),
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => PetProfileScreen(
-                                    a: widget.analytics,
-                                    o: widget.observer,
-                                  )));
-                        },
-                        child: Padding(
-                          padding: const EdgeInsets.only(
-                              top: 10, left: 10, right: 10),
-                          child: Column(
-                            children: [
-                              CircleAvatar(
-                                backgroundImage:
-                                    AssetImage('assets/catimage.png'),
-                                radius: 45,
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(top: 15),
-                                child: Text('Cuddles'),
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                )
+                      );
+                    }
+                  }),
+                ),
               ],
             ),
           ),
@@ -482,9 +393,4 @@ class _ProfileScreenState extends BaseRouteState {
   }
 
   bool isloading = true;
-
-  @override
-  void initState() {
-    super.initState();
-  }
 }
