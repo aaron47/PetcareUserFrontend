@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:motion_toast/motion_toast.dart';
 import 'package:pet_user_app/models/businessLayer/baseRoute.dart';
 import 'package:pet_user_app/screens/homeScreen.dart';
 import 'package:pet_user_app/screens/ordersScreen.dart';
@@ -8,8 +9,10 @@ import 'package:pet_user_app/screens/profileScreen.dart';
 
 class BottomNavigationWidget extends BaseRoute {
   final int screenId;
+
   BottomNavigationWidget({a, o, this.screenId})
       : super(a: a, o: o, r: 'BottomNavigationWidget');
+
   @override
   _BottomNavigationWidgetState createState() =>
       new _BottomNavigationWidgetState(screenId: screenId);
@@ -19,6 +22,7 @@ class _BottomNavigationWidgetState extends BaseRouteState {
   int screenId = 0;
   int _currentIndex = 0;
   int locationIndex = 0;
+
   _BottomNavigationWidgetState({this.screenId}) : super();
 
   @override
@@ -63,7 +67,7 @@ class _BottomNavigationWidgetState extends BaseRouteState {
             },
             items: [
               BottomNavigationBarItem(
-                label: 'Home',
+                label: 'Acceuil',
                 icon: Padding(
                   padding: const EdgeInsets.only(bottom: 3),
                   child: Icon(
@@ -74,7 +78,7 @@ class _BottomNavigationWidgetState extends BaseRouteState {
                 tooltip: 'Home',
               ),
               BottomNavigationBarItem(
-                label: 'Orders',
+                label: 'Réservartion',
                 icon: Padding(
                   padding: const EdgeInsets.only(bottom: 3),
                   child: Icon(
@@ -85,7 +89,7 @@ class _BottomNavigationWidgetState extends BaseRouteState {
                 tooltip: 'Orders',
               ),
               BottomNavigationBarItem(
-                label: 'Post',
+                label: 'Publication',
                 icon: Padding(
                   padding: const EdgeInsets.only(bottom: 3),
                   child: Icon(

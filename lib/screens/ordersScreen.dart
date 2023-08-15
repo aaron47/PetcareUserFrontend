@@ -20,7 +20,7 @@ class _OrdersScreenState extends BaseRouteState {
         elevation: 0,
         backgroundColor: Colors.transparent,
         title: Text(
-          'Orders',
+          'Réservartion',
           style: Theme.of(context).primaryTextTheme.headline1,
         ),
         centerTitle: true,
@@ -58,7 +58,7 @@ class _OrdersScreenState extends BaseRouteState {
                         padding: const EdgeInsets.only(right: 15),
                         child: Icon(Icons.search),
                       ),
-                      hintText: 'Search',
+                      hintText: 'Rechercher',
                       contentPadding: EdgeInsets.only(top: 5, left: 10),
                     ),
                   ),
@@ -75,8 +75,7 @@ class _OrdersScreenState extends BaseRouteState {
                             padding: EdgeInsets.only(bottom: 12),
                             height: 61,
                             child: Padding(
-                              padding:
-                                  const EdgeInsets.only(right: 15, left: 15),
+                              padding: const EdgeInsets.only(right: 15, left: 15),
                               child: Container(
                                 child: PreferredSize(
                                   preferredSize: Size.fromHeight(40.0),
@@ -90,20 +89,19 @@ class _OrdersScreenState extends BaseRouteState {
                                     backgroundColor: Colors.white,
                                     bottom: TabBar(
                                       unselectedLabelColor: Colors.grey,
-                                      indicatorColor:
-                                          Theme.of(context).primaryColor,
+                                      indicatorColor: Theme.of(context).primaryColor,
                                       tabs: [
                                         Tab(
                                           child: Container(
                                             child: Text(
-                                              'Active',
+                                              'En cours',
                                             ),
                                           ),
                                         ),
                                         Tab(
                                           child: Container(
                                             child: Text(
-                                              'Past',
+                                              'terminées',
                                             ),
                                           ),
                                         ),
@@ -125,127 +123,98 @@ class _OrdersScreenState extends BaseRouteState {
                                   Container(
                                       child: ListView.builder(
                                           itemCount: 3,
-                                          itemBuilder:
-                                              (BuildContext ctx, int index) {
+                                          itemBuilder: (BuildContext ctx, int index) {
                                             return Padding(
                                               padding: EdgeInsets.only(),
                                               child: Card(
                                                 elevation: 3,
                                                 child: Container(
                                                   height: 175,
-                                                  width: MediaQuery.of(context)
-                                                      .size
-                                                      .width,
+                                                  width: MediaQuery.of(context).size.width,
                                                   child: Column(
                                                     children: [
                                                       GestureDetector(
                                                         onTap: () {
-                                                          Navigator.of(context).push(
-                                                              MaterialPageRoute(
-                                                                  builder:
-                                                                      (context) =>
-                                                                          OrderDetailScreen(
-                                                                            a: widget.analytics,
-                                                                            o: widget.observer,
-                                                                          )));
+                                                          Navigator.of(context).push(MaterialPageRoute(
+                                                              builder: (context) => OrderDetailScreen(
+                                                                    a: widget.analytics,
+                                                                    o: widget.observer,
+                                                                  )));
                                                         },
                                                         child: Container(
                                                           //color: Colors.green,
                                                           child: Padding(
-                                                            padding:
-                                                                const EdgeInsets
-                                                                        .only(
-                                                                    top: 10,
-                                                                    left: 10),
+                                                            padding: const EdgeInsets.only(top: 10, left: 10),
                                                             child: Row(
                                                               children: [
                                                                 Container(
                                                                   child: Column(
                                                                     children: [
                                                                       CircleAvatar(
-                                                                        radius:
-                                                                            38,
-                                                                        backgroundImage:
-                                                                            AssetImage('assets/catimage2.png'),
+                                                                        radius: 38,
+                                                                        backgroundImage: AssetImage('assets/catimage2.png'),
                                                                       ),
                                                                       Container(
-                                                                        margin: EdgeInsets.only(
-                                                                            top:
-                                                                                10),
-                                                                        child:
-                                                                            Text(
-                                                                          'Sara Seth',
-                                                                          style: Theme.of(context)
-                                                                              .primaryTextTheme
-                                                                              .headline6,
+                                                                        margin: EdgeInsets.only(top: 10),
+                                                                        child: Text(
+                                                                          'Sara abid',
+                                                                          style: Theme.of(context).primaryTextTheme.headline6,
                                                                         ),
                                                                       ),
                                                                     ],
                                                                   ),
                                                                 ),
                                                                 Padding(
-                                                                  padding: const EdgeInsets
-                                                                          .only(
-                                                                      left: 5),
+                                                                  padding: const EdgeInsets.only(left: 5),
                                                                   child: Column(
-                                                                    crossAxisAlignment:
-                                                                        CrossAxisAlignment
-                                                                            .start,
+                                                                    crossAxisAlignment: CrossAxisAlignment.start,
                                                                     children: [
                                                                       Text(
-                                                                        'Pet Boarding',
-                                                                        style: Theme.of(context)
-                                                                            .primaryTextTheme
-                                                                            .headline1,
+                                                                        'Hébergement',
+                                                                        style: Theme.of(context).primaryTextTheme.headline1,
                                                                       ),
                                                                       Padding(
-                                                                        padding:
-                                                                            const EdgeInsets.only(top: 1),
-                                                                        child:
-                                                                            Row(
+                                                                        padding: const EdgeInsets.only(top: 1),
+                                                                        child: Row(
                                                                           children: [
                                                                             Padding(
                                                                               padding: const EdgeInsets.only(left: 5),
                                                                               child: Text(
-                                                                                'Fluffy, Cookie',
+                                                                                'Siri, chat',
                                                                                 style: Theme.of(context).primaryTextTheme.subtitle2,
                                                                               ),
                                                                             )
                                                                           ],
                                                                         ),
                                                                       ),
+                                                                      // Padding(
+                                                                      //   padding: const EdgeInsets.only(top: 1),
+                                                                      //   child: Row(
+                                                                      //     children: [
+                                                                      //       Padding(
+                                                                      //         padding: const EdgeInsets.only(left: 5),
+                                                                      //         child: Text(
+                                                                      //           '2 daily meals',
+                                                                      //           style: Theme.of(context).primaryTextTheme.subtitle2,
+                                                                      //         ),
+                                                                      //       )
+                                                                      //     ],
+                                                                      //   ),
+                                                                      // ),
                                                                       Padding(
-                                                                        padding:
-                                                                            const EdgeInsets.only(top: 1),
-                                                                        child:
-                                                                            Row(
-                                                                          children: [
-                                                                            Padding(
-                                                                              padding: const EdgeInsets.only(left: 5),
-                                                                              child: Text(
-                                                                                '2 daily meals',
-                                                                                style: Theme.of(context).primaryTextTheme.subtitle2,
-                                                                              ),
-                                                                            )
-                                                                          ],
-                                                                        ),
-                                                                      ),
-                                                                      Padding(
-                                                                        padding:
-                                                                            const EdgeInsets.only(top: 1),
-                                                                        child:
-                                                                            Row(
+                                                                        padding: const EdgeInsets.only(top: 1),
+                                                                        child: Row(
                                                                           children: [
                                                                             Padding(
                                                                               padding: const EdgeInsets.only(left: 5),
                                                                               child: Row(
                                                                                 children: [
                                                                                   Text(
-                                                                                    'Start: ',
+                                                                                    'Début: ',
                                                                                     style: Theme.of(context).primaryTextTheme.subtitle2,
                                                                                   ),
                                                                                   Text(
-                                                                                    '14 Feb 2021 9:00 pm',
+                                                                                    '14 Jul 2023 9:00 pm',
                                                                                     style: Theme.of(context).primaryTextTheme.subtitle2,
                                                                                   ),
                                                                                 ],
@@ -255,21 +224,19 @@ class _OrdersScreenState extends BaseRouteState {
                                                                         ),
                                                                       ),
                                                                       Padding(
-                                                                        padding:
-                                                                            const EdgeInsets.only(top: 1),
-                                                                        child:
-                                                                            Row(
+                                                                        padding: const EdgeInsets.only(top: 1),
+                                                                        child: Row(
                                                                           children: [
                                                                             Padding(
                                                                               padding: const EdgeInsets.only(left: 5),
                                                                               child: Row(
                                                                                 children: [
                                                                                   Text(
-                                                                                    'Start: ',
+                                                                                    'Fin: ',
                                                                                     style: Theme.of(context).primaryTextTheme.subtitle2,
                                                                                   ),
                                                                                   Text(
-                                                                                    '14 Feb 2021 9:00 pm',
+                                                                                    '14 Jul 2023 9:00 pm',
                                                                                     style: Theme.of(context).primaryTextTheme.subtitle2,
                                                                                   ),
                                                                                 ],
@@ -285,22 +252,16 @@ class _OrdersScreenState extends BaseRouteState {
                                                                   height: 110,
                                                                   // color:
                                                                   //     Colors.yellow,
-                                                                  padding:
-                                                                      EdgeInsets
-                                                                          .only(),
+                                                                  padding: EdgeInsets.only(),
                                                                   child: Column(
-                                                                    mainAxisAlignment:
-                                                                        MainAxisAlignment
-                                                                            .spaceBetween,
+                                                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                                     children: [
                                                                       Row(
                                                                         children: [
                                                                           Padding(
-                                                                            padding:
-                                                                                const EdgeInsets.only(right: 1),
-                                                                            child:
-                                                                                Text(
-                                                                              'Order Id: W62842',
+                                                                            padding: const EdgeInsets.only(right: 1),
+                                                                            child: Text(
+                                                                              'reservation ID: W62842',
                                                                               style: TextStyle(
                                                                                 fontSize: 10.5,
                                                                                 color: Color(0xFFF0900C),
@@ -309,12 +270,7 @@ class _OrdersScreenState extends BaseRouteState {
                                                                           ),
                                                                         ],
                                                                       ),
-                                                                      Container(
-                                                                          padding: EdgeInsets.only(
-                                                                              left:
-                                                                                  20),
-                                                                          child:
-                                                                              Text('Rs.700')),
+                                                                      Container(padding: EdgeInsets.only(left: 20), child: Text('250 dt')),
                                                                     ],
                                                                   ),
                                                                 )
@@ -324,9 +280,7 @@ class _OrdersScreenState extends BaseRouteState {
                                                         ),
                                                       ),
                                                       Container(
-                                                        margin: EdgeInsets.only(
-                                                            left: 10,
-                                                            right: 10),
+                                                        margin: EdgeInsets.only(left: 10, right: 10),
                                                         child: Divider(
                                                           height: 10,
                                                           color: Colors.grey,
@@ -334,43 +288,26 @@ class _OrdersScreenState extends BaseRouteState {
                                                       ),
                                                       Container(
                                                         child: Row(
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .spaceBetween,
+                                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                           children: [
                                                             Container(
-                                                              margin: EdgeInsets
-                                                                  .only(
-                                                                      left: 15),
-                                                              padding:
-                                                                  EdgeInsets
-                                                                      .all(6),
+                                                              margin: EdgeInsets.only(left: 15),
+                                                              padding: EdgeInsets.all(6),
                                                               width: 125,
                                                               height: 36,
                                                               child: Center(
-                                                                child:
-                                                                    Container(
+                                                                child: Container(
                                                                   child: Row(
-                                                                    mainAxisAlignment:
-                                                                        MainAxisAlignment
-                                                                            .center,
+                                                                    mainAxisAlignment: MainAxisAlignment.center,
                                                                     children: [
                                                                       Icon(
-                                                                        Icons
-                                                                            .cancel,
-                                                                        color: Colors
-                                                                            .grey,
-                                                                        size:
-                                                                            15,
+                                                                        Icons.cancel,
+                                                                        color: Colors.grey,
+                                                                        size: 15,
                                                                       ),
                                                                       Padding(
-                                                                        padding: const EdgeInsets.only(
-                                                                            top:
-                                                                                3,
-                                                                            left:
-                                                                                2),
-                                                                        child:
-                                                                            Text(
+                                                                        padding: const EdgeInsets.only(top: 3, left: 2),
+                                                                        child: Text(
                                                                           'Cancle',
                                                                         ),
                                                                       ),
@@ -383,40 +320,25 @@ class _OrdersScreenState extends BaseRouteState {
                                                               child: Text('|'),
                                                             ),
                                                             Container(
-                                                              margin: EdgeInsets
-                                                                  .only(
-                                                                      right:
-                                                                          15),
+                                                              margin: EdgeInsets.only(right: 15),
                                                               //  padding: EdgeInsets.all(6),
                                                               width: 125,
                                                               height: 36,
                                                               child: Center(
-                                                                child:
-                                                                    Container(
+                                                                child: Container(
                                                                   child: Row(
-                                                                    mainAxisAlignment:
-                                                                        MainAxisAlignment
-                                                                            .center,
+                                                                    mainAxisAlignment: MainAxisAlignment.center,
                                                                     children: [
                                                                       Icon(
-                                                                        Icons
-                                                                            .alarm,
-                                                                        color: Theme.of(context)
-                                                                            .primaryColor,
-                                                                        size:
-                                                                            15,
+                                                                        Icons.call,
+                                                                        color: Theme.of(context).primaryColor,
+                                                                        size: 15,
                                                                       ),
                                                                       Padding(
-                                                                        padding: const EdgeInsets.only(
-                                                                            top:
-                                                                                3.0,
-                                                                            left:
-                                                                                2),
-                                                                        child:
-                                                                            Text(
-                                                                          'Add Riminder',
-                                                                          style:
-                                                                              TextStyle(color: Theme.of(context).primaryColor),
+                                                                        padding: const EdgeInsets.only(top: 3.0, left: 2),
+                                                                        child: Text(
+                                                                          'Message',
+                                                                          style: TextStyle(color: Theme.of(context).primaryColor),
                                                                         ),
                                                                       ),
                                                                     ],
@@ -438,127 +360,98 @@ class _OrdersScreenState extends BaseRouteState {
                                   Container(
                                       child: ListView.builder(
                                           itemCount: 2,
-                                          itemBuilder:
-                                              (BuildContext ctx, int index) {
+                                          itemBuilder: (BuildContext ctx, int index) {
                                             return Padding(
                                               padding: EdgeInsets.only(),
                                               child: Card(
                                                 elevation: 3,
                                                 child: Container(
                                                   height: 175,
-                                                  width: MediaQuery.of(context)
-                                                      .size
-                                                      .width,
+                                                  width: MediaQuery.of(context).size.width,
                                                   child: Column(
                                                     children: [
                                                       GestureDetector(
                                                         onTap: () {
-                                                          Navigator.of(context).push(
-                                                              MaterialPageRoute(
-                                                                  builder:
-                                                                      (context) =>
-                                                                          OrderDetailScreen(
-                                                                            a: widget.analytics,
-                                                                            o: widget.observer,
-                                                                          )));
+                                                          Navigator.of(context).push(MaterialPageRoute(
+                                                              builder: (context) => OrderDetailScreen(
+                                                                    a: widget.analytics,
+                                                                    o: widget.observer,
+                                                                  )));
                                                         },
                                                         child: Container(
                                                           //color: Colors.green,
                                                           child: Padding(
-                                                            padding:
-                                                                const EdgeInsets
-                                                                        .only(
-                                                                    top: 10,
-                                                                    left: 10),
+                                                            padding: const EdgeInsets.only(top: 10, left: 10),
                                                             child: Row(
                                                               children: [
                                                                 Container(
                                                                   child: Column(
                                                                     children: [
                                                                       CircleAvatar(
-                                                                        radius:
-                                                                            38,
-                                                                        backgroundImage:
-                                                                            AssetImage('assets/catimage2.png'),
+                                                                        radius: 38,
+                                                                        backgroundImage: AssetImage('assets/catimage2.png'),
                                                                       ),
                                                                       Container(
-                                                                        margin: EdgeInsets.only(
-                                                                            top:
-                                                                                10),
-                                                                        child:
-                                                                            Text(
-                                                                          'Sara Seth',
-                                                                          style: Theme.of(context)
-                                                                              .primaryTextTheme
-                                                                              .headline6,
+                                                                        margin: EdgeInsets.only(top: 10),
+                                                                        child: Text(
+                                                                          'Sara abid',
+                                                                          style: Theme.of(context).primaryTextTheme.headline6,
                                                                         ),
                                                                       ),
                                                                     ],
                                                                   ),
                                                                 ),
                                                                 Padding(
-                                                                  padding: const EdgeInsets
-                                                                          .only(
-                                                                      left: 5),
+                                                                  padding: const EdgeInsets.only(left: 5),
                                                                   child: Column(
-                                                                    crossAxisAlignment:
-                                                                        CrossAxisAlignment
-                                                                            .start,
+                                                                    crossAxisAlignment: CrossAxisAlignment.start,
                                                                     children: [
                                                                       Text(
-                                                                        'Pet Boarding',
-                                                                        style: Theme.of(context)
-                                                                            .primaryTextTheme
-                                                                            .headline1,
+                                                                        'Hébergement',
+                                                                        style: Theme.of(context).primaryTextTheme.headline1,
                                                                       ),
                                                                       Padding(
-                                                                        padding:
-                                                                            const EdgeInsets.only(top: 1),
-                                                                        child:
-                                                                            Row(
+                                                                        padding: const EdgeInsets.only(top: 1),
+                                                                        child: Row(
                                                                           children: [
                                                                             Padding(
                                                                               padding: const EdgeInsets.only(left: 5),
                                                                               child: Text(
-                                                                                'Fluffy, Cookie',
+                                                                                'Siri, chat',
                                                                                 style: Theme.of(context).primaryTextTheme.subtitle2,
                                                                               ),
                                                                             )
                                                                           ],
                                                                         ),
                                                                       ),
+                                                                      // Padding(
+                                                                      //   padding: const EdgeInsets.only(top: 1),
+                                                                      //   child: Row(
+                                                                      //     children: [
+                                                                      //       Padding(
+                                                                      //         padding: const EdgeInsets.only(left: 5),
+                                                                      //         child: Text(
+                                                                      //           '2 daily meals',
+                                                                      //           style: Theme.of(context).primaryTextTheme.subtitle2,
+                                                                      //         ),
+                                                                      //       )
+                                                                      //     ],
+                                                                      //   ),
+                                                                      // ),
                                                                       Padding(
-                                                                        padding:
-                                                                            const EdgeInsets.only(top: 1),
-                                                                        child:
-                                                                            Row(
-                                                                          children: [
-                                                                            Padding(
-                                                                              padding: const EdgeInsets.only(left: 5),
-                                                                              child: Text(
-                                                                                '2 daily meals',
-                                                                                style: Theme.of(context).primaryTextTheme.subtitle2,
-                                                                              ),
-                                                                            )
-                                                                          ],
-                                                                        ),
-                                                                      ),
-                                                                      Padding(
-                                                                        padding:
-                                                                            const EdgeInsets.only(top: 1),
-                                                                        child:
-                                                                            Row(
+                                                                        padding: const EdgeInsets.only(top: 1),
+                                                                        child: Row(
                                                                           children: [
                                                                             Padding(
                                                                               padding: const EdgeInsets.only(left: 5),
                                                                               child: Row(
                                                                                 children: [
                                                                                   Text(
-                                                                                    'Start: ',
+                                                                                    'Début: ',
                                                                                     style: Theme.of(context).primaryTextTheme.subtitle2,
                                                                                   ),
                                                                                   Text(
-                                                                                    '14 Feb 2021 9:00 pm',
+                                                                                    '14 Jul 2023 9:00 pm',
                                                                                     style: Theme.of(context).primaryTextTheme.subtitle2,
                                                                                   ),
                                                                                 ],
@@ -568,21 +461,19 @@ class _OrdersScreenState extends BaseRouteState {
                                                                         ),
                                                                       ),
                                                                       Padding(
-                                                                        padding:
-                                                                            const EdgeInsets.only(top: 1),
-                                                                        child:
-                                                                            Row(
+                                                                        padding: const EdgeInsets.only(top: 1),
+                                                                        child: Row(
                                                                           children: [
                                                                             Padding(
                                                                               padding: const EdgeInsets.only(left: 5),
                                                                               child: Row(
                                                                                 children: [
                                                                                   Text(
-                                                                                    'Start: ',
+                                                                                    'Fin: ',
                                                                                     style: Theme.of(context).primaryTextTheme.subtitle2,
                                                                                   ),
                                                                                   Text(
-                                                                                    '14 Feb 2021 9:00 pm',
+                                                                                    '14 Jul 2023 9:00 pm',
                                                                                     style: Theme.of(context).primaryTextTheme.subtitle2,
                                                                                   ),
                                                                                 ],
@@ -598,22 +489,16 @@ class _OrdersScreenState extends BaseRouteState {
                                                                   height: 110,
                                                                   // color:
                                                                   //     Colors.yellow,
-                                                                  padding:
-                                                                      EdgeInsets
-                                                                          .only(),
+                                                                  padding: EdgeInsets.only(),
                                                                   child: Column(
-                                                                    mainAxisAlignment:
-                                                                        MainAxisAlignment
-                                                                            .spaceBetween,
+                                                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                                     children: [
                                                                       Row(
                                                                         children: [
                                                                           Padding(
-                                                                            padding:
-                                                                                const EdgeInsets.only(right: 1),
-                                                                            child:
-                                                                                Text(
-                                                                              'Order Id: W62842',
+                                                                            padding: const EdgeInsets.only(right: 1),
+                                                                            child: Text(
+                                                                              'reservation ID: W62842',
                                                                               style: TextStyle(
                                                                                 fontSize: 10.5,
                                                                                 color: Color(0xFFF0900C),
@@ -622,12 +507,7 @@ class _OrdersScreenState extends BaseRouteState {
                                                                           ),
                                                                         ],
                                                                       ),
-                                                                      Container(
-                                                                          padding: EdgeInsets.only(
-                                                                              left:
-                                                                                  20),
-                                                                          child:
-                                                                              Text('Rs.700')),
+                                                                      Container(padding: EdgeInsets.only(left: 20), child: Text('250 dt')),
                                                                     ],
                                                                   ),
                                                                 )
@@ -637,9 +517,7 @@ class _OrdersScreenState extends BaseRouteState {
                                                         ),
                                                       ),
                                                       Container(
-                                                        margin: EdgeInsets.only(
-                                                            left: 10,
-                                                            right: 10),
+                                                        margin: EdgeInsets.only(left: 10, right: 10),
                                                         child: Divider(
                                                           height: 10,
                                                           color: Colors.grey,
@@ -647,43 +525,26 @@ class _OrdersScreenState extends BaseRouteState {
                                                       ),
                                                       Container(
                                                         child: Row(
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .spaceBetween,
+                                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                           children: [
                                                             Container(
-                                                              margin: EdgeInsets
-                                                                  .only(
-                                                                      left: 15),
-                                                              padding:
-                                                                  EdgeInsets
-                                                                      .all(6),
+                                                              margin: EdgeInsets.only(left: 15),
+                                                              padding: EdgeInsets.all(6),
                                                               width: 125,
                                                               height: 36,
                                                               child: Center(
-                                                                child:
-                                                                    Container(
+                                                                child: Container(
                                                                   child: Row(
-                                                                    mainAxisAlignment:
-                                                                        MainAxisAlignment
-                                                                            .center,
+                                                                    mainAxisAlignment: MainAxisAlignment.center,
                                                                     children: [
                                                                       Icon(
-                                                                        Icons
-                                                                            .cancel,
-                                                                        color: Colors
-                                                                            .grey,
-                                                                        size:
-                                                                            15,
+                                                                        Icons.cancel,
+                                                                        color: Colors.grey,
+                                                                        size: 15,
                                                                       ),
                                                                       Padding(
-                                                                        padding: const EdgeInsets.only(
-                                                                            top:
-                                                                                3,
-                                                                            left:
-                                                                                2),
-                                                                        child:
-                                                                            Text(
+                                                                        padding: const EdgeInsets.only(top: 3, left: 2),
+                                                                        child: Text(
                                                                           'Cancle',
                                                                         ),
                                                                       ),
@@ -696,40 +557,25 @@ class _OrdersScreenState extends BaseRouteState {
                                                               child: Text('|'),
                                                             ),
                                                             Container(
-                                                              margin: EdgeInsets
-                                                                  .only(
-                                                                      right:
-                                                                          15),
+                                                              margin: EdgeInsets.only(right: 15),
                                                               //  padding: EdgeInsets.all(6),
                                                               width: 125,
                                                               height: 36,
                                                               child: Center(
-                                                                child:
-                                                                    Container(
+                                                                child: Container(
                                                                   child: Row(
-                                                                    mainAxisAlignment:
-                                                                        MainAxisAlignment
-                                                                            .center,
+                                                                    mainAxisAlignment: MainAxisAlignment.center,
                                                                     children: [
                                                                       Icon(
-                                                                        Icons
-                                                                            .alarm,
-                                                                        color: Theme.of(context)
-                                                                            .primaryColor,
-                                                                        size:
-                                                                            15,
+                                                                        Icons.call,
+                                                                        color: Theme.of(context).primaryColor,
+                                                                        size: 15,
                                                                       ),
                                                                       Padding(
-                                                                        padding: const EdgeInsets.only(
-                                                                            top:
-                                                                                3,
-                                                                            left:
-                                                                                2),
-                                                                        child:
-                                                                            Text(
-                                                                          'Add Riminder',
-                                                                          style:
-                                                                              TextStyle(color: Theme.of(context).primaryColor),
+                                                                        padding: const EdgeInsets.only(top: 3.0, left: 2),
+                                                                        child: Text(
+                                                                          'Message',
+                                                                          style: TextStyle(color: Theme.of(context).primaryColor),
                                                                         ),
                                                                       ),
                                                                     ],

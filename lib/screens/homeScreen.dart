@@ -1,10 +1,8 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:pet_user_app/models/businessLayer/baseRoute.dart';
-import 'package:pet_user_app/screens/CartScreen.dart';
 import 'package:pet_user_app/screens/dogWalkingScreen.dart';
 import 'package:pet_user_app/screens/petBoardingScreen.dart';
-import 'package:pet_user_app/screens/productstoreScreen.dart';
 import 'package:pet_user_app/screens/veterinaryScreen.dart';
 
 class HomeScreen extends BaseRoute {
@@ -30,58 +28,59 @@ class _HomeScreenState extends BaseRouteState {
               Padding(
                 padding: const EdgeInsets.only(left: 15),
                 child: Icon(
-                  Icons.location_on,
+                  Icons.pets,
                   color: Color(0xFF34385A),
                   size: 28,
                 ),
               ),
               Container(
-                margin: EdgeInsets.only(top: 10, left: 5),
+                margin: EdgeInsets.only(top: 10, left: 15),
                 // color: Colors.red,
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Mumbai',
+                      'Pets-care',
                       style: TextStyle(color: Colors.black, fontSize: 17),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(),
-                      child: Row(
-                        children: [
-                          Text('via Parle',
-                              style:
-                                  Theme.of(context).primaryTextTheme.subtitle2),
-                          Icon(
-                            Icons.arrow_back_ios_outlined,
-                            color: Colors.black,
-                            size: 15,
-                          )
-                        ],
-                      ),
-                    )
+                    // Padding(
+                    //   padding: const EdgeInsets.only(),
+                    //   child: Row(
+                    //     children: [
+                    //       Text('via Parle',
+                    //           style:
+                    //               Theme.of(context).primaryTextTheme.subtitle2),
+                    //       Icon(
+                    //         Icons.arrow_back_ios_outlined,
+                    //         color: Colors.black,
+                    //         size: 15,
+                    //       )
+                    //     ],
+                    //   ),
+                    // )
                   ],
                 ),
               )
             ],
           ),
-          actions: [
-            Padding(
-              padding: const EdgeInsets.only(right: 15),
-              child: GestureDetector(
-                onTap: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => CartScreen(
-                            a: widget.analytics,
-                            o: widget.observer,
-                          )));
-                },
-                child: Icon(
-                  Icons.shopping_cart_outlined,
-                  color: Color(0xFF34385A),
-                ),
-              ),
-            )
-          ],
+          // actions: [
+          //   Padding(
+          //     padding: const EdgeInsets.only(right: 15),
+          //     child: GestureDetector(
+          //       onTap: () {
+          //         Navigator.of(context).push(MaterialPageRoute(
+          //             builder: (context) => CartScreen(
+          //                   a: widget.analytics,
+          //                   o: widget.observer,
+          //                 )));
+          //       },
+          //       child: Icon(
+          //         Icons.shopping_cart_outlined,
+          //         color: Color(0xFF34385A),
+          //       ),
+          //     ),
+          //   )
+          // ],
         ),
         body: Padding(
           padding: const EdgeInsets.only(left: 10, right: 10),
@@ -97,7 +96,7 @@ class _HomeScreenState extends BaseRouteState {
                         padding: const EdgeInsets.only(right: 15),
                         child: Icon(Icons.search),
                       ),
-                      hintText: 'Search',
+                      hintText: 'Chercher',
                       contentPadding: EdgeInsets.only(top: 5, left: 10),
                     ),
                   ),
@@ -110,10 +109,18 @@ class _HomeScreenState extends BaseRouteState {
                       Padding(
                         padding: EdgeInsets.only(top: 25),
                         child: Text(
-                          'What are you looking for?',
+                          'Que recherchez-vous ?',
                           style: Theme.of(context).primaryTextTheme.bodyText1,
                         ),
                       ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 10),
+                        child: Row(
+                          children: [
+                            Text('Nos services', style: Theme.of(context).primaryTextTheme.subtitle2),
+                          ],
+                        ),
+                      )
                     ],
                   ),
                 ),
@@ -146,10 +153,8 @@ class _HomeScreenState extends BaseRouteState {
                                   fit: BoxFit.contain,
                                 ),
                                 Text(
-                                  'Pet boarding',
-                                  style: Theme.of(context)
-                                      .primaryTextTheme
-                                      .headline6,
+                                  'Hébergement',
+                                  style: Theme.of(context).primaryTextTheme.headline6,
                                 ),
                               ],
                             ),
@@ -176,10 +181,8 @@ class _HomeScreenState extends BaseRouteState {
                                   fit: BoxFit.contain,
                                 ),
                                 Text(
-                                  'Dog Walking',
-                                  style: Theme.of(context)
-                                      .primaryTextTheme
-                                      .headline6,
+                                  'Promenade',
+                                  style: Theme.of(context).primaryTextTheme.headline6,
                                 ),
                               ],
                             ),
@@ -206,10 +209,8 @@ class _HomeScreenState extends BaseRouteState {
                                   fit: BoxFit.contain,
                                 ),
                                 Text(
-                                  'Veterinary',
-                                  style: Theme.of(context)
-                                      .primaryTextTheme
-                                      .headline6,
+                                  'Vétérinaire',
+                                  style: Theme.of(context).primaryTextTheme.headline6,
                                 ),
                               ],
                             ),
@@ -218,11 +219,11 @@ class _HomeScreenState extends BaseRouteState {
                       ),
                       GestureDetector(
                         onTap: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => ProductStoreScreen(
-                                    a: widget.analytics,
-                                    o: widget.observer,
-                                  )));
+                          // Navigator.of(context).push(MaterialPageRoute(
+                          //     builder: (context) => ProductStoreScreen(
+                          //           a: widget.analytics,
+                          //           o: widget.observer,
+                          //         )));
                         },
                         child: Container(
                           width: 90,
@@ -236,10 +237,8 @@ class _HomeScreenState extends BaseRouteState {
                                   fit: BoxFit.contain,
                                 ),
                                 Text(
-                                  'Product Store',
-                                  style: Theme.of(context)
-                                      .primaryTextTheme
-                                      .headline6,
+                                  'Nourriture',
+                                  style: Theme.of(context).primaryTextTheme.headline6,
                                 ),
                               ],
                             ),
@@ -254,10 +253,9 @@ class _HomeScreenState extends BaseRouteState {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text('Booking Updates',
-                          style: Theme.of(context).primaryTextTheme.bodyText1),
+                      Text('Les meilleurs offres', style: Theme.of(context).primaryTextTheme.bodyText1),
                       Text(
-                        'View All',
+                        'Tout afficher',
                         style: Theme.of(context).primaryTextTheme.headline6,
                       )
                     ],
@@ -282,21 +280,14 @@ class _HomeScreenState extends BaseRouteState {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Container(
-                                  width:
-                                      MediaQuery.of(context).size.width - 100,
+                                  width: MediaQuery.of(context).size.width - 100,
                                   // color: Colors.red,
                                   child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                    crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsets.only(
-                                            top: 15, left: 10, bottom: 10),
-                                        child: Text(
-                                            'Pet Appointment with Dr.Arti',
-                                            style: Theme.of(context)
-                                                .primaryTextTheme
-                                                .headline3),
+                                        padding: const EdgeInsets.only(top: 15, left: 10, bottom: 10),
+                                        child: Text('Pension pour chiens avec Dr. malek', style: Theme.of(context).primaryTextTheme.headline3),
                                       ),
                                       Padding(
                                         padding: const EdgeInsets.only(
@@ -304,38 +295,31 @@ class _HomeScreenState extends BaseRouteState {
                                         ),
                                         child: Row(
                                           children: [
-                                            Text('9:00pm',
-                                                style: Theme.of(context)
-                                                    .primaryTextTheme
-                                                    .headline2),
+                                            Text('01/07 -> 31/08', style: Theme.of(context).primaryTextTheme.headline2),
+                                            // Padding(
+                                            //   padding: const EdgeInsets.only(
+                                            //       left: 2, right: 2),
+                                            //   child: Icon(
+                                            //     Icons.circle,
+                                            //     size: 10,
+                                            //     color: Colors.white,
+                                            //   ),
+                                            // ),
+                                            // Text(
+                                            //   '->',
+                                            //   style: Theme.of(context)
+                                            //       .primaryTextTheme
+                                            //       .headline2,
+                                            // ),
                                             Padding(
-                                              padding: const EdgeInsets.only(
-                                                  left: 2, right: 2),
+                                              padding: const EdgeInsets.only(left: 2, right: 2),
                                               child: Icon(
                                                 Icons.circle,
                                                 size: 10,
                                                 color: Colors.white,
                                               ),
                                             ),
-                                            Text(
-                                              'Monday',
-                                              style: Theme.of(context)
-                                                  .primaryTextTheme
-                                                  .headline2,
-                                            ),
-                                            Padding(
-                                              padding: const EdgeInsets.only(
-                                                  left: 2, right: 2),
-                                              child: Icon(
-                                                Icons.circle,
-                                                size: 10,
-                                                color: Colors.white,
-                                              ),
-                                            ),
-                                            Text('15 Feb',
-                                                style: Theme.of(context)
-                                                    .primaryTextTheme
-                                                    .headline2)
+                                            Text('15 dt/ jour', style: Theme.of(context).primaryTextTheme.headline2)
                                           ],
                                         ),
                                       )
@@ -347,8 +331,7 @@ class _HomeScreenState extends BaseRouteState {
                                   child: CircleAvatar(
                                       radius: 30,
                                       // backgroundColor: Colors.red,
-                                      backgroundImage:
-                                          AssetImage('assets/home4.png')),
+                                      backgroundImage: AssetImage('assets/home4.png')),
                                 )
                               ],
                             ),
@@ -364,9 +347,7 @@ class _HomeScreenState extends BaseRouteState {
                         );
                       },
                     ),
-                    decoration: BoxDecoration(
-                        color: Theme.of(context).primaryColor,
-                        borderRadius: BorderRadius.all(Radius.circular(10))),
+                    decoration: BoxDecoration(color: Theme.of(context).primaryColor, borderRadius: BorderRadius.all(Radius.circular(10))),
                   ),
                 ),
                 Padding(
@@ -374,10 +355,8 @@ class _HomeScreenState extends BaseRouteState {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text('Blogs',
-                          style: Theme.of(context).primaryTextTheme.bodyText1),
-                      Text('View All',
-                          style: Theme.of(context).primaryTextTheme.headline6)
+                      Text('Articles', style: Theme.of(context).primaryTextTheme.bodyText1),
+                      Text('Tout afficher', style: Theme.of(context).primaryTextTheme.headline6)
                     ],
                   ),
                 ),
@@ -390,8 +369,7 @@ class _HomeScreenState extends BaseRouteState {
                       Container(
                         height: 110,
                         child: Card(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10.0)),
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
                           elevation: 5,
                           child: Container(
                               padding: EdgeInsets.all(3),
@@ -403,10 +381,7 @@ class _HomeScreenState extends BaseRouteState {
                                       children: [
                                         Container(
                                           decoration: BoxDecoration(
-                                              image: DecorationImage(
-                                                  image: AssetImage(
-                                                      'assets/home3.png'),
-                                                  fit: BoxFit.cover),
+                                              image: DecorationImage(image: AssetImage('assets/home3.png'), fit: BoxFit.cover),
                                               color: Colors.red,
                                               borderRadius: BorderRadius.all(
                                                 Radius.circular(10),
@@ -415,22 +390,13 @@ class _HomeScreenState extends BaseRouteState {
                                           width: 80,
                                         ),
                                         Container(
-                                          padding: EdgeInsets.only(
-                                              top: 2,
-                                              bottom: 2,
-                                              left: 7,
-                                              right: 7),
+                                          padding: EdgeInsets.only(top: 2, bottom: 2, left: 7, right: 7),
                                           margin: EdgeInsets.only(top: 3),
                                           child: Text(
                                             'Behaviour',
-                                            style: Theme.of(context)
-                                                .primaryTextTheme
-                                                .headline6,
+                                            style: Theme.of(context).primaryTextTheme.headline6,
                                           ),
-                                          decoration: BoxDecoration(
-                                              color: Color(0xFFc9d0f2),
-                                              borderRadius: BorderRadius.all(
-                                                  Radius.circular(10))),
+                                          decoration: BoxDecoration(color: Color(0xFFc9d0f2), borderRadius: BorderRadius.all(Radius.circular(10))),
                                         )
                                       ],
                                     ),
@@ -438,35 +404,26 @@ class _HomeScreenState extends BaseRouteState {
                                   Container(
                                       margin: EdgeInsets.only(left: 10),
                                       // color: Colors.green,
-                                      width: MediaQuery.of(context).size.width -
-                                          134,
+                                      width: MediaQuery.of(context).size.width - 134,
                                       height: 120,
                                       child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
+                                        crossAxisAlignment: CrossAxisAlignment.start,
                                         children: [
                                           Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
+                                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                             children: [
-                                              Text('Hello this is good news',
-                                                  style: Theme.of(context)
-                                                      .primaryTextTheme
-                                                      .bodyText1),
+                                              Text('Ceci est une bonne nouvelle', style: Theme.of(context).primaryTextTheme.bodyText1),
                                               Icon(
                                                 Icons.bookmark,
-                                                color: Theme.of(context)
-                                                    .primaryColor,
+                                                color: Theme.of(context).primaryColor,
                                               )
                                             ],
                                           ),
                                           Text('@ 10th february 2021'),
                                           Expanded(
                                             child: Text(
-                                              'In publishing and graphic design, Lorem ipsum is a placeholder text,Lorem ipsum is a placeholder text ',
-                                              style: Theme.of(context)
-                                                  .primaryTextTheme
-                                                  .subtitle2,
+                                              'Lorem ipsum is a placeholder text,Lorem ipsum is a placeholder text ',
+                                              style: Theme.of(context).primaryTextTheme.subtitle2,
                                               overflow: TextOverflow.ellipsis,
                                               maxLines: 3,
                                             ),
@@ -480,8 +437,7 @@ class _HomeScreenState extends BaseRouteState {
                       Container(
                         height: 110,
                         child: Card(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10.0)),
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
                           elevation: 5,
                           child: Container(
                               padding: EdgeInsets.all(3),
@@ -493,10 +449,7 @@ class _HomeScreenState extends BaseRouteState {
                                       children: [
                                         Container(
                                           decoration: BoxDecoration(
-                                              image: DecorationImage(
-                                                  image: AssetImage(
-                                                      'assets/home3.png'),
-                                                  fit: BoxFit.cover),
+                                              image: DecorationImage(image: AssetImage('assets/home3.png'), fit: BoxFit.cover),
                                               color: Colors.red,
                                               borderRadius: BorderRadius.all(
                                                 Radius.circular(10),
@@ -505,20 +458,10 @@ class _HomeScreenState extends BaseRouteState {
                                           width: 80,
                                         ),
                                         Container(
-                                          padding: EdgeInsets.only(
-                                              top: 2,
-                                              bottom: 2,
-                                              left: 7,
-                                              right: 7),
+                                          padding: EdgeInsets.only(top: 2, bottom: 2, left: 7, right: 7),
                                           margin: EdgeInsets.only(top: 3),
-                                          child: Text('Behaviour',
-                                              style: Theme.of(context)
-                                                  .primaryTextTheme
-                                                  .headline6),
-                                          decoration: BoxDecoration(
-                                              color: Color(0xFFc9d0f2),
-                                              borderRadius: BorderRadius.all(
-                                                  Radius.circular(10))),
+                                          child: Text('Behaviour', style: Theme.of(context).primaryTextTheme.headline6),
+                                          decoration: BoxDecoration(color: Color(0xFFc9d0f2), borderRadius: BorderRadius.all(Radius.circular(10))),
                                         )
                                       ],
                                     ),
@@ -526,21 +469,15 @@ class _HomeScreenState extends BaseRouteState {
                                   Container(
                                       margin: EdgeInsets.only(left: 10),
                                       // color: Colors.green,
-                                      width: MediaQuery.of(context).size.width -
-                                          134,
+                                      width: MediaQuery.of(context).size.width - 134,
                                       height: 120,
                                       child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
+                                        crossAxisAlignment: CrossAxisAlignment.start,
                                         children: [
                                           Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
+                                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                             children: [
-                                              Text('Hello this is good news',
-                                                  style: Theme.of(context)
-                                                      .primaryTextTheme
-                                                      .bodyText1),
+                                              Text('Hello this is good news', style: Theme.of(context).primaryTextTheme.bodyText1),
                                               Icon(
                                                 Icons.bookmark,
                                                 color: Color(0xFF8F8F8F),
@@ -549,17 +486,13 @@ class _HomeScreenState extends BaseRouteState {
                                           ),
                                           Text(
                                             '@ 10th february 2021',
-                                            style: Theme.of(context)
-                                                .primaryTextTheme
-                                                .bodyText2,
+                                            style: Theme.of(context).primaryTextTheme.bodyText2,
                                           ),
                                           Expanded(
                                             child: Text(
                                               'In publishing and graphic design, Lorem ipsum is a placeholder text,Lorem ipsum is a placeholder text ',
                                               overflow: TextOverflow.ellipsis,
-                                              style: Theme.of(context)
-                                                  .primaryTextTheme
-                                                  .subtitle2,
+                                              style: Theme.of(context).primaryTextTheme.subtitle2,
                                               maxLines: 3,
                                             ),
                                           ),
@@ -572,8 +505,7 @@ class _HomeScreenState extends BaseRouteState {
                       Container(
                         height: 110,
                         child: Card(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10.0)),
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
                           elevation: 5,
                           child: Container(
                               padding: EdgeInsets.all(3),
@@ -585,10 +517,7 @@ class _HomeScreenState extends BaseRouteState {
                                       children: [
                                         Container(
                                           decoration: BoxDecoration(
-                                              image: DecorationImage(
-                                                  image: AssetImage(
-                                                      'assets/home3.png'),
-                                                  fit: BoxFit.cover),
+                                              image: DecorationImage(image: AssetImage('assets/home3.png'), fit: BoxFit.cover),
                                               color: Colors.red,
                                               borderRadius: BorderRadius.all(
                                                 Radius.circular(10),
@@ -597,20 +526,10 @@ class _HomeScreenState extends BaseRouteState {
                                           width: 80,
                                         ),
                                         Container(
-                                          padding: EdgeInsets.only(
-                                              top: 2,
-                                              bottom: 2,
-                                              left: 7,
-                                              right: 7),
+                                          padding: EdgeInsets.only(top: 2, bottom: 2, left: 7, right: 7),
                                           margin: EdgeInsets.only(top: 3),
-                                          child: Text('Behaviour',
-                                              style: Theme.of(context)
-                                                  .primaryTextTheme
-                                                  .headline6),
-                                          decoration: BoxDecoration(
-                                              color: Color(0xFFc9d0f2),
-                                              borderRadius: BorderRadius.all(
-                                                  Radius.circular(10))),
+                                          child: Text('Behaviour', style: Theme.of(context).primaryTextTheme.headline6),
+                                          decoration: BoxDecoration(color: Color(0xFFc9d0f2), borderRadius: BorderRadius.all(Radius.circular(10))),
                                         )
                                       ],
                                     ),
@@ -618,27 +537,21 @@ class _HomeScreenState extends BaseRouteState {
                                   Container(
                                       margin: EdgeInsets.only(left: 10),
                                       // color: Colors.green,
-                                      width: MediaQuery.of(context).size.width -
-                                          134,
+                                      width: MediaQuery.of(context).size.width - 134,
                                       height: 120,
                                       child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
+                                        crossAxisAlignment: CrossAxisAlignment.start,
                                         children: [
                                           Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
+                                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                             children: [
                                               Text(
                                                 'Hello this is good news',
-                                                style: Theme.of(context)
-                                                    .primaryTextTheme
-                                                    .bodyText1,
+                                                style: Theme.of(context).primaryTextTheme.bodyText1,
                                               ),
                                               Icon(
                                                 Icons.bookmark,
-                                                color: Theme.of(context)
-                                                    .primaryColor,
+                                                color: Theme.of(context).primaryColor,
                                               )
                                             ],
                                           ),
@@ -647,9 +560,7 @@ class _HomeScreenState extends BaseRouteState {
                                             child: Text(
                                               'In publishing and graphic design, Lorem ipsum is a placeholder text,Lorem ipsum is a placeholder text ',
                                               overflow: TextOverflow.ellipsis,
-                                              style: Theme.of(context)
-                                                  .primaryTextTheme
-                                                  .subtitle2,
+                                              style: Theme.of(context).primaryTextTheme.subtitle2,
                                               maxLines: 3,
                                             ),
                                           ),

@@ -60,25 +60,21 @@ class _ChatListScreenState extends BaseRouteState {
                             child: CircleAvatar(
                                 radius: 40,
                                 // backgroundColor: Colors.red,
-                                backgroundImage:
-                                    AssetImage('assets/home4.png')),
+                                backgroundImage: AssetImage('assets/home4.png')),
                           ),
                         ),
                         title: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              'Sara Seth',
-                              style:
-                                  Theme.of(context).primaryTextTheme.bodyText1,
+                              'Sara abid',
+                              style: Theme.of(context).primaryTextTheme.bodyText1,
                             ),
                             Container(
                                 padding: EdgeInsets.only(right: 15),
                                 child: Text(
                                   '6:02 PM',
-                                  style: Theme.of(context)
-                                      .primaryTextTheme
-                                      .subtitle2,
+                                  style: Theme.of(context).primaryTextTheme.subtitle2,
                                 )),
                           ],
                         ),
@@ -113,17 +109,15 @@ class _ChatListScreenState extends BaseRouteState {
                             child: CircleAvatar(
                                 radius: 40,
                                 // backgroundColor: Colors.red,
-                                backgroundImage:
-                                    AssetImage('assets/catimage2.png')),
+                                backgroundImage: AssetImage('assets/catimage2.png')),
                           ),
                         ),
                         title: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              'Nupur Shetty',
-                              style:
-                                  Theme.of(context).primaryTextTheme.bodyText1,
+                              'Nour houda',
+                              style: Theme.of(context).primaryTextTheme.bodyText1,
                             ),
                             Container(
                                 padding: EdgeInsets.only(right: 15),
@@ -131,9 +125,7 @@ class _ChatListScreenState extends BaseRouteState {
                                   children: [
                                     Text(
                                       '12 jan',
-                                      style: Theme.of(context)
-                                          .primaryTextTheme
-                                          .subtitle2,
+                                      style: Theme.of(context).primaryTextTheme.subtitle2,
                                     ),
                                   ],
                                 )),
@@ -144,8 +136,7 @@ class _ChatListScreenState extends BaseRouteState {
                           children: [
                             Text(
                               'No problem',
-                              style:
-                                  Theme.of(context).primaryTextTheme.subtitle2,
+                              style: Theme.of(context).primaryTextTheme.subtitle2,
                             ),
                             Container(
                                 padding: EdgeInsets.only(right: 15),
@@ -153,9 +144,7 @@ class _ChatListScreenState extends BaseRouteState {
                                   children: [
                                     Text(
                                       'seen',
-                                      style: Theme.of(context)
-                                          .primaryTextTheme
-                                          .subtitle2,
+                                      style: Theme.of(context).primaryTextTheme.subtitle2,
                                     ),
                                   ],
                                 )),

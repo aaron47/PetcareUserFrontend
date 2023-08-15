@@ -5,11 +5,9 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:pet_user_app/models/businessLayer/baseRoute.dart';
 
 class VeterinaryBookingProccessFilterScreen extends BaseRoute {
-  VeterinaryBookingProccessFilterScreen({a, o})
-      : super(a: a, o: o, r: 'VeterinaryBookingProccessFilterScreen');
+  VeterinaryBookingProccessFilterScreen({a, o}) : super(a: a, o: o, r: 'VeterinaryBookingProccessFilterScreen');
   @override
-  _VeterinaryBookingProccessFilterScreenState createState() =>
-      new _VeterinaryBookingProccessFilterScreenState();
+  _VeterinaryBookingProccessFilterScreenState createState() => new _VeterinaryBookingProccessFilterScreenState();
 }
 
 class _VeterinaryBookingProccessFilterScreenState extends BaseRouteState {
@@ -42,13 +40,10 @@ class _VeterinaryBookingProccessFilterScreenState extends BaseRouteState {
           children: [
             Card(
               elevation: 3,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(50.0)),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50.0)),
               child: CircleAvatar(
-                backgroundColor:
-                    dogSelected ? Theme.of(context).primaryColor : Colors.white,
-                child: Icon(FontAwesomeIcons.dog,
-                    color: dogSelected ? Colors.white : Color(0xFF8F8F8F)),
+                backgroundColor: dogSelected ? Theme.of(context).primaryColor : Colors.white,
+                child: Icon(FontAwesomeIcons.dog, color: dogSelected ? Colors.white : Color(0xFF8F8F8F)),
                 radius: 20,
               ),
             ),
@@ -68,13 +63,10 @@ class _VeterinaryBookingProccessFilterScreenState extends BaseRouteState {
           children: [
             Card(
               elevation: 3,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(50.0)),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50.0)),
               child: CircleAvatar(
-                backgroundColor:
-                    catSelectd ? Theme.of(context).primaryColor : Colors.white,
-                child: Icon(FontAwesomeIcons.cat,
-                    color: catSelectd ? Colors.white : Color(0xFF8F8F8F)),
+                backgroundColor: catSelectd ? Theme.of(context).primaryColor : Colors.white,
+                child: Icon(FontAwesomeIcons.cat, color: catSelectd ? Colors.white : Color(0xFF8F8F8F)),
                 radius: 20,
               ),
             ),
@@ -313,10 +305,7 @@ class _VeterinaryBookingProccessFilterScreenState extends BaseRouteState {
                                 child: Icon(
                                   FontAwesomeIcons.minus,
                                   size: 10,
-                                  color: Theme.of(context)
-                                      .primaryTextTheme
-                                      .subtitle2
-                                      .color,
+                                  color: Theme.of(context).primaryTextTheme.subtitle2.color,
                                 ),
                               ),
                             ),
@@ -343,10 +332,7 @@ class _VeterinaryBookingProccessFilterScreenState extends BaseRouteState {
                                 child: Icon(
                                   Icons.add,
                                   size: 15,
-                                  color: Theme.of(context)
-                                      .primaryTextTheme
-                                      .subtitle2
-                                      .color,
+                                  color: Theme.of(context).primaryTextTheme.subtitle2.color,
                                 ),
                               ),
                             )
@@ -378,15 +364,12 @@ class _VeterinaryBookingProccessFilterScreenState extends BaseRouteState {
                                   height: 25,
                                   width: 85,
                                   child: Padding(
-                                    padding: const EdgeInsets.only(
-                                        top: 3, bottom: 3, left: 5, right: 5),
+                                    padding: const EdgeInsets.only(top: 3, bottom: 3, left: 5, right: 5),
                                     child: Row(
                                       children: [
                                         Text(
-                                          '11 Feb 2021',
-                                          style: Theme.of(context)
-                                              .textTheme
-                                              .subtitle1,
+                                          '12 JUL 2021',
+                                          style: Theme.of(context).textTheme.subtitle1,
                                         ),
                                       ],
                                     ),
@@ -397,10 +380,7 @@ class _VeterinaryBookingProccessFilterScreenState extends BaseRouteState {
                               child: Icon(
                                 Icons.calendar_today,
                                 size: 15,
-                                color: Theme.of(context)
-                                    .primaryTextTheme
-                                    .subtitle2
-                                    .color,
+                                color: Theme.of(context).primaryTextTheme.subtitle2.color,
                               ),
                             )
                           ],
@@ -425,10 +405,7 @@ class _VeterinaryBookingProccessFilterScreenState extends BaseRouteState {
                           child: Container(
                             width: 50,
                             height: 25,
-                            child: Center(
-                                child: Text('${sliderVal.toInt()} KM',
-                                    style:
-                                        Theme.of(context).textTheme.subtitle1)),
+                            child: Center(child: Text('${sliderVal.toInt()} KM', style: Theme.of(context).textTheme.subtitle1)),
                           ),
                         ),
                       )
@@ -448,11 +425,9 @@ class _VeterinaryBookingProccessFilterScreenState extends BaseRouteState {
                           inactiveTrackColor: Color(0xFF8F8F8F),
                           trackHeight: 2.0,
                           thumbColor: Theme.of(context).primaryColor,
-                          thumbShape:
-                              RoundSliderThumbShape(enabledThumbRadius: 8.0),
+                          thumbShape: RoundSliderThumbShape(enabledThumbRadius: 8.0),
                           overlayColor: Colors.purple.withAlpha(32),
-                          overlayShape:
-                              RoundSliderOverlayShape(overlayRadius: 14.0),
+                          overlayShape: RoundSliderOverlayShape(overlayRadius: 14.0),
                         ),
                         child: Slider(
                           // onChangeEnd: ,
@@ -477,16 +452,12 @@ class _VeterinaryBookingProccessFilterScreenState extends BaseRouteState {
                             padding: const EdgeInsets.only(left: 10),
                             child: Text(
                               '0 Km',
-                              style:
-                                  Theme.of(context).primaryTextTheme.subtitle2,
+                              style: Theme.of(context).primaryTextTheme.subtitle2,
                             ),
                           ),
                           Padding(
                             padding: const EdgeInsets.only(right: 10),
-                            child: Text('30 KM',
-                                style: Theme.of(context)
-                                    .primaryTextTheme
-                                    .subtitle2),
+                            child: Text('30 KM', style: Theme.of(context).primaryTextTheme.subtitle2),
                           )
                         ],
                       ),
@@ -518,26 +489,18 @@ class _VeterinaryBookingProccessFilterScreenState extends BaseRouteState {
                                 )),
                               ),
                             ),
-                            Text('to',
-                                style: Theme.of(context)
-                                    .primaryTextTheme
-                                    .subtitle2),
+                            Text('to', style: Theme.of(context).primaryTextTheme.subtitle2),
                             Card(
                               elevation: 3,
                               child: Container(
                                 width: 50,
                                 height: 25,
-                                child: Center(
-                                    child: Text('Rs.$endRangeVal',
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .subtitle1)),
+                                child: Center(child: Text('Rs.$endRangeVal', style: Theme.of(context).textTheme.subtitle1)),
                               ),
                             ),
                             Text(
                               '/visit',
-                              style:
-                                  Theme.of(context).primaryTextTheme.subtitle2,
+                              style: Theme.of(context).primaryTextTheme.subtitle2,
                             )
                           ],
                         ),
@@ -558,11 +521,9 @@ class _VeterinaryBookingProccessFilterScreenState extends BaseRouteState {
                           inactiveTrackColor: Color(0xFF8F8F8F),
                           trackHeight: 2.0,
                           thumbColor: Theme.of(context).primaryColor,
-                          thumbShape:
-                              RoundSliderThumbShape(enabledThumbRadius: 8.0),
+                          thumbShape: RoundSliderThumbShape(enabledThumbRadius: 8.0),
                           overlayColor: Colors.purple.withAlpha(32),
-                          overlayShape:
-                              RoundSliderOverlayShape(overlayRadius: 14.0),
+                          overlayShape: RoundSliderOverlayShape(overlayRadius: 14.0),
                         ),
                         child: RangeSlider(
                           values: sliderVal5,
@@ -591,16 +552,12 @@ class _VeterinaryBookingProccessFilterScreenState extends BaseRouteState {
                             padding: const EdgeInsets.only(left: 10),
                             child: Text(
                               'Rs.0',
-                              style:
-                                  Theme.of(context).primaryTextTheme.subtitle2,
+                              style: Theme.of(context).primaryTextTheme.subtitle2,
                             ),
                           ),
                           Padding(
                             padding: const EdgeInsets.only(right: 10),
-                            child: Text('Rs.1000',
-                                style: Theme.of(context)
-                                    .primaryTextTheme
-                                    .subtitle2),
+                            child: Text('Rs.1000', style: Theme.of(context).primaryTextTheme.subtitle2),
                           )
                         ],
                       ),
@@ -641,8 +598,7 @@ class _VeterinaryBookingProccessFilterScreenState extends BaseRouteState {
                             padding: const EdgeInsets.only(left: 7),
                             child: Text(
                               '$ratingVal+',
-                              style:
-                                  Theme.of(context).primaryTextTheme.subtitle2,
+                              style: Theme.of(context).primaryTextTheme.subtitle2,
                             ),
                           )
                         ],
@@ -675,21 +631,10 @@ class _VeterinaryBookingProccessFilterScreenState extends BaseRouteState {
                                         children: [
                                           Card(
                                             elevation: 3,
-                                            shape: RoundedRectangleBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(
-                                                        50.0)),
+                                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50.0)),
                                             child: CircleAvatar(
-                                              backgroundColor: clinicSelected
-                                                  ? Theme.of(context)
-                                                      .primaryColor
-                                                  : Colors.white,
-                                              child: Icon(
-                                                  FontAwesomeIcons
-                                                      .clinicMedical,
-                                                  color: clinicSelected
-                                                      ? Colors.white
-                                                      : Color(0xFF8F8F8F)),
+                                              backgroundColor: clinicSelected ? Theme.of(context).primaryColor : Colors.white,
+                                              child: Icon(FontAwesomeIcons.clinicMedical, color: clinicSelected ? Colors.white : Color(0xFF8F8F8F)),
                                               radius: 25,
                                             ),
                                           ),
@@ -697,9 +642,7 @@ class _VeterinaryBookingProccessFilterScreenState extends BaseRouteState {
                                             padding: EdgeInsets.only(top: 0),
                                             child: Text(
                                               'Clinic Visit',
-                                              style: Theme.of(context)
-                                                  .primaryTextTheme
-                                                  .subtitle2,
+                                              style: Theme.of(context).primaryTextTheme.subtitle2,
                                             ),
                                           )
                                         ],
@@ -711,20 +654,10 @@ class _VeterinaryBookingProccessFilterScreenState extends BaseRouteState {
                                         children: [
                                           Card(
                                             elevation: 3,
-                                            shape: RoundedRectangleBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(
-                                                        50.0)),
+                                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50.0)),
                                             child: CircleAvatar(
-                                              backgroundColor: phonecallSelected
-                                                  ? Theme.of(context)
-                                                      .primaryColor
-                                                  : Colors.white,
-                                              child: Icon(
-                                                  FontAwesomeIcons.phoneAlt,
-                                                  color: phonecallSelected
-                                                      ? Colors.white
-                                                      : Color(0xFF8F8F8F)),
+                                              backgroundColor: phonecallSelected ? Theme.of(context).primaryColor : Colors.white,
+                                              child: Icon(FontAwesomeIcons.phoneAlt, color: phonecallSelected ? Colors.white : Color(0xFF8F8F8F)),
                                               radius: 25,
                                             ),
                                           ),
@@ -732,9 +665,7 @@ class _VeterinaryBookingProccessFilterScreenState extends BaseRouteState {
                                             padding: EdgeInsets.only(top: 0),
                                             child: Text(
                                               'Phone Call',
-                                              style: Theme.of(context)
-                                                  .primaryTextTheme
-                                                  .subtitle2,
+                                              style: Theme.of(context).primaryTextTheme.subtitle2,
                                             ),
                                           )
                                         ],
@@ -746,20 +677,10 @@ class _VeterinaryBookingProccessFilterScreenState extends BaseRouteState {
                                         children: [
                                           Card(
                                             elevation: 3,
-                                            shape: RoundedRectangleBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(
-                                                        50.0)),
+                                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50.0)),
                                             child: CircleAvatar(
-                                              backgroundColor: videocallSelected
-                                                  ? Theme.of(context)
-                                                      .primaryColor
-                                                  : Colors.white,
-                                              child: Icon(
-                                                  FontAwesomeIcons.video,
-                                                  color: videocallSelected
-                                                      ? Colors.white
-                                                      : Color(0xFF8F8F8F)),
+                                              backgroundColor: videocallSelected ? Theme.of(context).primaryColor : Colors.white,
+                                              child: Icon(FontAwesomeIcons.video, color: videocallSelected ? Colors.white : Color(0xFF8F8F8F)),
                                               radius: 25,
                                             ),
                                           ),
@@ -767,9 +688,7 @@ class _VeterinaryBookingProccessFilterScreenState extends BaseRouteState {
                                             padding: EdgeInsets.only(top: 0),
                                             child: Text(
                                               'Video Call',
-                                              style: Theme.of(context)
-                                                  .primaryTextTheme
-                                                  .subtitle2,
+                                              style: Theme.of(context).primaryTextTheme.subtitle2,
                                             ),
                                           )
                                         ],

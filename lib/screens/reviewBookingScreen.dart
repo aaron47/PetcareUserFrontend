@@ -36,19 +36,19 @@ class _ReviewBookingScreenState extends BaseRouteState {
           ),
         ),
         title: Text(
-          'Review Booking',
+          'Réservation',
           style: Theme.of(context).primaryTextTheme.headline1,
         ),
         centerTitle: true,
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 15),
-            child: Icon(
-              Icons.shopping_cart_outlined,
-              color: Color(0xFF34385A),
-            ),
-          )
-        ],
+        // actions: [
+        //   Padding(
+        //     padding: const EdgeInsets.only(right: 15),
+        //     child: Icon(
+        //       Icons.shopping_cart_outlined,
+        //       color: Color(0xFF34385A),
+        //     ),
+        //   )
+        // ],
       ),
       body: SingleChildScrollView(
           child: Container(
@@ -63,9 +63,7 @@ class _ReviewBookingScreenState extends BaseRouteState {
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(left: 28),
-                    child: CircleAvatar(
-                        radius: 70,
-                        backgroundImage: AssetImage('assets/catimage2.png')),
+                    child: CircleAvatar(radius: 70, backgroundImage: AssetImage('assets/catimage2.png')),
                   ),
                   Padding(
                     padding: EdgeInsets.only(left: 25),
@@ -73,12 +71,11 @@ class _ReviewBookingScreenState extends BaseRouteState {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          'Sara Seth',
+                          'Sara Abid',
                           style: Theme.of(context).primaryTextTheme.headline5,
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(
-                              top: 5, bottom: 4, right: 10),
+                          padding: const EdgeInsets.only(top: 5, bottom: 4, right: 10),
                           child: RatingBar.builder(
                             initialRating: ratingVal,
                             minRating: 0,
@@ -108,7 +105,7 @@ class _ReviewBookingScreenState extends BaseRouteState {
                                 color: Color(0xff8f8f8f),
                               ),
                               Text(
-                                '2 Km away',
+                                '70 dt / jour',
                               ),
                             ],
                           ),
@@ -146,10 +143,8 @@ class _ReviewBookingScreenState extends BaseRouteState {
                                 Padding(
                                   padding: EdgeInsets.only(left: 15),
                                   child: Text(
-                                    'Booking for',
-                                    style: Theme.of(context)
-                                        .primaryTextTheme
-                                        .bodyText1,
+                                    'Réservation pour',
+                                    style: Theme.of(context).primaryTextTheme.bodyText1,
                                   ),
                                 )
                               ],
@@ -158,9 +153,8 @@ class _ReviewBookingScreenState extends BaseRouteState {
                               padding: EdgeInsets.only(),
                               child: Row(
                                 children: [
-                                  Text('Select Pet'),
-                                  Icon(Icons.arrow_forward_ios_outlined,
-                                      size: 18, color: Color(0xFF8F8F8F)),
+                                  Text('Sélectionner l\'animal'),
+                                  Icon(Icons.arrow_forward_ios_outlined, size: 18, color: Color(0xFF8F8F8F)),
                                 ],
                               ),
                             )
@@ -200,10 +194,8 @@ class _ReviewBookingScreenState extends BaseRouteState {
                                 Padding(
                                   padding: EdgeInsets.only(left: 15),
                                   child: Text(
-                                    'Drop off',
-                                    style: Theme.of(context)
-                                        .primaryTextTheme
-                                        .bodyText1,
+                                    'Date début',
+                                    style: Theme.of(context).primaryTextTheme.bodyText1,
                                   ),
                                 )
                               ],
@@ -212,9 +204,8 @@ class _ReviewBookingScreenState extends BaseRouteState {
                               padding: EdgeInsets.only(),
                               child: Row(
                                 children: [
-                                  Text('11 Feb 2021 9:00 PM'),
-                                  Icon(Icons.arrow_forward_ios_outlined,
-                                      size: 18, color: Color(0xFF8F8F8F)),
+                                  Text('11 Jul 2021 9:00 PM'),
+                                  Icon(Icons.arrow_forward_ios_outlined, size: 18, color: Color(0xFF8F8F8F)),
                                 ],
                               ),
                             )
@@ -254,10 +245,8 @@ class _ReviewBookingScreenState extends BaseRouteState {
                                 Padding(
                                   padding: EdgeInsets.only(left: 15),
                                   child: Text(
-                                    'Pick up',
-                                    style: Theme.of(context)
-                                        .primaryTextTheme
-                                        .bodyText1,
+                                    'Date Fin',
+                                    style: Theme.of(context).primaryTextTheme.bodyText1,
                                   ),
                                 )
                               ],
@@ -266,9 +255,8 @@ class _ReviewBookingScreenState extends BaseRouteState {
                               padding: EdgeInsets.only(),
                               child: Row(
                                 children: [
-                                  Text('14 Feb 2021 12:00 PM'),
-                                  Icon(Icons.arrow_forward_ios_outlined,
-                                      size: 18, color: Color(0xFF8F8F8F)),
+                                  Text('14 Jul 2021 12:00 PM'),
+                                  Icon(Icons.arrow_forward_ios_outlined, size: 18, color: Color(0xFF8F8F8F)),
                                 ],
                               ),
                             )
@@ -287,65 +275,65 @@ class _ReviewBookingScreenState extends BaseRouteState {
                     ],
                   )),
             ),
-            GestureDetector(
-              onTap: () {
-                _selectNumberOfMeals(context);
-              },
-              child: Container(
+            // GestureDetector(
+            //   onTap: () {
+            //     _selectNumberOfMeals(context);
+            //   },
+            //   child: Container(
 
-                  // color: Colors.red,
-                  margin: EdgeInsets.only(bottom: 10, top: 5),
-                  width: MediaQuery.of(context).size.width,
-                  child: Column(
-                    children: [
-                      Container(
-                        margin: EdgeInsets.all(5),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Row(
-                              children: [
-                                Padding(
-                                  padding: EdgeInsets.only(left: 15),
-                                  child: Row(
-                                    children: [
-                                      Text(
-                                        'Meals per days',
-                                        style: Theme.of(context)
-                                            .primaryTextTheme
-                                            .bodyText1,
-                                      ),
-                                      SizedBox(
-                                        width: 10,
-                                      ),
-                                      Text('50/meals')
-                                    ],
-                                  ),
-                                )
-                              ],
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(),
-                              child: Row(
-                                children: [
-                                  Text('Select Number'),
-                                  Icon(Icons.arrow_forward_ios_outlined,
-                                      size: 18, color: Color(0xFF8F8F8F)),
-                                ],
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                      Container(
-                        child: Divider(
-                          height: 10,
-                          thickness: 1,
-                        ),
-                      )
-                    ],
-                  )),
-            ),
+            //       // color: Colors.red,
+            //       margin: EdgeInsets.only(bottom: 10, top: 5),
+            //       width: MediaQuery.of(context).size.width,
+            //       child: Column(
+            //         children: [
+            //           Container(
+            //             margin: EdgeInsets.all(5),
+            //             child: Row(
+            //               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //               children: [
+            //                 Row(
+            //                   children: [
+            //                     Padding(
+            //                       padding: EdgeInsets.only(left: 15),
+            //                       child: Row(
+            //                         children: [
+            //                           Text(
+            //                             'Meals per days',
+            //                             style: Theme.of(context)
+            //                                 .primaryTextTheme
+            //                                 .bodyText1,
+            //                           ),
+            //                           SizedBox(
+            //                             width: 10,
+            //                           ),
+            //                           Text('50/meals')
+            //                         ],
+            //                       ),
+            //                     )
+            //                   ],
+            //                 ),
+            //                 Padding(
+            //                   padding: EdgeInsets.only(),
+            //                   child: Row(
+            //                     children: [
+            //                       Text('Select Number'),
+            //                       Icon(Icons.arrow_forward_ios_outlined,
+            //                           size: 18, color: Color(0xFF8F8F8F)),
+            //                     ],
+            //                   ),
+            //                 )
+            //               ],
+            //             ),
+            //           ),
+            //           Container(
+            //             child: Divider(
+            //               height: 10,
+            //               thickness: 1,
+            //             ),
+            //           )
+            //         ],
+            //       )),
+            // ),
 
             // price detail box
 
@@ -366,9 +354,7 @@ class _ReviewBookingScreenState extends BaseRouteState {
                                     padding: EdgeInsets.only(left: 10),
                                     child: Text(
                                       'Price Details',
-                                      style: Theme.of(context)
-                                          .primaryTextTheme
-                                          .headline1,
+                                      style: Theme.of(context).primaryTextTheme.headline1,
                                     ),
                                   )
                                 ],
@@ -380,8 +366,7 @@ class _ReviewBookingScreenState extends BaseRouteState {
                           child: Column(
                             children: [
                               Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
                                   Row(
                                     children: [
@@ -391,9 +376,7 @@ class _ReviewBookingScreenState extends BaseRouteState {
                                           width: 60,
                                           child: Text(
                                             'Fluffy',
-                                            style: Theme.of(context)
-                                                .primaryTextTheme
-                                                .bodyText1,
+                                            style: Theme.of(context).primaryTextTheme.bodyText1,
                                           ),
                                         ),
                                       ),
@@ -401,9 +384,7 @@ class _ReviewBookingScreenState extends BaseRouteState {
                                         padding: EdgeInsets.only(left: 15),
                                         child: Text(
                                           '4 days',
-                                          style: Theme.of(context)
-                                              .primaryTextTheme
-                                              .subtitle2,
+                                          style: Theme.of(context).primaryTextTheme.subtitle2,
                                         ),
                                       ),
                                     ],
@@ -411,23 +392,18 @@ class _ReviewBookingScreenState extends BaseRouteState {
                                   Padding(
                                     padding: EdgeInsets.only(right: 10),
                                     child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceAround,
+                                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                                       children: [
                                         Text(
                                           'Base Price',
-                                          style: Theme.of(context)
-                                              .primaryTextTheme
-                                              .subtitle2,
+                                          style: Theme.of(context).primaryTextTheme.subtitle2,
                                         ),
                                         SizedBox(
                                           width: 10,
                                         ),
                                         Text(
                                           'Rs2800',
-                                          style: Theme.of(context)
-                                              .primaryTextTheme
-                                              .bodyText1,
+                                          style: Theme.of(context).primaryTextTheme.bodyText1,
                                         ),
                                       ],
                                     ),
@@ -435,8 +411,7 @@ class _ReviewBookingScreenState extends BaseRouteState {
                                 ],
                               ),
                               Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
                                   Row(
                                     children: [
@@ -446,9 +421,7 @@ class _ReviewBookingScreenState extends BaseRouteState {
                                           width: 60,
                                           child: Text(
                                             'Cookies',
-                                            style: Theme.of(context)
-                                                .primaryTextTheme
-                                                .bodyText1,
+                                            style: Theme.of(context).primaryTextTheme.bodyText1,
                                           ),
                                         ),
                                       ),
@@ -456,9 +429,7 @@ class _ReviewBookingScreenState extends BaseRouteState {
                                         padding: EdgeInsets.only(left: 15),
                                         child: Text(
                                           '4 days',
-                                          style: Theme.of(context)
-                                              .primaryTextTheme
-                                              .subtitle2,
+                                          style: Theme.of(context).primaryTextTheme.subtitle2,
                                         ),
                                       ),
                                     ],
@@ -466,23 +437,18 @@ class _ReviewBookingScreenState extends BaseRouteState {
                                   Padding(
                                     padding: EdgeInsets.only(right: 10),
                                     child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceAround,
+                                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                                       children: [
                                         Text(
                                           'Base Price',
-                                          style: Theme.of(context)
-                                              .primaryTextTheme
-                                              .subtitle2,
+                                          style: Theme.of(context).primaryTextTheme.subtitle2,
                                         ),
                                         SizedBox(
                                           width: 10,
                                         ),
                                         Text(
                                           'Rs2800',
-                                          style: Theme.of(context)
-                                              .primaryTextTheme
-                                              .bodyText1,
+                                          style: Theme.of(context).primaryTextTheme.bodyText1,
                                         ),
                                       ],
                                     ),
@@ -502,24 +468,19 @@ class _ReviewBookingScreenState extends BaseRouteState {
                                       Container(
                                         margin: EdgeInsets.all(5),
                                         child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
+                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                           children: [
                                             Row(
                                               children: [
                                                 Padding(
-                                                  padding:
-                                                      EdgeInsets.only(left: 15),
+                                                  padding: EdgeInsets.only(left: 15),
                                                   child: Row(
                                                     children: [
                                                       Container(
                                                         width: 60,
                                                         child: Text(
                                                           'Meals',
-                                                          style: Theme.of(
-                                                                  context)
-                                                              .primaryTextTheme
-                                                              .bodyText1,
+                                                          style: Theme.of(context).primaryTextTheme.bodyText1,
                                                         ),
                                                       ),
                                                       SizedBox(
@@ -527,9 +488,7 @@ class _ReviewBookingScreenState extends BaseRouteState {
                                                       ),
                                                       Text(
                                                         '16 meals',
-                                                        style: Theme.of(context)
-                                                            .primaryTextTheme
-                                                            .subtitle2,
+                                                        style: Theme.of(context).primaryTextTheme.subtitle2,
                                                       )
                                                     ],
                                                   ),
@@ -537,15 +496,12 @@ class _ReviewBookingScreenState extends BaseRouteState {
                                               ],
                                             ),
                                             Padding(
-                                              padding:
-                                                  EdgeInsets.only(right: 10),
+                                              padding: EdgeInsets.only(right: 10),
                                               child: Row(
                                                 children: [
                                                   Text(
                                                     'Rs800',
-                                                    style: Theme.of(context)
-                                                        .primaryTextTheme
-                                                        .bodyText1,
+                                                    style: Theme.of(context).primaryTextTheme.bodyText1,
                                                   ),
                                                 ],
                                               ),
@@ -571,21 +527,17 @@ class _ReviewBookingScreenState extends BaseRouteState {
                                       Container(
                                         margin: EdgeInsets.only(left: 5),
                                         child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
+                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                           children: [
                                             Row(
                                               children: [
                                                 Padding(
-                                                  padding:
-                                                      EdgeInsets.only(left: 15),
+                                                  padding: EdgeInsets.only(left: 15),
                                                   child: Row(
                                                     children: [
                                                       Text(
                                                         'Total',
-                                                        style: Theme.of(context)
-                                                            .primaryTextTheme
-                                                            .headline1,
+                                                        style: Theme.of(context).primaryTextTheme.headline1,
                                                       ),
                                                     ],
                                                   ),
@@ -593,15 +545,12 @@ class _ReviewBookingScreenState extends BaseRouteState {
                                               ],
                                             ),
                                             Padding(
-                                              padding:
-                                                  EdgeInsets.only(right: 10),
+                                              padding: EdgeInsets.only(right: 10),
                                               child: Row(
                                                 children: [
                                                   Text(
                                                     'Rs6400',
-                                                    style: Theme.of(context)
-                                                        .primaryTextTheme
-                                                        .headline1,
+                                                    style: Theme.of(context).primaryTextTheme.headline1,
                                                   ),
                                                 ],
                                               ),
@@ -632,7 +581,7 @@ class _ReviewBookingScreenState extends BaseRouteState {
                   addToCartDialogBox(context);
                 },
                 child: Text(
-                  "Add to Cart",
+                  "Réservée",
                 ))),
       ),
     );
@@ -664,9 +613,7 @@ class _ReviewBookingScreenState extends BaseRouteState {
                     Container(
                       decoration: BoxDecoration(
                           //  color: Colors.cyan,
-                          borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(30),
-                              topRight: Radius.circular(30))),
+                          borderRadius: BorderRadius.only(topLeft: Radius.circular(30), topRight: Radius.circular(30))),
                       child: Column(
                         children: [
                           Container(
@@ -677,9 +624,7 @@ class _ReviewBookingScreenState extends BaseRouteState {
                               children: [
                                 Text(
                                   'Booking For',
-                                  style: Theme.of(context)
-                                      .primaryTextTheme
-                                      .headline1,
+                                  style: Theme.of(context).primaryTextTheme.headline1,
                                 ),
                               ],
                             ),
@@ -706,16 +651,12 @@ class _ReviewBookingScreenState extends BaseRouteState {
                                   child: CircleAvatar(
                                       radius: 40,
                                       // backgroundColor: Colors.red,
-                                      backgroundImage:
-                                          AssetImage('assets/dogimage2.png')),
+                                      backgroundImage: AssetImage('assets/dogimage2.png')),
                                 ),
                               ),
                               title: Row(
                                 children: [
-                                  Text('Fluffy',
-                                      style: Theme.of(context)
-                                          .primaryTextTheme
-                                          .bodyText1),
+                                  Text('Fluffy', style: Theme.of(context).primaryTextTheme.bodyText1),
                                   Icon(Icons.male, color: Color(0xff8f8f8f))
                                 ],
                               ),
@@ -729,22 +670,15 @@ class _ReviewBookingScreenState extends BaseRouteState {
                                   },
                                   child: Container(
                                     decoration: BoxDecoration(
-                                        border: Border.all(
-                                            width: 1,
-                                            color:
-                                                Theme.of(context).primaryColor),
+                                        border: Border.all(width: 1, color: Theme.of(context).primaryColor),
                                         shape: BoxShape.circle,
-                                        color: _isChecked
-                                            ? Theme.of(context).primaryColor
-                                            : Colors.transparent),
+                                        color: _isChecked ? Theme.of(context).primaryColor : Colors.transparent),
                                     height: 18,
                                     width: 17,
                                     child: Center(
                                       child: Icon(
                                         Icons.check,
-                                        color: _isChecked
-                                            ? Colors.white
-                                            : Colors.transparent,
+                                        color: _isChecked ? Colors.white : Colors.transparent,
                                         size: 12,
                                       ),
                                     ),
@@ -767,16 +701,12 @@ class _ReviewBookingScreenState extends BaseRouteState {
                             child: CircleAvatar(
                                 radius: 40,
                                 // backgroundColor: Colors.red,
-                                backgroundImage:
-                                    AssetImage('assets/catimage2.png')),
+                                backgroundImage: AssetImage('assets/catimage2.png')),
                           ),
                         ),
                         title: Row(
                           children: [
-                            Text('Cookies',
-                                style: Theme.of(context)
-                                    .primaryTextTheme
-                                    .bodyText1),
+                            Text('Cookies', style: Theme.of(context).primaryTextTheme.bodyText1),
                             Icon(Icons.male, color: Color(0xff8f8f8f))
                           ],
                         ),
@@ -790,21 +720,15 @@ class _ReviewBookingScreenState extends BaseRouteState {
                             },
                             child: Container(
                               decoration: BoxDecoration(
-                                  border: Border.all(
-                                      width: 1,
-                                      color: Theme.of(context).primaryColor),
+                                  border: Border.all(width: 1, color: Theme.of(context).primaryColor),
                                   shape: BoxShape.circle,
-                                  color: _isChecked1
-                                      ? Theme.of(context).primaryColor
-                                      : Colors.transparent),
+                                  color: _isChecked1 ? Theme.of(context).primaryColor : Colors.transparent),
                               height: 18,
                               width: 17,
                               child: Center(
                                 child: Icon(
                                   Icons.check,
-                                  color: _isChecked1
-                                      ? Colors.white
-                                      : Colors.transparent,
+                                  color: _isChecked1 ? Colors.white : Colors.transparent,
                                   size: 12,
                                 ),
                               ),
@@ -849,9 +773,7 @@ class _ReviewBookingScreenState extends BaseRouteState {
             return Container(
               decoration: BoxDecoration(
                   // color: Colors.cyan,
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(30),
-                      topRight: Radius.circular(30))),
+                  borderRadius: BorderRadius.only(topLeft: Radius.circular(30), topRight: Radius.circular(30))),
               height: 180,
               child: Scaffold(
                 body: Wrap(
@@ -867,9 +789,7 @@ class _ReviewBookingScreenState extends BaseRouteState {
                               children: [
                                 Text(
                                   'Select Number',
-                                  style: Theme.of(context)
-                                      .primaryTextTheme
-                                      .headline1,
+                                  style: Theme.of(context).primaryTextTheme.headline1,
                                 ),
                               ],
                             ),
@@ -895,8 +815,7 @@ class _ReviewBookingScreenState extends BaseRouteState {
                             children: [
                               Card(
                                 elevation: 3,
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(50.0)),
+                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50.0)),
                                 child: CircleAvatar(
                                   backgroundColor: Colors.white,
                                   child: Text('1'),
@@ -905,8 +824,7 @@ class _ReviewBookingScreenState extends BaseRouteState {
                               ),
                               Card(
                                 elevation: 3,
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(50.0)),
+                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50.0)),
                                 child: CircleAvatar(
                                   backgroundColor: Colors.white,
                                   child: Text('2'),
@@ -915,15 +833,10 @@ class _ReviewBookingScreenState extends BaseRouteState {
                               ),
                               Card(
                                 elevation: 3,
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(50.0)),
+                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50.0)),
                                 child: CircleAvatar(
-                                  backgroundColor:
-                                      Theme.of(context).primaryColor,
-                                  child: Text('3',
-                                      style: Theme.of(context)
-                                          .primaryTextTheme
-                                          .button),
+                                  backgroundColor: Theme.of(context).primaryColor,
+                                  child: Text('3', style: Theme.of(context).primaryTextTheme.button),
                                   radius: 30,
                                 ),
                               ),
@@ -943,8 +856,7 @@ class _ReviewBookingScreenState extends BaseRouteState {
                       width: MediaQuery.of(context).size.width,
                       child: TextButton(
                           onPressed: () {
-                            Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => ReviewBookingScreen()));
+                            Navigator.of(context).push(MaterialPageRoute(builder: (context) => ReviewBookingScreen()));
                             setState(() {
                               confirm = true;
                             });
@@ -1022,8 +934,7 @@ class _ReviewBookingScreenState extends BaseRouteState {
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(15.0))),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(15.0))),
               content: Stack(
                 clipBehavior: Clip.none,
                 children: [
@@ -1039,23 +950,18 @@ class _ReviewBookingScreenState extends BaseRouteState {
                             children: [
                               Center(
                                   child: Text(
-                                "Added to Cart",
-                                style: Theme.of(context)
-                                    .primaryTextTheme
-                                    .headline1,
+                                "Succès",
+                                style: Theme.of(context).primaryTextTheme.headline1,
                               )),
                               Center(
                                   child: Text(
-                                "Thank you for choosing whiskers",
-                                style: Theme.of(context)
-                                    .primaryTextTheme
-                                    .bodyText1,
+                                "Merci d'avoir choisi Pet-Cares",
+                                style: Theme.of(context).primaryTextTheme.bodyText1,
                               )),
                               Container(
                                 height: 150,
                                 width: 200,
-                                child:
-                                    Image.asset('assets/alertdialogimage.png'),
+                                child: Image.asset('assets/alertdialogimage.png'),
                               ),
                             ],
                           ),
@@ -1069,10 +975,8 @@ class _ReviewBookingScreenState extends BaseRouteState {
                     child: GestureDetector(
                       onTap: () {},
                       child: Container(
-                        decoration: BoxDecoration(
-                            border: Border.all(width: 1, color: Colors.white),
-                            shape: BoxShape.circle,
-                            color: Colors.transparent),
+                        decoration:
+                            BoxDecoration(border: Border.all(width: 1, color: Colors.white), shape: BoxShape.circle, color: Colors.transparent),
                         height: 28,
                         width: 25,
                         child: Center(

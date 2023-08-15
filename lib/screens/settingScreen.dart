@@ -37,7 +37,7 @@ class _SettingScreenState extends BaseRouteState {
             },
             child: Icon(Icons.arrow_back_ios)),
         title: Text(
-          'Settings',
+          'Paramètres',
           style: Theme.of(context).primaryTextTheme.headline1,
         ),
         centerTitle: true,
@@ -120,7 +120,7 @@ class _SettingScreenState extends BaseRouteState {
                               Padding(
                                 padding: EdgeInsets.only(left: 15),
                                 child: Text(
-                                  'Account',
+                                  'Compte',
                                   style: Theme.of(context)
                                       .primaryTextTheme
                                       .bodyText1,
@@ -136,212 +136,212 @@ class _SettingScreenState extends BaseRouteState {
                         ],
                       )),
                 ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => UserReviewScreen(
-                              a: widget.analytics,
-                              o: widget.observer,
-                            )));
-                  },
-                  child: Container(
-                      margin: EdgeInsets.only(top: 10, bottom: 10),
-                      color: Colors.transparent,
-                      width: MediaQuery.of(context).size.width,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Row(
-                            children: [
-                              Padding(
-                                padding: EdgeInsets.only(),
-                                child: Icon(
-                                  Icons.reviews,
-                                  size: 18,
-                                  color: Theme.of(context).primaryColor,
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(left: 15),
-                                child: Text(
-                                  'My Reviews',
-                                  style: Theme.of(context)
-                                      .primaryTextTheme
-                                      .bodyText1,
-                                ),
-                              )
-                            ],
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(),
-                            child: Icon(Icons.arrow_forward_ios_outlined,
-                                size: 18, color: Color(0xFF8F8F8F)),
-                          )
-                        ],
-                      )),
-                ),
-                Container(
-                    margin: EdgeInsets.only(top: 10, bottom: 10),
-                    // color: Colors.red,
-                    color: Colors.transparent,
-                    width: MediaQuery.of(context).size.width,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Row(
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.only(),
-                              child: Icon(
-                                FontAwesomeIcons.wallet,
-                                size: 18,
-                                color: Theme.of(context).primaryColor,
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(left: 15),
-                              child: Text(
-                                'Payment Methods',
-                                style: Theme.of(context)
-                                    .primaryTextTheme
-                                    .bodyText1,
-                              ),
-                            )
-                          ],
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(),
-                          child: Icon(Icons.arrow_forward_ios_outlined,
-                              size: 18, color: Color(0xFF8F8F8F)),
-                        )
-                      ],
-                    )),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => LanguageSelectionScreen(
-                              a: widget.analytics,
-                              o: widget.observer,
-                            )));
-                  },
-                  child: Container(
-                      color: Colors.transparent,
-                      margin: EdgeInsets.only(top: 10, bottom: 10),
-                      // color: Colors.red,
-                      width: MediaQuery.of(context).size.width,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Row(
-                            children: [
-                              Padding(
-                                padding: EdgeInsets.only(),
-                                child: Icon(
-                                  FontAwesomeIcons.language,
-                                  size: 18,
-                                  color: Theme.of(context).primaryColor,
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(left: 15),
-                                child: Text(
-                                  'Language Selection',
-                                  style: Theme.of(context)
-                                      .primaryTextTheme
-                                      .bodyText1,
-                                ),
-                              )
-                            ],
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(),
-                            child: Icon(Icons.arrow_forward_ios_outlined,
-                                size: 18, color: Color(0xFF8F8F8F)),
-                          )
-                        ],
-                      )),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => MyPostScreen(
-                              a: widget.analytics,
-                              o: widget.observer,
-                            )));
-                  },
-                  child: Container(
-                      color: Colors.transparent,
-                      margin: EdgeInsets.only(top: 10, bottom: 10),
-                      // color: Colors.red,
-                      width: MediaQuery.of(context).size.width,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Row(
-                            children: [
-                              Padding(
-                                padding: EdgeInsets.only(),
-                                child: Icon(
-                                  FontAwesomeIcons.stickyNote,
-                                  size: 18,
-                                  color: Theme.of(context).primaryColor,
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(left: 15),
-                                child: Text(
-                                  'My Post',
-                                  style: Theme.of(context)
-                                      .primaryTextTheme
-                                      .bodyText1,
-                                ),
-                              )
-                            ],
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(),
-                            child: Icon(Icons.arrow_forward_ios_outlined,
-                                size: 18, color: Color(0xFF8F8F8F)),
-                          )
-                        ],
-                      )),
-                ),
-                Container(
-                    color: Colors.transparent,
-                    margin: EdgeInsets.only(top: 10, bottom: 10),
-                    // color: Colors.red,
-                    width: MediaQuery.of(context).size.width,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Row(
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.only(),
-                              child: Icon(
-                                FontAwesomeIcons.infoCircle,
-                                size: 18,
-                                color: Theme.of(context).primaryColor,
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(left: 15),
-                              child: Text(
-                                'About us',
-                                style: Theme.of(context)
-                                    .primaryTextTheme
-                                    .bodyText1,
-                              ),
-                            )
-                          ],
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(),
-                          child: Icon(Icons.arrow_forward_ios_outlined,
-                              size: 18, color: Color(0xFF8F8F8F)),
-                        )
-                      ],
-                    )),
+                // GestureDetector(
+                //   onTap: () {
+                //     Navigator.of(context).push(MaterialPageRoute(
+                //         builder: (context) => UserReviewScreen(
+                //               a: widget.analytics,
+                //               o: widget.observer,
+                //             )));
+                //   },
+                //   child: Container(
+                //       margin: EdgeInsets.only(top: 10, bottom: 10),
+                //       color: Colors.transparent,
+                //       width: MediaQuery.of(context).size.width,
+                //       child: Row(
+                //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                //         children: [
+                //           Row(
+                //             children: [
+                //               Padding(
+                //                 padding: EdgeInsets.only(),
+                //                 child: Icon(
+                //                   Icons.reviews,
+                //                   size: 18,
+                //                   color: Theme.of(context).primaryColor,
+                //                 ),
+                //               ),
+                //               Padding(
+                //                 padding: EdgeInsets.only(left: 15),
+                //                 child: Text(
+                //                   'My Reviews',
+                //                   style: Theme.of(context)
+                //                       .primaryTextTheme
+                //                       .bodyText1,
+                //                 ),
+                //               )
+                //             ],
+                //           ),
+                //           Padding(
+                //             padding: EdgeInsets.only(),
+                //             child: Icon(Icons.arrow_forward_ios_outlined,
+                //                 size: 18, color: Color(0xFF8F8F8F)),
+                //           )
+                //         ],
+                //       )),
+                // ),
+                // Container(
+                //     margin: EdgeInsets.only(top: 10, bottom: 10),
+                //     // color: Colors.red,
+                //     color: Colors.transparent,
+                //     width: MediaQuery.of(context).size.width,
+                //     child: Row(
+                //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                //       children: [
+                //         Row(
+                //           children: [
+                //             Padding(
+                //               padding: EdgeInsets.only(),
+                //               child: Icon(
+                //                 FontAwesomeIcons.wallet,
+                //                 size: 18,
+                //                 color: Theme.of(context).primaryColor,
+                //               ),
+                //             ),
+                //             Padding(
+                //               padding: EdgeInsets.only(left: 15),
+                //               child: Text(
+                //                 'Payment Methods',
+                //                 style: Theme.of(context)
+                //                     .primaryTextTheme
+                //                     .bodyText1,
+                //               ),
+                //             )
+                //           ],
+                //         ),
+                //         Padding(
+                //           padding: EdgeInsets.only(),
+                //           child: Icon(Icons.arrow_forward_ios_outlined,
+                //               size: 18, color: Color(0xFF8F8F8F)),
+                //         )
+                //       ],
+                //     )),
+                // GestureDetector(
+                //   onTap: () {
+                //     Navigator.of(context).push(MaterialPageRoute(
+                //         builder: (context) => LanguageSelectionScreen(
+                //               a: widget.analytics,
+                //               o: widget.observer,
+                //             )));
+                //   },
+                //   child: Container(
+                //       color: Colors.transparent,
+                //       margin: EdgeInsets.only(top: 10, bottom: 10),
+                //       // color: Colors.red,
+                //       width: MediaQuery.of(context).size.width,
+                //       child: Row(
+                //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                //         children: [
+                //           Row(
+                //             children: [
+                //               Padding(
+                //                 padding: EdgeInsets.only(),
+                //                 child: Icon(
+                //                   FontAwesomeIcons.language,
+                //                   size: 18,
+                //                   color: Theme.of(context).primaryColor,
+                //                 ),
+                //               ),
+                //               Padding(
+                //                 padding: EdgeInsets.only(left: 15),
+                //                 child: Text(
+                //                   'Language Selection',
+                //                   style: Theme.of(context)
+                //                       .primaryTextTheme
+                //                       .bodyText1,
+                //                 ),
+                //               )
+                //             ],
+                //           ),
+                //           Padding(
+                //             padding: EdgeInsets.only(),
+                //             child: Icon(Icons.arrow_forward_ios_outlined,
+                //                 size: 18, color: Color(0xFF8F8F8F)),
+                //           )
+                //         ],
+                //       )),
+                // ),
+                // GestureDetector(
+                //   onTap: () {
+                //     Navigator.of(context).push(MaterialPageRoute(
+                //         builder: (context) => MyPostScreen(
+                //               a: widget.analytics,
+                //               o: widget.observer,
+                //             )));
+                //   },
+                //   child: Container(
+                //       color: Colors.transparent,
+                //       margin: EdgeInsets.only(top: 10, bottom: 10),
+                //       // color: Colors.red,
+                //       width: MediaQuery.of(context).size.width,
+                //       child: Row(
+                //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                //         children: [
+                //           Row(
+                //             children: [
+                //               Padding(
+                //                 padding: EdgeInsets.only(),
+                //                 child: Icon(
+                //                   FontAwesomeIcons.stickyNote,
+                //                   size: 18,
+                //                   color: Theme.of(context).primaryColor,
+                //                 ),
+                //               ),
+                //               Padding(
+                //                 padding: EdgeInsets.only(left: 15),
+                //                 child: Text(
+                //                   'My Post',
+                //                   style: Theme.of(context)
+                //                       .primaryTextTheme
+                //                       .bodyText1,
+                //                 ),
+                //               )
+                //             ],
+                //           ),
+                //           Padding(
+                //             padding: EdgeInsets.only(),
+                //             child: Icon(Icons.arrow_forward_ios_outlined,
+                //                 size: 18, color: Color(0xFF8F8F8F)),
+                //           )
+                //         ],
+                //       )),
+                // ),
+                // Container(
+                //     color: Colors.transparent,
+                //     margin: EdgeInsets.only(top: 10, bottom: 10),
+                //     // color: Colors.red,
+                //     width: MediaQuery.of(context).size.width,
+                //     child: Row(
+                //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                //       children: [
+                //         Row(
+                //           children: [
+                //             Padding(
+                //               padding: EdgeInsets.only(),
+                //               child: Icon(
+                //                 FontAwesomeIcons.infoCircle,
+                //                 size: 18,
+                //                 color: Theme.of(context).primaryColor,
+                //               ),
+                //             ),
+                //             Padding(
+                //               padding: EdgeInsets.only(left: 15),
+                //               child: Text(
+                //                 'About us',
+                //                 style: Theme.of(context)
+                //                     .primaryTextTheme
+                //                     .bodyText1,
+                //               ),
+                //             )
+                //           ],
+                //         ),
+                //         Padding(
+                //           padding: EdgeInsets.only(),
+                //           child: Icon(Icons.arrow_forward_ios_outlined,
+                //               size: 18, color: Color(0xFF8F8F8F)),
+                //         )
+                //       ],
+                //     )),
                 GestureDetector(
                   onTap: () {
                     Navigator.of(context).push(MaterialPageRoute(
@@ -416,7 +416,7 @@ class _SettingScreenState extends BaseRouteState {
                               Padding(
                                 padding: EdgeInsets.only(left: 15),
                                 child: Text(
-                                  'Love the app? Rate us',
+                                  'Évaluez-nous',
                                   style: Theme.of(context)
                                       .primaryTextTheme
                                       .bodyText1,
@@ -457,7 +457,7 @@ class _SettingScreenState extends BaseRouteState {
                               Padding(
                                 padding: EdgeInsets.only(left: 15),
                                 child: Text(
-                                  'Logout',
+                                  'Déconnexion',
                                   style: Theme.of(context)
                                       .primaryTextTheme
                                       .bodyText1,

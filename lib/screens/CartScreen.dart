@@ -19,10 +19,10 @@ class _CartScreenState extends BaseRouteState {
     return Scaffold(
       appBar: AppBar(
         leading: GestureDetector(
-          onTap: (){
-            Navigator.of(context).pop();
-          },
-          child: Icon(Icons.arrow_back_ios)),
+            onTap: () {
+              Navigator.of(context).pop();
+            },
+            child: Icon(Icons.arrow_back_ios)),
         title: Text(
           'Cart',
           style: Theme.of(context).primaryTextTheme.headline1,
@@ -34,9 +34,7 @@ class _CartScreenState extends BaseRouteState {
           Padding(
             padding: const EdgeInsets.only(right: 15),
             child: GestureDetector(
-              onTap: () {
-               
-              },
+              onTap: () {},
               child: Icon(
                 Icons.shopping_cart_outlined,
                 color: Color(0xFF34385A),
@@ -46,7 +44,7 @@ class _CartScreenState extends BaseRouteState {
         ],
       ),
       body: Padding(
-        padding: EdgeInsets.only(left: 15,right: 15),
+        padding: EdgeInsets.only(left: 15, right: 15),
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -57,171 +55,145 @@ class _CartScreenState extends BaseRouteState {
                 child: ListView.builder(
                     itemCount: 2,
                     itemBuilder: (BuildContext context, int index) {
-                      return  index == 0 ? Padding(
-                        padding: const EdgeInsets.only(),
-                        child: Container(
-                          margin: EdgeInsets.only(top: 5),
-                          width: MediaQuery.of(context).size.width,
-                          height: 120,
-                          child: Card(
-                            elevation: 2,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Padding(
-                                  padding:
-                                      const EdgeInsets.only(top: 5, left: 10),
-                                  child: Column(
+                      return index == 0
+                          ? Padding(
+                              padding: const EdgeInsets.only(),
+                              child: Container(
+                                margin: EdgeInsets.only(top: 5),
+                                width: MediaQuery.of(context).size.width,
+                                height: 120,
+                                child: Card(
+                                  elevation: 2,
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: [
-                                      CircleAvatar(
-                                        radius: 35,
-                                        backgroundImage:
-                                            AssetImage('assets/catimage4.png'),
+                                      Padding(
+                                        padding: const EdgeInsets.only(top: 5, left: 10),
+                                        child: Column(
+                                          children: [
+                                            CircleAvatar(
+                                              radius: 35,
+                                              backgroundImage: AssetImage('assets/catimage4.png'),
+                                            ),
+                                            Padding(
+                                              padding: EdgeInsets.only(top: 10),
+                                              child: Text('Sara abid'),
+                                            )
+                                          ],
+                                        ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsets.only(top: 10),
-                                        child: Text('Sara Seth'),
+                                        padding: EdgeInsets.only(top: 10, left: 10),
+                                        child: Column(
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            Text('Hébergement'),
+                                            Text('Fluffy,cookie', style: Theme.of(context).primaryTextTheme.subtitle2),
+                                            Text('2 day meal', style: Theme.of(context).primaryTextTheme.subtitle2),
+                                            Text('Start : 12 JUL 9:00 AM', style: Theme.of(context).primaryTextTheme.subtitle2),
+                                            Text('End : 15 Feb 12:00 PM', style: Theme.of(context).primaryTextTheme.subtitle2)
+                                          ],
+                                        ),
+                                      ),
+                                      Container(
+                                        margin: EdgeInsets.only(right: 3),
+                                        //  color: Colors.yellow,
+                                        width: MediaQuery.of(context).size.width - 280,
+                                        child: Column(
+                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                          crossAxisAlignment: CrossAxisAlignment.end,
+                                          children: [
+                                            Icon(
+                                              Icons.cancel,
+                                              color: Color(0xFF8F8F8F),
+                                            ),
+                                            Text(
+                                              'Rs.6,400',
+                                              style: Theme.of(context).primaryTextTheme.headline1,
+                                            )
+                                          ],
+                                        ),
                                       )
                                     ],
                                   ),
                                 ),
-                                Padding(
-                                  padding: EdgeInsets.only(top: 10, left: 10),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                              ),
+                            )
+                          : Padding(
+                              padding: const EdgeInsets.only(),
+                              child: Container(
+                                margin: EdgeInsets.only(top: 5),
+                                width: MediaQuery.of(context).size.width,
+                                height: 100,
+                                child: Card(
+                                  elevation: 2,
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: [
-                                      Text('Pet Boarding'),
-                                      Text('Fluffy,cookie',
-                                          style: Theme.of(context)
-                                              .primaryTextTheme
-                                              .subtitle2),
-                                      Text('2 day meal',
-                                          style: Theme.of(context)
-                                              .primaryTextTheme
-                                              .subtitle2),
-                                      Text('Start : 11 Feb 9:00 AM',
-                                          style: Theme.of(context)
-                                              .primaryTextTheme
-                                              .subtitle2),
-                                      Text('End : 15 Feb 12:00 PM',
-                                          style: Theme.of(context)
-                                              .primaryTextTheme
-                                              .subtitle2)
-                                    ],
-                                  ),
-                                ),
-                                Container(
-                                  margin: EdgeInsets.only(right: 3),
-                                  //  color: Colors.yellow,
-                                  width:
-                                      MediaQuery.of(context).size.width - 280,
-                                  child: Column(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    crossAxisAlignment: CrossAxisAlignment.end,
-                                    children: [
-                                      Icon(
-                                        Icons.cancel,
-                                        color: Color(0xFF8F8F8F),
+                                      Padding(
+                                        padding: const EdgeInsets.only(top: 15, left: 10),
+                                        child: CircleAvatar(
+                                          backgroundColor: Colors.transparent,
+                                          radius: 35,
+                                          backgroundImage: AssetImage('assets/prod1.png'),
+                                        ),
                                       ),
-                                      Text(
-                                        'Rs.6,400',
-                                        style: Theme.of(context)
-                                            .primaryTextTheme
-                                            .headline1,
+                                      Padding(
+                                        padding: EdgeInsets.only(top: 10, left: 08),
+                                        child: Column(
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            Text('kennel Kitchen Wet Food'),
+                                            Text('Chicken', style: Theme.of(context).primaryTextTheme.subtitle2),
+                                            Text('180 gm', style: Theme.of(context).primaryTextTheme.subtitle2),
+                                            Row(
+                                              children: [
+                                                Text('Quantity : 1', style: Theme.of(context).primaryTextTheme.subtitle2),
+                                                Padding(
+                                                  padding: const EdgeInsets.only(left: 5),
+                                                  child: Icon(
+                                                    FontAwesomeIcons.caretUp,
+                                                    color: Color(0xFF8F8F8F),
+                                                    size: 15,
+                                                  ),
+                                                ),
+                                                Padding(
+                                                  padding: const EdgeInsets.only(left: 5),
+                                                  child: Icon(
+                                                    FontAwesomeIcons.caretDown,
+                                                    color: Color(0xFF8F8F8F),
+                                                    size: 15,
+                                                  ),
+                                                )
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      Container(
+                                        margin: EdgeInsets.only(right: 3),
+                                        // color: Colors.yellow,
+                                        width: MediaQuery.of(context).size.width - 300,
+                                        child: Column(
+                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                          crossAxisAlignment: CrossAxisAlignment.end,
+                                          children: [
+                                            Icon(
+                                              Icons.cancel,
+                                              color: Color(0xFF8F8F8F),
+                                            ),
+                                            Text(
+                                              'Rs.180',
+                                              style: Theme.of(context).primaryTextTheme.headline1,
+                                            )
+                                          ],
+                                        ),
                                       )
                                     ],
                                   ),
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                      ) :  Padding(
-                        padding: const EdgeInsets.only(),
-                        child: Container(
-                          margin: EdgeInsets.only(top: 5),
-                          width: MediaQuery.of(context).size.width,
-                          height: 100,
-                          child: Card(
-                            elevation: 2,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Padding(
-                                  padding:
-                                      const EdgeInsets.only(top: 15, left: 10),
-                                  child: CircleAvatar(
-                                    backgroundColor: Colors.transparent,
-                                    radius: 35,
-                                    backgroundImage:
-                                        AssetImage('assets/prod1.png'),
-                                  ),
                                 ),
-                                Padding(
-                                  padding: EdgeInsets.only(top: 10, left: 08),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text('kennel Kitchen Wet Food'),
-                                      Text('Chicken',
-                                          style: Theme.of(context)
-                                              .primaryTextTheme
-                                              .subtitle2),
-                                      Text('180 gm',
-                                          style: Theme.of(context)
-                                              .primaryTextTheme
-                                              .subtitle2),
-                                      Row(
-                                        children: [
-                                          Text('Quantity : 1',
-                                              style: Theme.of(context)
-                                                  .primaryTextTheme
-                                                  .subtitle2),
-                                                    Padding(
-                                                      padding: const EdgeInsets.only(left: 5),
-                                                      child: Icon(FontAwesomeIcons.caretUp ,color: Color(0xFF8F8F8F),size: 15,),
-                                                    ),
-                                                      Padding(
-                                                      padding: const EdgeInsets.only(left: 5),
-                                                      child: Icon(FontAwesomeIcons.caretDown ,color: Color(0xFF8F8F8F),size: 15,),
-                                                    )
-                                        ],
-                                      ),
-                                   
-                                    ],
-                                  ),
-                                ),
-                                Container(
-                                  margin: EdgeInsets.only(right: 3),
-                                    // color: Colors.yellow,
-                                  width:
-                                      MediaQuery.of(context).size.width - 300,
-                                  child: Column(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    crossAxisAlignment: CrossAxisAlignment.end,
-                                    children: [
-                                      Icon(
-                                        Icons.cancel,
-                                        color: Color(0xFF8F8F8F),
-                                      ),
-                                      Text(
-                                        'Rs.180',
-                                        style: Theme.of(context)
-                                            .primaryTextTheme
-                                            .headline1,
-                                      )
-                                    ],
-                                  ),
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                      )  ;
+                              ),
+                            );
                     }),
               )
             ],

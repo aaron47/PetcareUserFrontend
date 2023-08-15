@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pet_user_app/models/businessLayer/baseRoute.dart';
 import 'package:pet_user_app/screens/chatScreen.dart';
+
 class OrderDetailScreen extends BaseRoute {
   // OrderDetailScreen() : super();
   OrderDetailScreen({a, o}) : super(a: a, o: o, r: 'OrderDetailScreen');
@@ -27,7 +28,7 @@ class _OrderDetailScreenState extends BaseRouteState {
           ),
         ),
         title: Text(
-          'Orders',
+          'Reservation',
           style: Theme.of(context).primaryTextTheme.headline1,
         ),
         centerTitle: true,
@@ -50,7 +51,7 @@ class _OrderDetailScreenState extends BaseRouteState {
                         width: 5,
                       ),
                       Text(
-                        'Sara Seth',
+                        'Sara abid',
                         style: Theme.of(context).primaryTextTheme.headline1,
                       ),
                     ],
@@ -75,10 +76,7 @@ class _OrderDetailScreenState extends BaseRouteState {
                                       Stack(children: [
                                         Container(
                                           decoration: BoxDecoration(
-                                              image: DecorationImage(
-                                                  image: AssetImage(
-                                                      'assets/home3.png'),
-                                                  fit: BoxFit.cover),
+                                              image: DecorationImage(image: AssetImage('assets/home3.png'), fit: BoxFit.cover),
                                               color: Colors.red,
                                               borderRadius: BorderRadius.all(
                                                 Radius.circular(10),
@@ -106,7 +104,7 @@ class _OrderDetailScreenState extends BaseRouteState {
                                         ),
                                         Row(
                                           children: [
-                                            Text('11 feb 7:00 PM'),
+                                            Text('12 JUL 7:00 PM'),
                                           ],
                                         )
                                       ],
@@ -136,10 +134,7 @@ class _OrderDetailScreenState extends BaseRouteState {
                                       Stack(children: [
                                         Container(
                                           decoration: BoxDecoration(
-                                              image: DecorationImage(
-                                                  image: AssetImage(
-                                                      'assets/home3.png'),
-                                                  fit: BoxFit.cover),
+                                              image: DecorationImage(image: AssetImage('assets/home3.png'), fit: BoxFit.cover),
                                               color: Colors.red,
                                               borderRadius: BorderRadius.all(
                                                 Radius.circular(10),
@@ -167,7 +162,7 @@ class _OrderDetailScreenState extends BaseRouteState {
                                         ),
                                         Row(
                                           children: [
-                                            Text('11 feb 7:00 PM'),
+                                            Text('12 JUL 7:00 PM'),
                                           ],
                                         )
                                       ],

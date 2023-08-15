@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pet_user_app/Theme/nativeTheme.dart';
 import 'package:pet_user_app/models/businessLayer/baseRoute.dart';
-import 'package:pet_user_app/network/remote/Requests/signup_request.dart';
-import 'package:pet_user_app/network/services/ApiService.dart';
 import 'package:pet_user_app/screens/logInScreen1.dart';
 import 'package:pet_user_app/widgets/bottomNavigationBarWidget.dart';
 
@@ -29,8 +27,7 @@ class _SIgnUpScreenState extends BaseRouteState {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _phoneController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  final TextEditingController _confirmPasswordController =
-      TextEditingController();
+  final TextEditingController _confirmPasswordController = TextEditingController();
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>(); // Add this key
 
@@ -83,15 +80,16 @@ class _SIgnUpScreenState extends BaseRouteState {
                 Padding(
                   padding: EdgeInsets.only(top: 25),
                   child: Text(
-                    'Create Account',
+                    'Créer un compte',
                     style: Theme.of(context).primaryTextTheme.headline5,
                   ),
                 ),
                 Padding(
                   padding: EdgeInsets.only(top: 15),
                   child: Text(
-                    "Let's get you started",
+                    "Commençons si vous êtes un pet-sitter ou un propriétaire d'animal",
                     style: Theme.of(context).primaryTextTheme.subtitle1,
+                    textAlign: TextAlign.center,
                   ),
                 ),
                 Padding(
@@ -235,15 +233,14 @@ class _SIgnUpScreenState extends BaseRouteState {
                       }
                     },
                     child: Text(
-                      "Sign Up",
+                      "Inscription",
                     ))),
             Column(
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('Already have an account?',
-                        style: Theme.of(context).primaryTextTheme.headline4),
+                    Text('Vous avez déjà un compte ?', style: Theme.of(context).primaryTextTheme.headline4),
                     GestureDetector(
                       onTap: () {
                         Navigator.of(context).push(MaterialPageRoute(
@@ -253,7 +250,7 @@ class _SIgnUpScreenState extends BaseRouteState {
                                 )));
                       },
                       child: Text(
-                        ' Log In',
+                        ' Se connecter',
                         style: TextStyle(
                           decoration: TextDecoration.underline,
                           fontSize: 15,
@@ -266,7 +263,7 @@ class _SIgnUpScreenState extends BaseRouteState {
                 Padding(
                   padding: EdgeInsets.only(bottom: 15, top: 10),
                   child: Text(
-                    'Skip for now',
+                    ' ',
                     style: Theme.of(context).primaryTextTheme.subtitle1,
                   ),
                 )

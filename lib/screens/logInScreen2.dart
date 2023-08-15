@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:motion_toast/motion_toast.dart';
 import 'package:pet_user_app/models/businessLayer/baseRoute.dart';
 import 'package:pet_user_app/screens/forgotPasswordScreen.dart';
 import 'package:pet_user_app/screens/logInScreen1.dart';
@@ -68,14 +69,14 @@ class _LogInScreen2State extends BaseRouteState {
                 Padding(
                   padding: EdgeInsets.only(top: 25),
                   child: Text(
-                    'Enter Password',
+                    'Entrez le mot de passe',
                     style: Theme.of(context).primaryTextTheme.headline5,
                   ),
                 ),
                 Padding(
                   padding: EdgeInsets.only(top: 15),
                   child: Text(
-                    'Enter the password you used to sign up',
+                    'que vous avez utilisé lors de l\'inscription.',
                     style: Theme.of(context).primaryTextTheme.subtitle1,
                   ),
                 ),
@@ -84,7 +85,7 @@ class _LogInScreen2State extends BaseRouteState {
                   children: [
                     Padding(
                       padding: EdgeInsets.only(top: 70),
-                      child: Text('Enter Password',
+                      child: Text('Mot de passe',
                           style: Theme.of(context).primaryTextTheme.headline6),
                     ),
                   ],
@@ -98,10 +99,10 @@ class _LogInScreen2State extends BaseRouteState {
                       controller: _passwordController,
                       validator: (value) {
                         if (value == null || value.isEmpty) {
-                          return 'Please enter your password';
+                          return 'Veuillez entrer votre mot de passe';
                         }
                         if (value.length < 6) {
-                          return 'Password must be at least 6 characters';
+                          return 'Le mot de passe doit contenir au moins 6 caractères';
                         }
                         return null;
                       },
@@ -116,7 +117,7 @@ class _LogInScreen2State extends BaseRouteState {
                             setState(() {});
                           },
                         ),
-                        hintText: 'Input text',
+                        hintText: '***************',
                         // prefixIcon: Icon(Icons.mail),
                         contentPadding: EdgeInsets.only(top: 5, left: 10),
                       ),
@@ -136,7 +137,7 @@ class _LogInScreen2State extends BaseRouteState {
                                     o: widget.observer,
                                   )));
                         },
-                        child: Text('Forgot Password',
+                        child: Text('Mot de passe oublié ?',
                             style:
                                 Theme.of(context).primaryTextTheme.headline6),
                       ),
@@ -153,22 +154,46 @@ class _LogInScreen2State extends BaseRouteState {
                       width: MediaQuery.of(context).size.width,
                       child: TextButton(
                         // style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Theme.of(context).primaryColor)),
-                        onPressed: () {
+                        onPressed: () async {
                           // print('Hello');
                           if (_formKey.currentState.validate()) {
-                            apiController.loginUser(
+                            var response = await apiController.loginUser(
                                 widget.email, _passwordController.text);
 
-                            Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => BottomNavigationWidget(
-                                      a: widget.analytics,
-                                      o: widget.observer,
-                                    )));
+                            if (response.status == false) {
+                              MotionToast(
+                                icon: Icons.warning,
+                                primaryColor: Colors.red,
+                                title: Text("Error de connection"),
+                                description: Text(
+                                    "Votre email ou mot de passe sont incorrectes!"),
+                                width: 300,
+                                height: 100,
+                              ).show(context);
+                              return;
+                            }
+
+                            MotionToast(
+                                icon: Icons.verified,
+                                primaryColor: Colors.green,
+                                title: Text("Success"),
+                                description:
+                                    Text("Vous êtes connecté avec succes!"),
+                                width: 300,
+                                height: 100,
+                                onClose: () {
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (context) =>
+                                          BottomNavigationWidget(
+                                            a: widget.analytics,
+                                            o: widget.observer,
+                                          )));
+                                }).show(context);
                           }
                         },
                         child: apiController.isLoading.value
                             ? Center(child: const CircularProgressIndicator())
-                            : Text("Log In"), // Show "Log In" button
+                            : Text("Se connecter"), // Show "Log In" button
                       ),
                     ),
                   ),

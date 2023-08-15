@@ -20,9 +20,8 @@ class _PostListScreenState extends BaseRouteState {
         appBar: AppBar(
           elevation: 0,
           backgroundColor: Colors.transparent,
-        
           title: Text(
-            'Post',
+            'Publication',
             style: Theme.of(context).primaryTextTheme.headline1,
           ),
           centerTitle: true,
@@ -38,7 +37,7 @@ class _PostListScreenState extends BaseRouteState {
               child: Padding(
                 padding: EdgeInsets.only(top: 20, right: 10),
                 child: Text(
-                  'Add Post',
+                  'Ajouter',
                   style: Theme.of(context).primaryTextTheme.overline,
                 ),
               ),
@@ -59,7 +58,7 @@ class _PostListScreenState extends BaseRouteState {
                         padding: const EdgeInsets.only(right: 15),
                         child: Icon(Icons.search),
                       ),
-                      hintText: 'Search',
+                      hintText: 'rechercher',
                       contentPadding: EdgeInsets.only(top: 5, left: 10),
                     ),
                   ),
@@ -77,16 +76,14 @@ class _PostListScreenState extends BaseRouteState {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding:
-                                EdgeInsets.only(left: 10, right: 10, top: 15),
+                            padding: EdgeInsets.only(left: 10, right: 10, top: 15),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Row(
                                   children: [
                                     CircleAvatar(
-                                      backgroundColor:
-                                          Theme.of(context).primaryColor,
+                                      backgroundColor: Theme.of(context).primaryColor,
                                       radius: 25,
                                       child: CircleAvatar(
                                         radius: 24,
@@ -97,10 +94,8 @@ class _PostListScreenState extends BaseRouteState {
                                     Padding(
                                       padding: EdgeInsets.only(left: 15),
                                       child: Text(
-                                        'Sara Seth',
-                                        style: Theme.of(context)
-                                            .primaryTextTheme
-                                            .headline1,
+                                        'Sara abid',
+                                        style: Theme.of(context).primaryTextTheme.headline1,
                                       ),
                                     )
                                   ],
@@ -118,12 +113,10 @@ class _PostListScreenState extends BaseRouteState {
                             height: 220,
                             decoration: BoxDecoration(
                                 //  color: Colors.red,
-                                image: DecorationImage(
-                                    image: AssetImage('assets/catimage4.png'))),
+                                image: DecorationImage(image: AssetImage('assets/catimage4.png'))),
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(
-                                top: 15, left: 5, right: 5),
+                            padding: const EdgeInsets.only(top: 15, left: 5, right: 5),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
@@ -132,35 +125,30 @@ class _PostListScreenState extends BaseRouteState {
                                   width: 70,
                                   // color: Colors.red,
                                   child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: [
                                       Row(
                                         children: [
                                           Icon(FontAwesomeIcons.heart),
                                           Padding(
-                                            padding: const EdgeInsets.only(
-                                                left: 5, top: 5),
+                                            padding: const EdgeInsets.only(left: 5, top: 5),
                                             child: Text('5'),
                                           )
                                         ],
                                       ),
                                       GestureDetector(
                                         onTap: () {
-                                          Navigator.of(context).push(
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      CommentScreen(
-                                                        a: widget.analytics,
-                                                        o: widget.observer,
-                                                      )));
+                                          Navigator.of(context).push(MaterialPageRoute(
+                                              builder: (context) => CommentScreen(
+                                                    a: widget.analytics,
+                                                    o: widget.observer,
+                                                  )));
                                         },
                                         child: Row(
                                           children: [
                                             Icon(Icons.message),
                                             Padding(
-                                              padding: const EdgeInsets.only(
-                                                  left: 5, top: 5),
+                                              padding: const EdgeInsets.only(left: 5, top: 5),
                                               child: Text('0'),
                                             )
                                           ],
@@ -173,9 +161,8 @@ class _PostListScreenState extends BaseRouteState {
                                   children: [
                                     Icon(FontAwesomeIcons.share),
                                     Padding(
-                                      padding: const EdgeInsets.only(
-                                          left: 5, top: 0, right: 10),
-                                      child: Text('Share'),
+                                      padding: const EdgeInsets.only(left: 5, top: 0, right: 10),
+                                      child: Text('partager'),
                                     )
                                   ],
                                 )
@@ -198,16 +185,14 @@ class _PostListScreenState extends BaseRouteState {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding:
-                                EdgeInsets.only(left: 10, right: 10, top: 15),
+                            padding: EdgeInsets.only(left: 10, right: 10, top: 15),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Row(
                                   children: [
                                     CircleAvatar(
-                                      backgroundColor:
-                                          Theme.of(context).primaryColor,
+                                      backgroundColor: Theme.of(context).primaryColor,
                                       radius: 25,
                                       child: CircleAvatar(
                                         radius: 24,
@@ -218,10 +203,8 @@ class _PostListScreenState extends BaseRouteState {
                                     Padding(
                                       padding: EdgeInsets.only(left: 15),
                                       child: Text(
-                                        'Shivam Patel',
-                                        style: Theme.of(context)
-                                            .primaryTextTheme
-                                            .headline1,
+                                        'Siwar labiedh',
+                                        style: Theme.of(context).primaryTextTheme.headline1,
                                       ),
                                     )
                                   ],
@@ -239,12 +222,10 @@ class _PostListScreenState extends BaseRouteState {
                             height: 220,
                             decoration: BoxDecoration(
                                 //  color: Colors.red,
-                                image: DecorationImage(
-                                    image: AssetImage('assets/catimage3.png'))),
+                                image: DecorationImage(image: AssetImage('assets/catimage3.png'))),
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(
-                                top: 15, left: 5, right: 5),
+                            padding: const EdgeInsets.only(top: 15, left: 5, right: 5),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
@@ -253,35 +234,30 @@ class _PostListScreenState extends BaseRouteState {
                                   width: 70,
                                   // color: Colors.red,
                                   child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: [
                                       Row(
                                         children: [
                                           Icon(FontAwesomeIcons.heart),
                                           Padding(
-                                            padding: const EdgeInsets.only(
-                                                left: 5, top: 5),
+                                            padding: const EdgeInsets.only(left: 5, top: 5),
                                             child: Text('5'),
                                           )
                                         ],
                                       ),
                                       GestureDetector(
                                         onTap: () {
-                                          Navigator.of(context).push(
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      CommentScreen(
-                                                        a: widget.analytics,
-                                                        o: widget.observer,
-                                                      )));
+                                          Navigator.of(context).push(MaterialPageRoute(
+                                              builder: (context) => CommentScreen(
+                                                    a: widget.analytics,
+                                                    o: widget.observer,
+                                                  )));
                                         },
                                         child: Row(
                                           children: [
                                             Icon(Icons.message),
                                             Padding(
-                                              padding: const EdgeInsets.only(
-                                                  left: 5, top: 5),
+                                              padding: const EdgeInsets.only(left: 5, top: 5),
                                               child: Text('0'),
                                             )
                                           ],
@@ -294,9 +270,8 @@ class _PostListScreenState extends BaseRouteState {
                                   children: [
                                     Icon(FontAwesomeIcons.share),
                                     Padding(
-                                      padding: const EdgeInsets.only(
-                                          left: 5, top: 0, right: 10),
-                                      child: Text('Share'),
+                                      padding: const EdgeInsets.only(left: 5, top: 0, right: 10),
+                                      child: Text('partager'),
                                     )
                                   ],
                                 )

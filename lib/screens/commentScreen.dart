@@ -20,7 +20,7 @@ class _CommentScreenState extends BaseRouteState {
             Navigator.of(context).pop();
           },
           child: Icon(Icons.arrow_back_ios)),
-        title: Text('Comments',style: Theme.of(context).primaryTextTheme.headline1,),
+        title: Text('Commentaire',style: Theme.of(context).primaryTextTheme.headline1,),
         centerTitle: true,
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -33,7 +33,7 @@ class _CommentScreenState extends BaseRouteState {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('Be the First to talk',style: Theme.of(context).primaryTextTheme.headline1 ,),
+              Text('premier commentaire',style: Theme.of(context).primaryTextTheme.headline1 ,),
             ],
           ),
         ),
@@ -46,7 +46,7 @@ class _CommentScreenState extends BaseRouteState {
                   height: 40,
                   child: TextFormField(
                     decoration: InputDecoration(
-                      hintText: '   Type your Comment',
+                      hintText: 'Ecrire vos commentaire',
                       suffixIcon: IconButton(
                         onPressed: () {},
                         icon: Icon(

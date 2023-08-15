@@ -3,15 +3,12 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:pet_user_app/models/businessLayer/baseRoute.dart';
 import 'package:pet_user_app/screens/dogWalkingReviewScreen.dart';
-import 'package:pet_user_app/screens/reviewBookingScreen.dart';
 
 class DogWalkingDetailScreen extends BaseRoute {
   // DogWalkingDetailScreen() : super();
-  DogWalkingDetailScreen({a, o})
-      : super(a: a, o: o, r: 'DogWalkingDetailScreen');
+  DogWalkingDetailScreen({a, o}) : super(a: a, o: o, r: 'DogWalkingDetailScreen');
   @override
-  _DogWalkingDetailScreenState createState() =>
-      new _DogWalkingDetailScreenState();
+  _DogWalkingDetailScreenState createState() => new _DogWalkingDetailScreenState();
 }
 
 class _DogWalkingDetailScreenState extends BaseRouteState {
@@ -33,7 +30,7 @@ class _DogWalkingDetailScreenState extends BaseRouteState {
           ),
         ),
         title: Text(
-          'Sara Seth',
+          'Sara abid',
           style: Theme.of(context).primaryTextTheme.headline1,
         ),
         centerTitle: true,
@@ -59,10 +56,7 @@ class _DogWalkingDetailScreenState extends BaseRouteState {
                     child: Container(
                       child: Padding(
                         padding: const EdgeInsets.only(left: 28),
-                        child: CircleAvatar(
-                            radius: 80,
-                            backgroundImage:
-                                AssetImage('assets/dogimage2.png')),
+                        child: CircleAvatar(radius: 80, backgroundImage: AssetImage('assets/dogimage2.png')),
                       ),
                     ),
                   ),
@@ -71,8 +65,7 @@ class _DogWalkingDetailScreenState extends BaseRouteState {
                     top: 0,
                     child: Card(
                       elevation: 1,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(50.0)),
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50.0)),
                       child: CircleAvatar(
                         backgroundColor: Colors.white,
                         child: Icon(
@@ -88,8 +81,7 @@ class _DogWalkingDetailScreenState extends BaseRouteState {
                     top: 60,
                     child: Card(
                       elevation: 1,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(50.0)),
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50.0)),
                       child: CircleAvatar(
                         backgroundColor: Colors.white,
                         child: Icon(
@@ -146,8 +138,7 @@ class _DogWalkingDetailScreenState extends BaseRouteState {
                                 allowHalfRating: true,
                                 itemCount: 5,
                                 itemSize: 15,
-                                itemPadding:
-                                    EdgeInsets.symmetric(horizontal: 0),
+                                itemPadding: EdgeInsets.symmetric(horizontal: 0),
                                 itemBuilder: (context, _) => Icon(
                                   Icons.star,
                                   color: Colors.amber,
@@ -349,8 +340,7 @@ class _DogWalkingDetailScreenState extends BaseRouteState {
                           child: Container(
                             child: Text(
                               'Any behavioural issues, allergies,and/or special preference',
-                              style:
-                                  Theme.of(context).primaryTextTheme.bodyText2,
+                              style: Theme.of(context).primaryTextTheme.bodyText2,
                             ),
                           ),
                         )
@@ -380,12 +370,10 @@ class _DogWalkingDetailScreenState extends BaseRouteState {
                             children: [
                               Card(
                                 elevation: 0,
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(50.0)),
+                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50.0)),
                                 child: CircleAvatar(
                                   backgroundColor: Colors.white,
-                                  child: Icon(FontAwesomeIcons.medal,
-                                      color: Theme.of(context).primaryColor),
+                                  child: Icon(FontAwesomeIcons.medal, color: Theme.of(context).primaryColor),
                                   radius: 30,
                                 ),
                               ),
@@ -393,8 +381,7 @@ class _DogWalkingDetailScreenState extends BaseRouteState {
                                 padding: EdgeInsets.only(top: 0),
                                 child: Text(
                                   'Meals',
-                                  style: TextStyle(
-                                      color: Theme.of(context).primaryColor),
+                                  style: TextStyle(color: Theme.of(context).primaryColor),
                                 ),
                               )
                             ],
@@ -406,12 +393,10 @@ class _DogWalkingDetailScreenState extends BaseRouteState {
                             children: [
                               Card(
                                 elevation: 0,
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(50.0)),
+                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50.0)),
                                 child: CircleAvatar(
                                   backgroundColor: Colors.white,
-                                  child: Icon(FontAwesomeIcons.heart,
-                                      color: Theme.of(context).primaryColor),
+                                  child: Icon(FontAwesomeIcons.heart, color: Theme.of(context).primaryColor),
                                   radius: 30,
                                 ),
                               ),
@@ -419,8 +404,7 @@ class _DogWalkingDetailScreenState extends BaseRouteState {
                                 padding: EdgeInsets.only(top: 0),
                                 child: Text(
                                   'Care+',
-                                  style: TextStyle(
-                                      color: Theme.of(context).primaryColor),
+                                  style: TextStyle(color: Theme.of(context).primaryColor),
                                 ),
                               )
                             ],
@@ -432,12 +416,10 @@ class _DogWalkingDetailScreenState extends BaseRouteState {
                             children: [
                               Card(
                                 elevation: 0,
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(50.0)),
+                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50.0)),
                                 child: CircleAvatar(
                                   backgroundColor: Colors.white,
-                                  child: Icon(FontAwesomeIcons.building,
-                                      color: Theme.of(context).primaryColor),
+                                  child: Icon(FontAwesomeIcons.building, color: Theme.of(context).primaryColor),
                                   radius: 30,
                                 ),
                               ),
@@ -445,8 +427,7 @@ class _DogWalkingDetailScreenState extends BaseRouteState {
                                 padding: EdgeInsets.only(top: 0),
                                 child: Text(
                                   'Outdoor',
-                                  style: TextStyle(
-                                      color: Theme.of(context).primaryColor),
+                                  style: TextStyle(color: Theme.of(context).primaryColor),
                                 ),
                               )
                             ],
@@ -462,9 +443,7 @@ class _DogWalkingDetailScreenState extends BaseRouteState {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text('Reviews',
-                            style:
-                                Theme.of(context).primaryTextTheme.bodyText1),
+                        Text('Reviews', style: Theme.of(context).primaryTextTheme.bodyText1),
                         Text(
                           'View All',
                           style: Theme.of(context).primaryTextTheme.headline6,
@@ -478,8 +457,7 @@ class _DogWalkingDetailScreenState extends BaseRouteState {
                       child: Card(
                           child: Stack(children: [
                         Card(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10.0)),
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
                           elevation: 5,
                           child: Container(
                               padding: EdgeInsets.all(10),
@@ -492,26 +470,17 @@ class _DogWalkingDetailScreenState extends BaseRouteState {
                                       children: [
                                         Container(
                                           child: Padding(
-                                            padding:
-                                                const EdgeInsets.only(right: 0),
+                                            padding: const EdgeInsets.only(right: 0),
                                             child: CircleAvatar(
                                                 radius: 40,
                                                 // backgroundColor: Colors.red,
-                                                backgroundImage: AssetImage(
-                                                    'assets/home4.png')),
+                                                backgroundImage: AssetImage('assets/home4.png')),
                                           ),
                                         ),
                                         Container(
-                                          padding: EdgeInsets.only(
-                                              top: 2,
-                                              bottom: 2,
-                                              left: 7,
-                                              right: 7),
+                                          padding: EdgeInsets.only(top: 2, bottom: 2, left: 7, right: 7),
                                           margin: EdgeInsets.only(top: 3),
-                                          child: Text('verified stay',
-                                              style: Theme.of(context)
-                                                  .primaryTextTheme
-                                                  .headline6),
+                                          child: Text('verified stay', style: Theme.of(context).primaryTextTheme.headline6),
                                         )
                                       ],
                                     ),
@@ -519,30 +488,22 @@ class _DogWalkingDetailScreenState extends BaseRouteState {
                                   Container(
                                       margin: EdgeInsets.only(left: 10),
                                       // color: Colors.green,
-                                      width: MediaQuery.of(context).size.width -
-                                          150,
+                                      width: MediaQuery.of(context).size.width - 150,
                                       height: 120,
                                       child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
+                                        crossAxisAlignment: CrossAxisAlignment.start,
                                         children: [
                                           Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
+                                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                             children: [
-                                              Text('Karan Mehta',
-                                                  style: Theme.of(context)
-                                                      .primaryTextTheme
-                                                      .bodyText1),
+                                              Text('Karan Mehta', style: Theme.of(context).primaryTextTheme.bodyText1),
                                             ],
                                           ),
                                           Expanded(
                                             child: Text(
                                               'In publishing and graphic design, Lorem ipsum is a placeholder text,Lorem ipsum is a placeholder text ',
                                               overflow: TextOverflow.ellipsis,
-                                              style: Theme.of(context)
-                                                  .primaryTextTheme
-                                                  .subtitle2,
+                                              style: Theme.of(context).primaryTextTheme.subtitle2,
                                               maxLines: 4,
                                             ),
                                           ),
@@ -564,8 +525,7 @@ class _DogWalkingDetailScreenState extends BaseRouteState {
                                   allowHalfRating: true,
                                   itemCount: 5,
                                   itemSize: 15,
-                                  itemPadding:
-                                      EdgeInsets.symmetric(horizontal: 0),
+                                  itemPadding: EdgeInsets.symmetric(horizontal: 0),
                                   itemBuilder: (context, _) => Icon(
                                     Icons.star,
                                     color: Colors.amber,

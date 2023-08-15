@@ -1,13 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pet_user_app/Theme/nativeTheme.dart';
 import 'package:pet_user_app/models/businessLayer/baseRoute.dart';
 import 'package:pet_user_app/network/remote/Requests/create_pet_request.dart';
-import 'package:pet_user_app/network/remote/Requests/signup_request.dart';
-import 'package:pet_user_app/network/services/ApiService.dart';
-import 'package:pet_user_app/screens/logInScreen1.dart';
 import 'package:pet_user_app/screens/profileScreen.dart';
-import 'package:pet_user_app/widgets/bottomNavigationBarWidget.dart';
 
 import '../controllers/ApiController.dart';
 
@@ -22,21 +17,21 @@ class AddPetScreen extends BaseRoute {
 class _AddPetScreenState extends BaseRouteState {
   _AddPetScreenState() : super();
 
-
   final TextEditingController _petNameController = TextEditingController();
   final TextEditingController _petAgeController = TextEditingController();
   final TextEditingController _petImageLinkController = TextEditingController();
   final TextEditingController _petTypeController = TextEditingController();
   final TextEditingController _petBreedController = TextEditingController();
   final TextEditingController _petGenderController = TextEditingController();
-  final TextEditingController _petBloodPressureController = TextEditingController();
-  final TextEditingController _petBoneDensityController = TextEditingController();
+  final TextEditingController _petBloodPressureController =
+      TextEditingController();
+  final TextEditingController _petBoneDensityController =
+      TextEditingController();
   final TextEditingController _petWeightController = TextEditingController();
-
 
   @override
   Widget build(BuildContext context) {
-  final ApiController apiController = Get.find<ApiController>();
+    final ApiController apiController = Get.find<ApiController>();
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
@@ -64,14 +59,14 @@ class _AddPetScreenState extends BaseRouteState {
               Padding(
                 padding: EdgeInsets.only(top: 25),
                 child: Text(
-                  'Add your pet!',
+                  'Ajouter votre animal !',
                   style: Theme.of(context).primaryTextTheme.headline5,
                 ),
               ),
               Padding(
                 padding: EdgeInsets.only(top: 15),
                 child: Text(
-                  "Fill in the form below",
+                  "Remplissez le formulaire ci-dessous",
                   style: Theme.of(context).primaryTextTheme.subtitle1,
                 ),
               ),
@@ -80,7 +75,7 @@ class _AddPetScreenState extends BaseRouteState {
                 child: TextFormField(
                   controller: _petNameController,
                   decoration: InputDecoration(
-                    hintText: 'Pet Name',
+                    hintText: 'Nom  ',
                     contentPadding: EdgeInsets.only(top: 5, left: 10),
                   ),
                 ),
@@ -90,7 +85,7 @@ class _AddPetScreenState extends BaseRouteState {
                 child: TextFormField(
                   controller: _petAgeController,
                   decoration: InputDecoration(
-                    hintText: 'Pet Age',
+                    hintText: 'Âge  ',
                     contentPadding: EdgeInsets.only(top: 5, left: 10),
                   ),
                 ),
@@ -100,7 +95,7 @@ class _AddPetScreenState extends BaseRouteState {
                 child: TextFormField(
                   controller: _petImageLinkController,
                   decoration: InputDecoration(
-                    hintText: 'Pet Image Link',
+                    hintText: 'Lien de l\'image  ',
                     contentPadding: EdgeInsets.only(top: 5, left: 10),
                   ),
                 ),
@@ -110,7 +105,7 @@ class _AddPetScreenState extends BaseRouteState {
                 child: TextFormField(
                   controller: _petTypeController,
                   decoration: InputDecoration(
-                    hintText: 'Pet Type',
+                    hintText: 'Type d\'animal',
                     contentPadding: EdgeInsets.only(top: 5, left: 10),
                   ),
                 ),
@@ -120,7 +115,7 @@ class _AddPetScreenState extends BaseRouteState {
                 child: TextFormField(
                   controller: _petBreedController,
                   decoration: InputDecoration(
-                    hintText: 'Pet Breed',
+                    hintText: 'Race  ',
                     contentPadding: EdgeInsets.only(top: 5, left: 10),
                   ),
                 ),
@@ -130,7 +125,7 @@ class _AddPetScreenState extends BaseRouteState {
                 child: TextFormField(
                   controller: _petGenderController,
                   decoration: InputDecoration(
-                    hintText: 'Pet Gender',
+                    hintText: 'Genre  ',
                     contentPadding: EdgeInsets.only(top: 5, left: 10),
                   ),
                 ),
@@ -140,7 +135,7 @@ class _AddPetScreenState extends BaseRouteState {
                 child: TextFormField(
                   controller: _petBloodPressureController,
                   decoration: InputDecoration(
-                    hintText: 'Pet Blood Pressure',
+                    hintText: 'Pression artérielle  ',
                     contentPadding: EdgeInsets.only(top: 5, left: 10),
                   ),
                 ),
@@ -150,7 +145,7 @@ class _AddPetScreenState extends BaseRouteState {
                 child: TextFormField(
                   controller: _petBoneDensityController,
                   decoration: InputDecoration(
-                    hintText: 'Pet Bone Density',
+                    hintText: 'Densité osseuse  ',
                     contentPadding: EdgeInsets.only(top: 5, left: 10),
                   ),
                 ),
@@ -160,7 +155,7 @@ class _AddPetScreenState extends BaseRouteState {
                 child: TextFormField(
                   controller: _petWeightController,
                   decoration: InputDecoration(
-                    hintText: 'Pet Weight',
+                    hintText: 'Poids  ',
                     contentPadding: EdgeInsets.only(top: 5, left: 10),
                   ),
                 ),
@@ -175,37 +170,46 @@ class _AddPetScreenState extends BaseRouteState {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
-                // color: Colors.red,
-                height: 45,
-                padding: EdgeInsets.only(left: 15, right: 15),
-                width: MediaQuery.of(context).size.width,
-                child: TextButton(
-                    // style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Theme.of(context).primaryColor)),
-                    onPressed: () {
-                      // print('Hello');
-                      apiController.addPet(
-                        CreatePetRequest(
-                          petName: _petNameController.text,
-                          petAge: _petAgeController.text,
-                          petImageLink: _petImageLinkController.text,
-                          petType: _petTypeController.text,
-                          petBreed: _petBreedController.text,
-                          petGender: _petGenderController.text,
-                          petBloodPressure: _petBloodPressureController.text,
-                          petBoneDensity: _petBoneDensityController.text,
-                          petWeight: _petWeightController.text,
-                          petOwner: apiController.user.value.email,
-                        ),
-                      );
+              // color: Colors.red,
+              height: 45,
+              padding: EdgeInsets.only(left: 15, right: 15),
+              width: MediaQuery.of(context).size.width,
+              child: Obx(
+                () => TextButton(
+                  // style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Theme.of(context).primaryColor)),
+                  onPressed: () async {
+                    // print('Hello');
+                    var isLoading = await apiController.addPet(
+                      CreatePetRequest(
+                        petName: _petNameController.text,
+                        petAge: _petAgeController.text,
+                        petImageLink: _petImageLinkController.text,
+                        petType: _petTypeController.text,
+                        petBreed: _petBreedController.text,
+                        petGender: _petGenderController.text,
+                        petBloodPressure: _petBloodPressureController.text,
+                        petBoneDensity: _petBoneDensityController.text,
+                        petWeight: _petWeightController.text,
+                        petOwner: apiController.user.value.email,
+                      ),
+                    );
+
+                    if (!isLoading && apiController.error.value == "") {
                       Navigator.of(context).push(MaterialPageRoute(
                           builder: (context) => ProfileScreen(
                                 a: widget.analytics,
                                 o: widget.observer,
                               )));
-                    },
-                    child: Text(
-                      "Add Your Pet",
-                    ))),
+                    }
+                  },
+                  child: apiController.isLoading.value
+                      ? const Center(child: CircularProgressIndicator())
+                      : Text(
+                          "Ajouter votre animal",
+                        ),
+                ),
+              ),
+            ),
           ],
         ),
       ),

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:pet_user_app/models/businessLayer/baseRoute.dart';
-import 'package:pet_user_app/screens/bookingProccessFilterScreen.dart';
 import 'package:pet_user_app/screens/petBoardingDetailScreen.dart';
+import 'package:pet_user_app/screens/reviewBookingScreen.dart';
 
 class PetBoardingScreen extends BaseRoute {
   // PetBoardingScreen() : super();
@@ -30,18 +30,18 @@ class _PetBoardingScreenState extends BaseRouteState {
             ),
           ),
           title: Text(
-            'Pet Boarding',
+            'Hébergement',
             style: Theme.of(context).primaryTextTheme.headline1,
           ),
           centerTitle: true,
-          actions: [
-            Padding(
-              padding: const EdgeInsets.only(right: 15),
-              child: Icon(
-                Icons.shopping_cart_outlined,
-              ),
-            )
-          ],
+          // actions: [
+          //   Padding(
+          //     padding: const EdgeInsets.only(right: 15),
+          //     child: Icon(
+          //       Icons.shopping_cart_outlined,
+          //     ),
+          //   )
+          // ],
         ),
         body: Padding(
           padding: EdgeInsets.only(left: 10, right: 10),
@@ -68,36 +68,36 @@ class _PetBoardingScreenState extends BaseRouteState {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        'Pet Boarding near you...',
+                        'Pension pour animaux',
                         style: Theme.of(context).primaryTextTheme.bodyText1,
                       ),
-                      Row(
-                        children: [
-                          GestureDetector(
-                            onTap: () {
-                              Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) =>
-                                      BookingProccessFilterScreen(
-                                        a: widget.analytics,
-                                        o: widget.observer,
-                                      )));
-                            },
-                            child: Icon(
-                              FontAwesomeIcons.filter,
-                              color: Color(0xFF8F8F8F),
-                              size: 18,
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 15),
-                            child: Icon(
-                              Icons.filter_3_outlined,
-                              size: 18,
-                              color: Color(0xFF8F8F8F),
-                            ),
-                          )
-                        ],
-                      )
+                      // Row(
+                      //   children: [
+                      //     GestureDetector(
+                      //       onTap: () {
+                      //         // Navigator.of(context).push(MaterialPageRoute(
+                      //         //     builder: (context) =>
+                      //         //         BookingProccessFilterScreen(
+                      //         //           a: widget.analytics,
+                      //         //           o: widget.observer,
+                      //         //         )));
+                      //       },
+                      //       child: Icon(
+                      //         FontAwesomeIcons.filter,
+                      //         color: Color(0xFF8F8F8F),
+                      //         size: 18,
+                      //       ),
+                      //     ),
+                      //     Padding(
+                      //       padding: const EdgeInsets.only(left: 15),
+                      //       child: Icon(
+                      //         Icons.filter_3_outlined,
+                      //         size: 18,
+                      //         color: Color(0xFF8F8F8F),
+                      //       ),
+                      //     )
+                      //   ],
+                      // )
                     ],
                   ),
                 ),
@@ -119,24 +119,19 @@ class _PetBoardingScreenState extends BaseRouteState {
                                 children: [
                                   CircleAvatar(
                                     radius: 38,
-                                    backgroundImage:
-                                        AssetImage('assets/catimage2.png'),
+                                    backgroundImage: AssetImage('assets/catimage2.png'),
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.only(left: 10),
                                     child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
+                                      crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          'Sara Seth',
-                                          style: Theme.of(context)
-                                              .primaryTextTheme
-                                              .headline1,
+                                          'Sara abid',
+                                          style: Theme.of(context).primaryTextTheme.headline1,
                                         ),
                                         Padding(
-                                          padding:
-                                              const EdgeInsets.only(top: 5),
+                                          padding: const EdgeInsets.only(top: 5),
                                           child: Row(
                                             children: [
                                               RatingBar.builder(
@@ -146,11 +141,8 @@ class _PetBoardingScreenState extends BaseRouteState {
                                                 allowHalfRating: true,
                                                 itemCount: 5,
                                                 itemSize: 20,
-                                                itemPadding:
-                                                    EdgeInsets.symmetric(
-                                                        horizontal: 0),
-                                                itemBuilder: (context, _) =>
-                                                    Icon(
+                                                itemPadding: EdgeInsets.symmetric(horizontal: 0),
+                                                itemBuilder: (context, _) => Icon(
                                                   Icons.star,
                                                   color: Colors.amber,
                                                 ),
@@ -161,26 +153,9 @@ class _PetBoardingScreenState extends BaseRouteState {
                                                   // setState(() { });
                                                 },
                                               ),
-                                              Padding(
-                                                padding: const EdgeInsets.only(
-                                                    left: 7),
-                                                child: Text(
-                                                  '15 reviews',
-                                                  style: Theme.of(context)
-                                                      .primaryTextTheme
-                                                      .subtitle2,
-                                                ),
-                                              )
                                             ],
                                           ),
                                         ),
-                                        Padding(
-                                          padding: EdgeInsets.only(top: 10),
-                                          child: Text('2 km away',
-                                              style: Theme.of(context)
-                                                  .primaryTextTheme
-                                                  .subtitle2),
-                                        )
                                       ],
                                     ),
                                   ),
@@ -189,8 +164,7 @@ class _PetBoardingScreenState extends BaseRouteState {
                                     // color: Colors.yellow,
                                     padding: EdgeInsets.only(),
                                     child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
+                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                       children: [
                                         Row(
                                           children: [
@@ -200,8 +174,7 @@ class _PetBoardingScreenState extends BaseRouteState {
                                               color: Color(0xFFF0900C),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsets.only(
-                                                  left: 5),
+                                              padding: const EdgeInsets.only(left: 5),
                                               child: Text(
                                                 'Verified',
                                                 style: TextStyle(
@@ -212,7 +185,7 @@ class _PetBoardingScreenState extends BaseRouteState {
                                             ),
                                           ],
                                         ),
-                                        Text('Rs.700/day')
+                                        Text('50 dt/ jour')
                                       ],
                                     ),
                                   )
@@ -227,13 +200,11 @@ class _PetBoardingScreenState extends BaseRouteState {
                               children: [
                                 GestureDetector(
                                   onTap: () {
-                                    Navigator.of(context).push(
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                PetBoardoingDetailScreen(
-                                                  a: widget.analytics,
-                                                  o: widget.observer,
-                                                )));
+                                    Navigator.of(context).push(MaterialPageRoute(
+                                        builder: (context) => PetBoardoingDetailScreen(
+                                              a: widget.analytics,
+                                              o: widget.observer,
+                                            )));
                                   },
                                   child: Container(
                                     margin: EdgeInsets.only(left: 15),
@@ -242,19 +213,13 @@ class _PetBoardingScreenState extends BaseRouteState {
                                     height: 36,
                                     child: Center(
                                       child: Text(
-                                        'View profile',
-                                        style: TextStyle(
-                                            color:
-                                                Theme.of(context).primaryColor),
+                                        'Voir le profil',
+                                        style: TextStyle(color: Theme.of(context).primaryColor),
                                       ),
                                     ),
                                     decoration: BoxDecoration(
-                                        border: Border.all(
-                                            width: 1,
-                                            color:
-                                                Theme.of(context).primaryColor),
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(5))),
+                                        border: Border.all(width: 1, color: Theme.of(context).primaryColor),
+                                        borderRadius: BorderRadius.all(Radius.circular(5))),
                                   ),
                                 ),
                                 Container(
@@ -265,23 +230,17 @@ class _PetBoardingScreenState extends BaseRouteState {
                                     width: 125,
                                     child: TextButton(
                                         style: ButtonStyle(
-                                            backgroundColor:
-                                                MaterialStateProperty.all(
-                                                    Theme.of(context)
-                                                        .primaryColor),
-                                            textStyle:
-                                                MaterialStateProperty.all(
-                                                    TextStyle(fontSize: 13))),
+                                            backgroundColor: MaterialStateProperty.all(Theme.of(context).primaryColor),
+                                            textStyle: MaterialStateProperty.all(TextStyle(fontSize: 13))),
                                         onPressed: () {
-                                          // print('Hello');
-                                          // Navigator.of(context).push(MaterialPageRoute(
-                                          //     builder: (context) => LogInScreen2(
-                                          //           a: widget.analytics,
-                                          //           o: widget.observer,
-                                          //         )));
+                                          Navigator.of(context).push(MaterialPageRoute(
+                                              builder: (context) => ReviewBookingScreen(
+                                                    a: widget.analytics,
+                                                    o: widget.observer,
+                                                  )));
                                         },
                                         child: Text(
-                                          "Book Now",
+                                          "Réserver",
                                         ))),
                               ],
                             ),
@@ -309,24 +268,19 @@ class _PetBoardingScreenState extends BaseRouteState {
                                 children: [
                                   CircleAvatar(
                                     radius: 38,
-                                    backgroundImage:
-                                        AssetImage('assets/catimage4.png'),
+                                    backgroundImage: AssetImage('assets/catimage4.png'),
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.only(left: 10),
                                     child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
+                                      crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          'Friends of Floof',
-                                          style: Theme.of(context)
-                                              .primaryTextTheme
-                                              .headline1,
+                                          'Mariem toumi',
+                                          style: Theme.of(context).primaryTextTheme.headline1,
                                         ),
                                         Padding(
-                                          padding:
-                                              const EdgeInsets.only(top: 5),
+                                          padding: const EdgeInsets.only(top: 5),
                                           child: Row(
                                             children: [
                                               RatingBar.builder(
@@ -336,11 +290,8 @@ class _PetBoardingScreenState extends BaseRouteState {
                                                 allowHalfRating: true,
                                                 itemCount: 5,
                                                 itemSize: 20,
-                                                itemPadding:
-                                                    EdgeInsets.symmetric(
-                                                        horizontal: 0),
-                                                itemBuilder: (context, _) =>
-                                                    Icon(
+                                                itemPadding: EdgeInsets.symmetric(horizontal: 0),
+                                                itemBuilder: (context, _) => Icon(
                                                   Icons.star,
                                                   color: Colors.amber,
                                                 ),
@@ -351,26 +302,9 @@ class _PetBoardingScreenState extends BaseRouteState {
                                                   // setState(() { });
                                                 },
                                               ),
-                                              Padding(
-                                                padding: const EdgeInsets.only(
-                                                    left: 7),
-                                                child: Text(
-                                                  '15 reviews',
-                                                  style: Theme.of(context)
-                                                      .primaryTextTheme
-                                                      .subtitle2,
-                                                ),
-                                              )
                                             ],
                                           ),
                                         ),
-                                        Padding(
-                                          padding: EdgeInsets.only(top: 10),
-                                          child: Text('2 km away',
-                                              style: Theme.of(context)
-                                                  .primaryTextTheme
-                                                  .subtitle2),
-                                        )
                                       ],
                                     ),
                                   ),
@@ -379,8 +313,7 @@ class _PetBoardingScreenState extends BaseRouteState {
                                     // color: Colors.yellow,
                                     padding: EdgeInsets.only(),
                                     child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
+                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                       children: [
                                         Row(
                                           children: [
@@ -390,8 +323,7 @@ class _PetBoardingScreenState extends BaseRouteState {
                                               color: Color(0xFFF0900C),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsets.only(
-                                                  left: 5),
+                                              padding: const EdgeInsets.only(left: 5),
                                               child: Text(
                                                 'Verified',
                                                 style: TextStyle(
@@ -402,7 +334,7 @@ class _PetBoardingScreenState extends BaseRouteState {
                                             ),
                                           ],
                                         ),
-                                        Text('Rs.700/day')
+                                        Text('40 dt/jour')
                                       ],
                                     ),
                                   )
@@ -417,13 +349,11 @@ class _PetBoardingScreenState extends BaseRouteState {
                               children: [
                                 GestureDetector(
                                   onTap: () {
-                                    Navigator.of(context).push(
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                PetBoardoingDetailScreen(
-                                                  a: widget.analytics,
-                                                  o: widget.observer,
-                                                )));
+                                    Navigator.of(context).push(MaterialPageRoute(
+                                        builder: (context) => PetBoardoingDetailScreen(
+                                              a: widget.analytics,
+                                              o: widget.observer,
+                                            )));
                                   },
                                   child: Container(
                                     margin: EdgeInsets.only(left: 15),
@@ -432,19 +362,13 @@ class _PetBoardingScreenState extends BaseRouteState {
                                     height: 36,
                                     child: Center(
                                       child: Text(
-                                        'View profile',
-                                        style: TextStyle(
-                                            color:
-                                                Theme.of(context).primaryColor),
+                                        'Voir le profil',
+                                        style: TextStyle(color: Theme.of(context).primaryColor),
                                       ),
                                     ),
                                     decoration: BoxDecoration(
-                                        border: Border.all(
-                                            width: 1,
-                                            color:
-                                                Theme.of(context).primaryColor),
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(5))),
+                                        border: Border.all(width: 1, color: Theme.of(context).primaryColor),
+                                        borderRadius: BorderRadius.all(Radius.circular(5))),
                                   ),
                                 ),
                                 Container(
@@ -455,13 +379,8 @@ class _PetBoardingScreenState extends BaseRouteState {
                                     width: 125,
                                     child: TextButton(
                                         style: ButtonStyle(
-                                            backgroundColor:
-                                                MaterialStateProperty.all(
-                                                    Theme.of(context)
-                                                        .primaryColor),
-                                            textStyle:
-                                                MaterialStateProperty.all(
-                                                    TextStyle(fontSize: 13))),
+                                            backgroundColor: MaterialStateProperty.all(Theme.of(context).primaryColor),
+                                            textStyle: MaterialStateProperty.all(TextStyle(fontSize: 13))),
                                         onPressed: () {
                                           // print('Hello');
                                           // Navigator.of(context).push(MaterialPageRoute(
@@ -471,7 +390,7 @@ class _PetBoardingScreenState extends BaseRouteState {
                                           //         )));
                                         },
                                         child: Text(
-                                          "Book Now",
+                                          "Réserver",
                                         ))),
                               ],
                             ),
@@ -499,24 +418,19 @@ class _PetBoardingScreenState extends BaseRouteState {
                                 children: [
                                   CircleAvatar(
                                     radius: 38,
-                                    backgroundImage:
-                                        AssetImage('assets/catimage3.png'),
+                                    backgroundImage: AssetImage('assets/catimage3.png'),
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.only(left: 10),
                                     child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
+                                      crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          'Yogesh kapoor',
-                                          style: Theme.of(context)
-                                              .primaryTextTheme
-                                              .headline1,
+                                          'Dr.Mahdi amine',
+                                          style: Theme.of(context).primaryTextTheme.headline1,
                                         ),
                                         Padding(
-                                          padding:
-                                              const EdgeInsets.only(top: 5),
+                                          padding: const EdgeInsets.only(top: 5),
                                           child: Row(
                                             children: [
                                               RatingBar.builder(
@@ -526,11 +440,8 @@ class _PetBoardingScreenState extends BaseRouteState {
                                                 allowHalfRating: true,
                                                 itemCount: 5,
                                                 itemSize: 20,
-                                                itemPadding:
-                                                    EdgeInsets.symmetric(
-                                                        horizontal: 0),
-                                                itemBuilder: (context, _) =>
-                                                    Icon(
+                                                itemPadding: EdgeInsets.symmetric(horizontal: 0),
+                                                itemBuilder: (context, _) => Icon(
                                                   Icons.star,
                                                   color: Colors.amber,
                                                 ),
@@ -541,26 +452,9 @@ class _PetBoardingScreenState extends BaseRouteState {
                                                   // setState(() { });
                                                 },
                                               ),
-                                              Padding(
-                                                padding: const EdgeInsets.only(
-                                                    left: 7),
-                                                child: Text(
-                                                  '15 reviews',
-                                                  style: Theme.of(context)
-                                                      .primaryTextTheme
-                                                      .subtitle2,
-                                                ),
-                                              )
                                             ],
                                           ),
                                         ),
-                                        Padding(
-                                          padding: EdgeInsets.only(top: 10),
-                                          child: Text('2 km away',
-                                              style: Theme.of(context)
-                                                  .primaryTextTheme
-                                                  .subtitle2),
-                                        )
                                       ],
                                     ),
                                   ),
@@ -569,8 +463,7 @@ class _PetBoardingScreenState extends BaseRouteState {
                                     // color: Colors.yellow,
                                     padding: EdgeInsets.only(),
                                     child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
+                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                       children: [
                                         Row(
                                           children: [
@@ -580,8 +473,7 @@ class _PetBoardingScreenState extends BaseRouteState {
                                               color: Color(0xFFF0900C),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsets.only(
-                                                  left: 5),
+                                              padding: const EdgeInsets.only(left: 5),
                                               child: Text(
                                                 'Verified',
                                                 style: TextStyle(
@@ -592,7 +484,7 @@ class _PetBoardingScreenState extends BaseRouteState {
                                             ),
                                           ],
                                         ),
-                                        Text('Rs.700/day')
+                                        Text('60 dt/jour')
                                       ],
                                     ),
                                   )
@@ -607,13 +499,11 @@ class _PetBoardingScreenState extends BaseRouteState {
                               children: [
                                 GestureDetector(
                                   onTap: () {
-                                    Navigator.of(context).push(
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                PetBoardoingDetailScreen(
-                                                  a: widget.analytics,
-                                                  o: widget.observer,
-                                                )));
+                                    Navigator.of(context).push(MaterialPageRoute(
+                                        builder: (context) => PetBoardoingDetailScreen(
+                                              a: widget.analytics,
+                                              o: widget.observer,
+                                            )));
                                   },
                                   child: Container(
                                     margin: EdgeInsets.only(left: 15),
@@ -622,19 +512,13 @@ class _PetBoardingScreenState extends BaseRouteState {
                                     height: 36,
                                     child: Center(
                                       child: Text(
-                                        'View profile',
-                                        style: TextStyle(
-                                            color:
-                                                Theme.of(context).primaryColor),
+                                        'Voir le profil',
+                                        style: TextStyle(color: Theme.of(context).primaryColor),
                                       ),
                                     ),
                                     decoration: BoxDecoration(
-                                        border: Border.all(
-                                            width: 1,
-                                            color:
-                                                Theme.of(context).primaryColor),
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(5))),
+                                        border: Border.all(width: 1, color: Theme.of(context).primaryColor),
+                                        borderRadius: BorderRadius.all(Radius.circular(5))),
                                   ),
                                 ),
                                 Container(
@@ -645,13 +529,8 @@ class _PetBoardingScreenState extends BaseRouteState {
                                     width: 125,
                                     child: TextButton(
                                         style: ButtonStyle(
-                                            backgroundColor:
-                                                MaterialStateProperty.all(
-                                                    Theme.of(context)
-                                                        .primaryColor),
-                                            textStyle:
-                                                MaterialStateProperty.all(
-                                                    TextStyle(fontSize: 13))),
+                                            backgroundColor: MaterialStateProperty.all(Theme.of(context).primaryColor),
+                                            textStyle: MaterialStateProperty.all(TextStyle(fontSize: 13))),
                                         onPressed: () {
                                           // print('Hello');
                                           // Navigator.of(context).push(MaterialPageRoute(
@@ -661,7 +540,7 @@ class _PetBoardingScreenState extends BaseRouteState {
                                           //         )));
                                         },
                                         child: Text(
-                                          "Book Now",
+                                          "Réserver",
                                         ))),
                               ],
                             ),
@@ -689,24 +568,19 @@ class _PetBoardingScreenState extends BaseRouteState {
                                 children: [
                                   CircleAvatar(
                                     radius: 38,
-                                    backgroundImage:
-                                        AssetImage('assets/dogimage2.png'),
+                                    backgroundImage: AssetImage('assets/dogimage2.png'),
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.only(left: 10),
                                     child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
+                                      crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          'Dignesh Shah',
-                                          style: Theme.of(context)
-                                              .primaryTextTheme
-                                              .headline1,
+                                          'Amine slama',
+                                          style: Theme.of(context).primaryTextTheme.headline1,
                                         ),
                                         Padding(
-                                          padding:
-                                              const EdgeInsets.only(top: 5),
+                                          padding: const EdgeInsets.only(top: 5),
                                           child: Row(
                                             children: [
                                               RatingBar.builder(
@@ -716,11 +590,8 @@ class _PetBoardingScreenState extends BaseRouteState {
                                                 allowHalfRating: true,
                                                 itemCount: 5,
                                                 itemSize: 20,
-                                                itemPadding:
-                                                    EdgeInsets.symmetric(
-                                                        horizontal: 0),
-                                                itemBuilder: (context, _) =>
-                                                    Icon(
+                                                itemPadding: EdgeInsets.symmetric(horizontal: 0),
+                                                itemBuilder: (context, _) => Icon(
                                                   Icons.star,
                                                   color: Colors.amber,
                                                 ),
@@ -731,26 +602,9 @@ class _PetBoardingScreenState extends BaseRouteState {
                                                   // setState(() { });
                                                 },
                                               ),
-                                              Padding(
-                                                padding: const EdgeInsets.only(
-                                                    left: 7),
-                                                child: Text(
-                                                  '15 reviews',
-                                                  style: Theme.of(context)
-                                                      .primaryTextTheme
-                                                      .subtitle2,
-                                                ),
-                                              )
                                             ],
                                           ),
                                         ),
-                                        Padding(
-                                          padding: EdgeInsets.only(top: 10),
-                                          child: Text('2 km away',
-                                              style: Theme.of(context)
-                                                  .primaryTextTheme
-                                                  .subtitle2),
-                                        )
                                       ],
                                     ),
                                   ),
@@ -759,8 +613,7 @@ class _PetBoardingScreenState extends BaseRouteState {
                                     // color: Colors.yellow,
                                     padding: EdgeInsets.only(),
                                     child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
+                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                       children: [
                                         Row(
                                           children: [
@@ -770,8 +623,7 @@ class _PetBoardingScreenState extends BaseRouteState {
                                               color: Color(0xFFF0900C),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsets.only(
-                                                  left: 5),
+                                              padding: const EdgeInsets.only(left: 5),
                                               child: Text(
                                                 'Verified',
                                                 style: TextStyle(
@@ -782,7 +634,7 @@ class _PetBoardingScreenState extends BaseRouteState {
                                             ),
                                           ],
                                         ),
-                                        Text('Rs.700/day')
+                                        Text('40 dt/jour')
                                       ],
                                     ),
                                   )
@@ -802,19 +654,13 @@ class _PetBoardingScreenState extends BaseRouteState {
                                   height: 36,
                                   child: Center(
                                     child: Text(
-                                      'View profile',
-                                      style: TextStyle(
-                                          color:
-                                              Theme.of(context).primaryColor),
+                                      'Voir le profil',
+                                      style: TextStyle(color: Theme.of(context).primaryColor),
                                     ),
                                   ),
                                   decoration: BoxDecoration(
-                                      border: Border.all(
-                                          width: 1,
-                                          color:
-                                              Theme.of(context).primaryColor),
-                                      borderRadius:
-                                          BorderRadius.all(Radius.circular(5))),
+                                      border: Border.all(width: 1, color: Theme.of(context).primaryColor),
+                                      borderRadius: BorderRadius.all(Radius.circular(5))),
                                 ),
                                 Container(
                                     margin: EdgeInsets.only(right: 15),
@@ -824,13 +670,8 @@ class _PetBoardingScreenState extends BaseRouteState {
                                     width: 125,
                                     child: TextButton(
                                         style: ButtonStyle(
-                                            backgroundColor:
-                                                MaterialStateProperty.all(
-                                                    Theme.of(context)
-                                                        .primaryColor),
-                                            textStyle:
-                                                MaterialStateProperty.all(
-                                                    TextStyle(fontSize: 13))),
+                                            backgroundColor: MaterialStateProperty.all(Theme.of(context).primaryColor),
+                                            textStyle: MaterialStateProperty.all(TextStyle(fontSize: 13))),
                                         onPressed: () {
                                           // print('Hello');
                                           // Navigator.of(context).push(MaterialPageRoute(
@@ -840,7 +681,7 @@ class _PetBoardingScreenState extends BaseRouteState {
                                           //         )));
                                         },
                                         child: Text(
-                                          "Book Now",
+                                          "Réserver",
                                         ))),
                               ],
                             ),

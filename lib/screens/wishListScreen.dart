@@ -47,73 +47,48 @@ class _WishListScreenState extends BaseRouteState {
                                 child: Card(
                                   elevation: 2,
                                   child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsets.only(
-                                            top: 5, left: 10),
+                                        padding: const EdgeInsets.only(top: 5, left: 10),
                                         child: Column(
                                           children: [
                                             CircleAvatar(
                                               radius: 35,
-                                              backgroundImage: AssetImage(
-                                                  'assets/catimage4.png'),
+                                              backgroundImage: AssetImage('assets/catimage4.png'),
                                             ),
                                             Padding(
                                               padding: EdgeInsets.only(top: 10),
-                                              child: Text('Sara Seth'),
+                                              child: Text('Sara abid'),
                                             )
                                           ],
                                         ),
                                       ),
                                       Padding(
-                                        padding:
-                                            EdgeInsets.only(top: 10, left: 10),
+                                        padding: EdgeInsets.only(top: 10, left: 10),
                                         child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
+                                          crossAxisAlignment: CrossAxisAlignment.start,
                                           children: [
-                                            Text('Pet Boarding'),
-                                            Text('Fluffy,cookie',
-                                                style: Theme.of(context)
-                                                    .primaryTextTheme
-                                                    .subtitle2),
-                                            Text('2 day meal',
-                                                style: Theme.of(context)
-                                                    .primaryTextTheme
-                                                    .subtitle2),
-                                            Text('Start : 11 Feb 9:00 AM',
-                                                style: Theme.of(context)
-                                                    .primaryTextTheme
-                                                    .subtitle2),
-                                            Text('End : 15 Feb 12:00 PM',
-                                                style: Theme.of(context)
-                                                    .primaryTextTheme
-                                                    .subtitle2)
+                                            Text('Hébergement'),
+                                            Text('Fluffy,cookie', style: Theme.of(context).primaryTextTheme.subtitle2),
+                                            Text('2 day meal', style: Theme.of(context).primaryTextTheme.subtitle2),
+                                            Text('Start : 12 JUL 9:00 AM', style: Theme.of(context).primaryTextTheme.subtitle2),
+                                            Text('End : 15 Feb 12:00 PM', style: Theme.of(context).primaryTextTheme.subtitle2)
                                           ],
                                         ),
                                       ),
                                       Container(
                                         margin: EdgeInsets.only(right: 3),
                                         //  color: Colors.yellow,
-                                        width:
-                                            MediaQuery.of(context).size.width -
-                                                280,
+                                        width: MediaQuery.of(context).size.width - 280,
                                         child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.end,
+                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                          crossAxisAlignment: CrossAxisAlignment.end,
                                           children: [
-                                            Icon(Icons.favorite,
-                                                color: Theme.of(context)
-                                                    .primaryColor),
+                                            Icon(Icons.favorite, color: Theme.of(context).primaryColor),
                                             Text(
                                               'Rs.6,400',
-                                              style: Theme.of(context)
-                                                  .primaryTextTheme
-                                                  .headline1,
+                                              style: Theme.of(context).primaryTextTheme.headline1,
                                             )
                                           ],
                                         ),
@@ -133,63 +108,40 @@ class _WishListScreenState extends BaseRouteState {
                                     child: Card(
                                       elevation: 2,
                                       child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                         children: [
                                           Padding(
-                                            padding: const EdgeInsets.only(
-                                                top: 15, left: 10),
+                                            padding: const EdgeInsets.only(top: 15, left: 10),
                                             child: CircleAvatar(
-                                              backgroundColor:
-                                                  Colors.transparent,
+                                              backgroundColor: Colors.transparent,
                                               radius: 35,
-                                              backgroundImage: AssetImage(
-                                                  'assets/prod1.png'),
+                                              backgroundImage: AssetImage('assets/prod1.png'),
                                             ),
                                           ),
                                           Padding(
-                                            padding: EdgeInsets.only(
-                                                top: 10, left: 08),
+                                            padding: EdgeInsets.only(top: 10, left: 08),
                                             child: Column(
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
+                                              crossAxisAlignment: CrossAxisAlignment.start,
                                               children: [
                                                 Text('kennel Kitchen Wet Food'),
-                                                Text('Chicken',
-                                                    style: Theme.of(context)
-                                                        .primaryTextTheme
-                                                        .subtitle2),
-                                                Text('180 gm',
-                                                    style: Theme.of(context)
-                                                        .primaryTextTheme
-                                                        .subtitle2),
+                                                Text('Chicken', style: Theme.of(context).primaryTextTheme.subtitle2),
+                                                Text('180 gm', style: Theme.of(context).primaryTextTheme.subtitle2),
                                                 Row(
                                                   children: [
-                                                    Text('Quantity : 1',
-                                                        style: Theme.of(context)
-                                                            .primaryTextTheme
-                                                            .subtitle2),
+                                                    Text('Quantity : 1', style: Theme.of(context).primaryTextTheme.subtitle2),
                                                     Padding(
-                                                      padding:
-                                                          const EdgeInsets.only(
-                                                              left: 5),
+                                                      padding: const EdgeInsets.only(left: 5),
                                                       child: Icon(
-                                                        FontAwesomeIcons
-                                                            .caretUp,
-                                                        color:
-                                                            Color(0xFF8F8F8F),
+                                                        FontAwesomeIcons.caretUp,
+                                                        color: Color(0xFF8F8F8F),
                                                         size: 15,
                                                       ),
                                                     ),
                                                     Padding(
-                                                      padding:
-                                                          const EdgeInsets.only(
-                                                              left: 5),
+                                                      padding: const EdgeInsets.only(left: 5),
                                                       child: Icon(
-                                                        FontAwesomeIcons
-                                                            .caretDown,
-                                                        color:
-                                                            Color(0xFF8F8F8F),
+                                                        FontAwesomeIcons.caretDown,
+                                                        color: Color(0xFF8F8F8F),
                                                         size: 15,
                                                       ),
                                                     )
@@ -201,27 +153,18 @@ class _WishListScreenState extends BaseRouteState {
                                           Container(
                                             margin: EdgeInsets.only(right: 3),
                                             // color: Colors.yellow,
-                                            width: MediaQuery.of(context)
-                                                    .size
-                                                    .width -
-                                                300,
+                                            width: MediaQuery.of(context).size.width - 300,
                                             child: Column(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment
-                                                      .spaceBetween,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.end,
+                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                              crossAxisAlignment: CrossAxisAlignment.end,
                                               children: [
                                                 Icon(
                                                   Icons.favorite,
-                                                  color: Theme.of(context)
-                                                      .primaryColor,
+                                                  color: Theme.of(context).primaryColor,
                                                 ),
                                                 Text(
                                                   'Rs.180',
-                                                  style: Theme.of(context)
-                                                      .primaryTextTheme
-                                                      .headline1,
+                                                  style: Theme.of(context).primaryTextTheme.headline1,
                                                 )
                                               ],
                                             ),
@@ -240,77 +183,48 @@ class _WishListScreenState extends BaseRouteState {
                                     child: Card(
                                       elevation: 2,
                                       child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                         children: [
                                           Padding(
-                                            padding: const EdgeInsets.only(
-                                                top: 5, left: 10),
+                                            padding: const EdgeInsets.only(top: 5, left: 10),
                                             child: Column(
                                               children: [
                                                 CircleAvatar(
                                                   radius: 35,
-                                                  backgroundImage: AssetImage(
-                                                      'assets/dogimage2.png'),
+                                                  backgroundImage: AssetImage('assets/dogimage2.png'),
                                                 ),
                                                 Padding(
-                                                  padding:
-                                                      EdgeInsets.only(top: 10),
+                                                  padding: EdgeInsets.only(top: 10),
                                                   child: Text('Jay Seth'),
                                                 )
                                               ],
                                             ),
                                           ),
                                           Padding(
-                                            padding: EdgeInsets.only(
-                                                top: 10, left: 10),
+                                            padding: EdgeInsets.only(top: 10, left: 10),
                                             child: Column(
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
+                                              crossAxisAlignment: CrossAxisAlignment.start,
                                               children: [
                                                 Text('Pet Walking'),
-                                                Text('Fluffy',
-                                                    style: Theme.of(context)
-                                                        .primaryTextTheme
-                                                        .subtitle2),
-                                                Text('2 walks',
-                                                    style: Theme.of(context)
-                                                        .primaryTextTheme
-                                                        .subtitle2),
-                                                Text('1stwalk : 11 Feb 9:00 AM',
-                                                    style: Theme.of(context)
-                                                        .primaryTextTheme
-                                                        .subtitle2),
-                                                Text(
-                                                    '2ndwalk : 15 Feb 12:00 PM',
-                                                    style: Theme.of(context)
-                                                        .primaryTextTheme
-                                                        .subtitle2)
+                                                Text('Fluffy', style: Theme.of(context).primaryTextTheme.subtitle2),
+                                                Text('2 walks', style: Theme.of(context).primaryTextTheme.subtitle2),
+                                                Text('1stwalk : 12 JUL 9:00 AM', style: Theme.of(context).primaryTextTheme.subtitle2),
+                                                Text('2ndwalk : 15 Feb 12:00 PM', style: Theme.of(context).primaryTextTheme.subtitle2)
                                               ],
                                             ),
                                           ),
                                           Container(
                                             margin: EdgeInsets.only(right: 3),
                                             //  color: Colors.yellow,
-                                            width: MediaQuery.of(context)
-                                                    .size
-                                                    .width -
-                                                280,
+                                            width: MediaQuery.of(context).size.width - 280,
                                             child: Column(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment
-                                                      .spaceBetween,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.end,
+                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                              crossAxisAlignment: CrossAxisAlignment.end,
                                               children: [
-                                                Icon(Icons.favorite,
-                                                    color: Theme.of(context)
-                                                        .primaryColor),
+                                                Icon(Icons.favorite, color: Theme.of(context).primaryColor),
                                                 Text(
                                                   'Rs.600',
-                                                  style: Theme.of(context)
-                                                      .primaryTextTheme
-                                                      .headline1,
+                                                  style: Theme.of(context).primaryTextTheme.headline1,
                                                 )
                                               ],
                                             ),

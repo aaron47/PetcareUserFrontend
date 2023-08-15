@@ -27,7 +27,7 @@ class _UserAccountScreenState extends BaseRouteState {
             },
             child: Icon(Icons.arrow_back_ios)),
         title: Text(
-          'Account Settings',
+          'paramètres',
           style: Theme.of(context).primaryTextTheme.headline1,
         ),
         centerTitle: true,
@@ -110,7 +110,7 @@ class _UserAccountScreenState extends BaseRouteState {
                   child: Padding(
                     padding: EdgeInsets.only(top: 10, left: 15, right: 15),
                     child: Text(
-                      'Name',
+                      'Nom',
                       style: Theme.of(context).primaryTextTheme.bodyText1,
                     ),
                   )),
@@ -156,7 +156,7 @@ class _UserAccountScreenState extends BaseRouteState {
                   child: Padding(
                     padding: EdgeInsets.only(top: 10, left: 15, right: 15),
                     child: Text(
-                      'Mobile Number',
+                      'Téléphone',
                       style: Theme.of(context).primaryTextTheme.bodyText1,
                     ),
                   )),
@@ -179,7 +179,7 @@ class _UserAccountScreenState extends BaseRouteState {
                   child: Padding(
                     padding: EdgeInsets.only(top: 10, left: 15, right: 15),
                     child: Text(
-                      'Change Password',
+                      'Changer mot de passe',
                       style: Theme.of(context).primaryTextTheme.bodyText1,
                     ),
                   )),
@@ -199,7 +199,7 @@ class _UserAccountScreenState extends BaseRouteState {
                   child: Padding(
                     padding: EdgeInsets.only(top: 10, left: 15, right: 15),
                     child: Text(
-                      'Confirm Password',
+                      'Confirmer Mot de passe',
                       style: Theme.of(context).primaryTextTheme.bodyText1,
                     ),
                   )),
@@ -240,7 +240,7 @@ class _UserAccountScreenState extends BaseRouteState {
                   //         )));
                 },
                 child: Text(
-                  "Save",
+                  "Enregistrer",
                 ))),
       ),
     );

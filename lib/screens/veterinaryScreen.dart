@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:pet_user_app/models/businessLayer/baseRoute.dart';
-import 'package:pet_user_app/screens/dogWalkingDetailScreen.dart';
-import 'package:pet_user_app/screens/veterinaryBookingProcessFilterScreeen.dart';
-import 'package:pet_user_app/screens/veterinaryDetailScreen.dart';
+import 'package:pet_user_app/screens/petBoardingDetailScreen.dart';
 
 class VeterinaryScreen extends BaseRoute {
   // VeterinaryScreen() : super();
@@ -31,7 +29,7 @@ class _VeterinaryScreenState extends BaseRouteState {
           ),
         ),
         title: Text(
-          'Veterinary',
+          'Vétérinaire',
           style: Theme.of(context).primaryTextTheme.headline1,
         ),
         centerTitle: true,
@@ -68,39 +66,223 @@ class _VeterinaryScreenState extends BaseRouteState {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      'Veterinary near you...',
+                      'Vétérinaire à proximité de chez vous...',
                       style: Theme.of(context).primaryTextTheme.bodyText1,
                     ),
-                    Row(
-                      children: [
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) =>
-                                    VeterinaryBookingProccessFilterScreen(
-                                      a: widget.analytics,
-                                      o: widget.observer,
-                                    )));
-                          },
-                          child: Icon(
-                            FontAwesomeIcons.filter,
-                            color: Color(0xFF8F8F8F),
-                            size: 18,
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 15),
-                          child: Icon(
-                            Icons.filter_3_outlined,
-                            size: 18,
-                            color: Color(0xFF8F8F8F),
-                          ),
-                        )
-                      ],
-                    )
+                    // Row(
+                    //   children: [
+                    //     GestureDetector(
+                    //       onTap: () {
+                    //         Navigator.of(context).push(MaterialPageRoute(
+                    //             builder: (context) => VeterinaryBookingProccessFilterScreen(
+                    //                   a: widget.analytics,
+                    //                   o: widget.observer,
+                    //                 )));
+                    //       },
+                    //       child: Icon(
+                    //         FontAwesomeIcons.filter,
+                    //         color: Color(0xFF8F8F8F),
+                    //         size: 18,
+                    //       ),
+                    //     ),
+                    //     Padding(
+                    //       padding: const EdgeInsets.only(left: 15),
+                    //       child: Icon(
+                    //         Icons.filter_3_outlined,
+                    //         size: 18,
+                    //         color: Color(0xFF8F8F8F),
+                    //       ),
+                    //     )
+                    //   ],
+                    // )
                   ],
                 ),
               ),
+              // Padding(
+              //   padding: EdgeInsets.only(),
+              //   child: Card(
+              //     elevation: 3,
+              //     child: Container(
+              //       height: 175,
+              //       width: MediaQuery.of(context).size.width,
+              //       // color: Colors.red,
+              //       child: Column(
+              //         children: [
+              //           Container(
+              //             // color: Colors.green,
+              //             child: Padding(
+              //               padding: const EdgeInsets.only(top: 10, left: 10),
+              //               child: Row(
+              //                 children: [
+              //                   CircleAvatar(
+              //                     radius: 38,
+              //                     backgroundImage:
+              //                         AssetImage('assets/catimage2.png'),
+              //                   ),
+              //                   Padding(
+              //                     padding: const EdgeInsets.only(left: 10),
+              //                     child: Column(
+              //                       crossAxisAlignment:
+              //                           CrossAxisAlignment.start,
+              //                       children: [
+              //                         Text(
+              //                           'Dr.Arti Agarwal',
+              //                           style: Theme.of(context)
+              //                               .primaryTextTheme
+              //                               .headline1,
+              //                         ),
+              //                         Padding(
+              //                           padding: const EdgeInsets.only(top: 5),
+              //                           child: Row(
+              //                             children: [
+              //                               RatingBar.builder(
+              //                                 initialRating: 4,
+              //                                 minRating: 0,
+              //                                 direction: Axis.horizontal,
+              //                                 allowHalfRating: true,
+              //                                 itemCount: 5,
+              //                                 itemSize: 20,
+              //                                 itemPadding: EdgeInsets.symmetric(
+              //                                     horizontal: 0),
+              //                                 itemBuilder: (context, _) => Icon(
+              //                                   Icons.star,
+              //                                   color: Colors.amber,
+              //                                 ),
+              //                                 ignoreGestures: true,
+              //                                 updateOnDrag: false,
+              //                                 onRatingUpdate: (rating) {
+              //                                   // ratingVal= rating;
+              //                                   // setState(() { });
+              //                                 },
+              //                               ),
+              //                               Padding(
+              //                                 padding: const EdgeInsets.only(
+              //                                     left: 7),
+              //                                 child: Text(
+              //                                   '15 reviews',
+              //                                   style: Theme.of(context)
+              //                                       .primaryTextTheme
+              //                                       .subtitle2,
+              //                                 ),
+              //                               )
+              //                             ],
+              //                           ),
+              //                         ),
+              //                         Padding(
+              //                           padding: EdgeInsets.only(top: 10),
+              //                           child: Text('2 km away',
+              //                               style: Theme.of(context)
+              //                                   .primaryTextTheme
+              //                                   .subtitle2),
+              //                         )
+              //                       ],
+              //                     ),
+              //                   ),
+              //                   Container(
+              //                     height: 110,
+              //                     // color: Colors.yellow,
+              //                     padding: EdgeInsets.only(),
+              //                     child: Column(
+              //                       mainAxisAlignment:
+              //                           MainAxisAlignment.spaceBetween,
+              //                       children: [
+              //                         Row(
+              //                           children: [
+              //                             Icon(
+              //                               FontAwesomeIcons.checkCircle,
+              //                               size: 12,
+              //                               color: Color(0xFFF0900C),
+              //                             ),
+              //                             Padding(
+              //                               padding:
+              //                                   const EdgeInsets.only(left: 5),
+              //                               child: Text(
+              //                                 'Verified',
+              //                                 style: TextStyle(
+              //                                   fontSize: 11.5,
+              //                                   color: Color(0xFFF0900C),
+              //                                 ),
+              //                               ),
+              //                             ),
+              //                           ],
+              //                         ),
+              //                         Container(child: Text('Rs700/visit'))
+              //                       ],
+              //                     ),
+              //                   )
+              //                 ],
+              //               ),
+              //             ),
+              //           ),
+              //           Padding(
+              //             padding: const EdgeInsets.only(top: 5),
+              //             child: Row(
+              //               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //               children: [
+              //                 GestureDetector(
+              //                   onTap: () {
+              //                     Navigator.of(context).push(MaterialPageRoute(
+              //                         builder: (context) =>
+              //                             VeterinaryDetailScreen(
+              //                               a: widget.analytics,
+              //                               o: widget.observer,
+              //                             )));
+              //                   },
+              //                   child: Container(
+              //                     margin: EdgeInsets.only(left: 15),
+              //                     //  padding: EdgeInsets.all(6),
+              //                     width: 125,
+              //                     height: 36,
+              //                     child: Center(
+              //                       child: Text(
+              //                         'View profile',
+              //                         style: TextStyle(
+              //                             color:
+              //                                 Theme.of(context).primaryColor),
+              //                       ),
+              //                     ),
+              //                     decoration: BoxDecoration(
+              //                         border: Border.all(
+              //                             width: 1,
+              //                             color:
+              //                                 Theme.of(context).primaryColor),
+              //                         borderRadius:
+              //                             BorderRadius.all(Radius.circular(5))),
+              //                   ),
+              //                 ),
+              //                 Container(
+              //                     margin: EdgeInsets.only(right: 15),
+              //                     // color: Colors.red,
+              //                     height: 36,
+              //                     // padding: EdgeInsets.only(left: 15, right: 15),
+              //                     width: 125,
+              //                     child: TextButton(
+              //                         style: ButtonStyle(
+              //                             backgroundColor:
+              //                                 MaterialStateProperty.all(
+              //                                     Theme.of(context)
+              //                                         .primaryColor),
+              //                             textStyle: MaterialStateProperty.all(
+              //                                 TextStyle(fontSize: 13))),
+              //                         onPressed: () {
+              //                           // print('Hello');
+              //                           // Navigator.of(context).push(MaterialPageRoute(
+              //                           //     builder: (context) => LogInScreen2(
+              //                           //           a: widget.analytics,
+              //                           //           o: widget.observer,
+              //                           //         )));
+              //                         },
+              //                         child: Text(
+              //                           "Book Now",
+              //                         ))),
+              //               ],
+              //             ),
+              //           )
+              //         ],
+              //       ),
+              //     ),
+              //   ),
+              // ),
               Padding(
                 padding: EdgeInsets.only(),
                 child: Card(
@@ -119,20 +301,16 @@ class _VeterinaryScreenState extends BaseRouteState {
                               children: [
                                 CircleAvatar(
                                   radius: 38,
-                                  backgroundImage:
-                                      AssetImage('assets/catimage2.png'),
+                                  backgroundImage: AssetImage('assets/catimage4.png'),
                                 ),
                                 Padding(
                                   padding: const EdgeInsets.only(left: 10),
                                   child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                    crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        'Dr.Arti Agarwal',
-                                        style: Theme.of(context)
-                                            .primaryTextTheme
-                                            .headline1,
+                                        'Dr. Rim riahi',
+                                        style: Theme.of(context).primaryTextTheme.headline1,
                                       ),
                                       Padding(
                                         padding: const EdgeInsets.only(top: 5),
@@ -145,8 +323,7 @@ class _VeterinaryScreenState extends BaseRouteState {
                                               allowHalfRating: true,
                                               itemCount: 5,
                                               itemSize: 20,
-                                              itemPadding: EdgeInsets.symmetric(
-                                                  horizontal: 0),
+                                              itemPadding: EdgeInsets.symmetric(horizontal: 0),
                                               itemBuilder: (context, _) => Icon(
                                                 Icons.star,
                                                 color: Colors.amber,
@@ -158,26 +335,26 @@ class _VeterinaryScreenState extends BaseRouteState {
                                                 // setState(() { });
                                               },
                                             ),
-                                            Padding(
-                                              padding: const EdgeInsets.only(
-                                                  left: 7),
-                                              child: Text(
-                                                '15 reviews',
-                                                style: Theme.of(context)
-                                                    .primaryTextTheme
-                                                    .subtitle2,
-                                              ),
-                                            )
+                                            // Padding(
+                                            //   padding: const EdgeInsets.only(
+                                            //       left: 7),
+                                            //   child: Text(
+                                            //     '15 reviews',
+                                            //     style: Theme.of(context)
+                                            //         .primaryTextTheme
+                                            //         .subtitle2,
+                                            //   ),
+                                            // )
                                           ],
                                         ),
                                       ),
-                                      Padding(
-                                        padding: EdgeInsets.only(top: 10),
-                                        child: Text('2 km away',
-                                            style: Theme.of(context)
-                                                .primaryTextTheme
-                                                .subtitle2),
-                                      )
+                                      // Padding(
+                                      //   padding: EdgeInsets.only(top: 10),
+                                      //   child: Text('2 km away',
+                                      //       style: Theme.of(context)
+                                      //           .primaryTextTheme
+                                      //           .subtitle2),
+                                      // )
                                     ],
                                   ),
                                 ),
@@ -186,8 +363,7 @@ class _VeterinaryScreenState extends BaseRouteState {
                                   // color: Colors.yellow,
                                   padding: EdgeInsets.only(),
                                   child: Column(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: [
                                       Row(
                                         children: [
@@ -197,8 +373,7 @@ class _VeterinaryScreenState extends BaseRouteState {
                                             color: Color(0xFFF0900C),
                                           ),
                                           Padding(
-                                            padding:
-                                                const EdgeInsets.only(left: 5),
+                                            padding: const EdgeInsets.only(left: 5),
                                             child: Text(
                                               'Verified',
                                               style: TextStyle(
@@ -209,7 +384,7 @@ class _VeterinaryScreenState extends BaseRouteState {
                                           ),
                                         ],
                                       ),
-                                      Container(child: Text('Rs700/visit'))
+                                      Container(child: Text('70 dt /visit'))
                                     ],
                                   ),
                                 )
@@ -225,11 +400,16 @@ class _VeterinaryScreenState extends BaseRouteState {
                               GestureDetector(
                                 onTap: () {
                                   Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) =>
-                                          VeterinaryDetailScreen(
+                                      builder: (context) => PetBoardoingDetailScreen(
                                             a: widget.analytics,
                                             o: widget.observer,
                                           )));
+                                  // Navigator.of(context).push(MaterialPageRoute(
+                                  //     builder: (context) =>
+                                  //         VeterinaryDetailScreen(
+                                  //           a: widget.analytics,
+                                  //           o: widget.observer,
+                                  //         )));
                                 },
                                 child: Container(
                                   margin: EdgeInsets.only(left: 15),
@@ -238,19 +418,13 @@ class _VeterinaryScreenState extends BaseRouteState {
                                   height: 36,
                                   child: Center(
                                     child: Text(
-                                      'View profile',
-                                      style: TextStyle(
-                                          color:
-                                              Theme.of(context).primaryColor),
+                                      'Voir le profil',
+                                      style: TextStyle(color: Theme.of(context).primaryColor),
                                     ),
                                   ),
                                   decoration: BoxDecoration(
-                                      border: Border.all(
-                                          width: 1,
-                                          color:
-                                              Theme.of(context).primaryColor),
-                                      borderRadius:
-                                          BorderRadius.all(Radius.circular(5))),
+                                      border: Border.all(width: 1, color: Theme.of(context).primaryColor),
+                                      borderRadius: BorderRadius.all(Radius.circular(5))),
                                 ),
                               ),
                               Container(
@@ -261,12 +435,8 @@ class _VeterinaryScreenState extends BaseRouteState {
                                   width: 125,
                                   child: TextButton(
                                       style: ButtonStyle(
-                                          backgroundColor:
-                                              MaterialStateProperty.all(
-                                                  Theme.of(context)
-                                                      .primaryColor),
-                                          textStyle: MaterialStateProperty.all(
-                                              TextStyle(fontSize: 13))),
+                                          backgroundColor: MaterialStateProperty.all(Theme.of(context).primaryColor),
+                                          textStyle: MaterialStateProperty.all(TextStyle(fontSize: 13))),
                                       onPressed: () {
                                         // print('Hello');
                                         // Navigator.of(context).push(MaterialPageRoute(
@@ -276,192 +446,7 @@ class _VeterinaryScreenState extends BaseRouteState {
                                         //         )));
                                       },
                                       child: Text(
-                                        "Book Now",
-                                      ))),
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(),
-                child: Card(
-                  elevation: 3,
-                  child: Container(
-                    height: 175,
-                    width: MediaQuery.of(context).size.width,
-                    // color: Colors.red,
-                    child: Column(
-                      children: [
-                        Container(
-                          // color: Colors.green,
-                          child: Padding(
-                            padding: const EdgeInsets.only(top: 10, left: 10),
-                            child: Row(
-                              children: [
-                                CircleAvatar(
-                                  radius: 38,
-                                  backgroundImage:
-                                      AssetImage('assets/catimage4.png'),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 10),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        'Dr.Sara Seth',
-                                        style: Theme.of(context)
-                                            .primaryTextTheme
-                                            .headline1,
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.only(top: 5),
-                                        child: Row(
-                                          children: [
-                                            RatingBar.builder(
-                                              initialRating: 4,
-                                              minRating: 0,
-                                              direction: Axis.horizontal,
-                                              allowHalfRating: true,
-                                              itemCount: 5,
-                                              itemSize: 20,
-                                              itemPadding: EdgeInsets.symmetric(
-                                                  horizontal: 0),
-                                              itemBuilder: (context, _) => Icon(
-                                                Icons.star,
-                                                color: Colors.amber,
-                                              ),
-                                              ignoreGestures: true,
-                                              updateOnDrag: false,
-                                              onRatingUpdate: (rating) {
-                                                // ratingVal= rating;
-                                                // setState(() { });
-                                              },
-                                            ),
-                                            Padding(
-                                              padding: const EdgeInsets.only(
-                                                  left: 7),
-                                              child: Text(
-                                                '15 reviews',
-                                                style: Theme.of(context)
-                                                    .primaryTextTheme
-                                                    .subtitle2,
-                                              ),
-                                            )
-                                          ],
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsets.only(top: 10),
-                                        child: Text('2 km away',
-                                            style: Theme.of(context)
-                                                .primaryTextTheme
-                                                .subtitle2),
-                                      )
-                                    ],
-                                  ),
-                                ),
-                                Container(
-                                  height: 110,
-                                  // color: Colors.yellow,
-                                  padding: EdgeInsets.only(),
-                                  child: Column(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Row(
-                                        children: [
-                                          Icon(
-                                            FontAwesomeIcons.checkCircle,
-                                            size: 12,
-                                            color: Color(0xFFF0900C),
-                                          ),
-                                          Padding(
-                                            padding:
-                                                const EdgeInsets.only(left: 5),
-                                            child: Text(
-                                              'Verified',
-                                              style: TextStyle(
-                                                fontSize: 11.5,
-                                                color: Color(0xFFF0900C),
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                      Container(child: Text('Rs700/visit'))
-                                    ],
-                                  ),
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 5),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              GestureDetector(
-                                onTap: () {
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) =>
-                                          VeterinaryDetailScreen(
-                                            a: widget.analytics,
-                                            o: widget.observer,
-                                          )));
-                                },
-                                child: Container(
-                                  margin: EdgeInsets.only(left: 15),
-                                  //  padding: EdgeInsets.all(6),
-                                  width: 125,
-                                  height: 36,
-                                  child: Center(
-                                    child: Text(
-                                      'View profile',
-                                      style: TextStyle(
-                                          color:
-                                              Theme.of(context).primaryColor),
-                                    ),
-                                  ),
-                                  decoration: BoxDecoration(
-                                      border: Border.all(
-                                          width: 1,
-                                          color:
-                                              Theme.of(context).primaryColor),
-                                      borderRadius:
-                                          BorderRadius.all(Radius.circular(5))),
-                                ),
-                              ),
-                              Container(
-                                  margin: EdgeInsets.only(right: 15),
-                                  // color: Colors.red,
-                                  height: 36,
-                                  // padding: EdgeInsets.only(left: 15, right: 15),
-                                  width: 125,
-                                  child: TextButton(
-                                      style: ButtonStyle(
-                                          backgroundColor:
-                                              MaterialStateProperty.all(
-                                                  Theme.of(context)
-                                                      .primaryColor),
-                                          textStyle: MaterialStateProperty.all(
-                                              TextStyle(fontSize: 13))),
-                                      onPressed: () {
-                                        // print('Hello');
-                                        // Navigator.of(context).push(MaterialPageRoute(
-                                        //     builder: (context) => LogInScreen2(
-                                        //           a: widget.analytics,
-                                        //           o: widget.observer,
-                                        //         )));
-                                      },
-                                      child: Text(
-                                        "Book Now",
+                                        "Réserver",
                                       ))),
                             ],
                           ),

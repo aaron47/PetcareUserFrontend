@@ -6,12 +6,10 @@ import 'package:table_calendar/table_calendar.dart';
 
 class DogWalkingReviewScreen extends BaseRoute {
   // DogWalkingReviewScreen() : super();
-  DogWalkingReviewScreen({a, o})
-      : super(a: a, o: o, r: 'DogWalkingReviewScreen');
+  DogWalkingReviewScreen({a, o}) : super(a: a, o: o, r: 'DogWalkingReviewScreen');
 
   @override
-  _DogWalkingReviewScreenState createState() =>
-      new _DogWalkingReviewScreenState();
+  _DogWalkingReviewScreenState createState() => new _DogWalkingReviewScreenState();
 }
 
 class _DogWalkingReviewScreenState extends BaseRouteState {
@@ -65,9 +63,7 @@ class _DogWalkingReviewScreenState extends BaseRouteState {
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(left: 28),
-                    child: CircleAvatar(
-                        radius: 70,
-                        backgroundImage: AssetImage('assets/dogimage2.png')),
+                    child: CircleAvatar(radius: 70, backgroundImage: AssetImage('assets/dogimage2.png')),
                   ),
                   Padding(
                     padding: EdgeInsets.only(left: 25),
@@ -75,12 +71,11 @@ class _DogWalkingReviewScreenState extends BaseRouteState {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          'Sara Seth',
+                          'Sara abid',
                           style: Theme.of(context).primaryTextTheme.headline5,
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(
-                              top: 5, bottom: 4, right: 10),
+                          padding: const EdgeInsets.only(top: 5, bottom: 4, right: 10),
                           child: RatingBar.builder(
                             initialRating: ratingVal,
                             minRating: 0,
@@ -149,9 +144,7 @@ class _DogWalkingReviewScreenState extends BaseRouteState {
                                   padding: EdgeInsets.only(left: 15),
                                   child: Text(
                                     'Booking for',
-                                    style: Theme.of(context)
-                                        .primaryTextTheme
-                                        .bodyText1,
+                                    style: Theme.of(context).primaryTextTheme.bodyText1,
                                   ),
                                 )
                               ],
@@ -161,8 +154,7 @@ class _DogWalkingReviewScreenState extends BaseRouteState {
                               child: Row(
                                 children: [
                                   Text('Select Pet'),
-                                  Icon(Icons.arrow_forward_ios_outlined,
-                                      size: 18, color: Color(0xFF8F8F8F)),
+                                  Icon(Icons.arrow_forward_ios_outlined, size: 18, color: Color(0xFF8F8F8F)),
                                 ],
                               ),
                             )
@@ -204,9 +196,7 @@ class _DogWalkingReviewScreenState extends BaseRouteState {
                                   padding: EdgeInsets.only(left: 15),
                                   child: Text(
                                     'Walk per Day',
-                                    style: Theme.of(context)
-                                        .primaryTextTheme
-                                        .bodyText1,
+                                    style: Theme.of(context).primaryTextTheme.bodyText1,
                                   ),
                                 )
                               ],
@@ -216,8 +206,7 @@ class _DogWalkingReviewScreenState extends BaseRouteState {
                               child: Row(
                                 children: [
                                   Text('2'),
-                                  Icon(Icons.arrow_forward_ios_outlined,
-                                      size: 18, color: Color(0xFF8F8F8F)),
+                                  Icon(Icons.arrow_forward_ios_outlined, size: 18, color: Color(0xFF8F8F8F)),
                                 ],
                               ),
                             )
@@ -259,9 +248,7 @@ class _DogWalkingReviewScreenState extends BaseRouteState {
                                   padding: EdgeInsets.only(left: 15),
                                   child: Text(
                                     'Pick up Date',
-                                    style: Theme.of(context)
-                                        .primaryTextTheme
-                                        .bodyText1,
+                                    style: Theme.of(context).primaryTextTheme.bodyText1,
                                   ),
                                 )
                               ],
@@ -271,8 +258,7 @@ class _DogWalkingReviewScreenState extends BaseRouteState {
                               child: Row(
                                 children: [
                                   Text('14 Feb 2021 12:00 PM'),
-                                  Icon(Icons.arrow_forward_ios_outlined,
-                                      size: 18, color: Color(0xFF8F8F8F)),
+                                  Icon(Icons.arrow_forward_ios_outlined, size: 18, color: Color(0xFF8F8F8F)),
                                 ],
                               ),
                             )
@@ -315,9 +301,7 @@ class _DogWalkingReviewScreenState extends BaseRouteState {
                                     children: [
                                       Text(
                                         'Meals per days',
-                                        style: Theme.of(context)
-                                            .primaryTextTheme
-                                            .bodyText1,
+                                        style: Theme.of(context).primaryTextTheme.bodyText1,
                                       ),
                                       SizedBox(
                                         width: 10,
@@ -333,8 +317,7 @@ class _DogWalkingReviewScreenState extends BaseRouteState {
                               child: Row(
                                 children: [
                                   Text('Select Number'),
-                                  Icon(Icons.arrow_forward_ios_outlined,
-                                      size: 18, color: Color(0xFF8F8F8F)),
+                                  Icon(Icons.arrow_forward_ios_outlined, size: 18, color: Color(0xFF8F8F8F)),
                                 ],
                               ),
                             )
@@ -370,9 +353,7 @@ class _DogWalkingReviewScreenState extends BaseRouteState {
                                     padding: EdgeInsets.only(left: 10),
                                     child: Text(
                                       'Price Details',
-                                      style: Theme.of(context)
-                                          .primaryTextTheme
-                                          .headline1,
+                                      style: Theme.of(context).primaryTextTheme.headline1,
                                     ),
                                   )
                                 ],
@@ -384,8 +365,7 @@ class _DogWalkingReviewScreenState extends BaseRouteState {
                           child: Column(
                             children: [
                               Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
                                   Row(
                                     children: [
@@ -395,9 +375,7 @@ class _DogWalkingReviewScreenState extends BaseRouteState {
                                           width: 60,
                                           child: Text(
                                             'Fluffy',
-                                            style: Theme.of(context)
-                                                .primaryTextTheme
-                                                .bodyText1,
+                                            style: Theme.of(context).primaryTextTheme.bodyText1,
                                           ),
                                         ),
                                       ),
@@ -405,9 +383,7 @@ class _DogWalkingReviewScreenState extends BaseRouteState {
                                         padding: EdgeInsets.only(left: 15),
                                         child: Text(
                                           '4 days',
-                                          style: Theme.of(context)
-                                              .primaryTextTheme
-                                              .subtitle2,
+                                          style: Theme.of(context).primaryTextTheme.subtitle2,
                                         ),
                                       ),
                                     ],
@@ -415,23 +391,18 @@ class _DogWalkingReviewScreenState extends BaseRouteState {
                                   Padding(
                                     padding: EdgeInsets.only(right: 10),
                                     child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceAround,
+                                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                                       children: [
                                         Text(
                                           'Base Price',
-                                          style: Theme.of(context)
-                                              .primaryTextTheme
-                                              .subtitle2,
+                                          style: Theme.of(context).primaryTextTheme.subtitle2,
                                         ),
                                         SizedBox(
                                           width: 10,
                                         ),
                                         Text(
                                           'Rs2800',
-                                          style: Theme.of(context)
-                                              .primaryTextTheme
-                                              .bodyText1,
+                                          style: Theme.of(context).primaryTextTheme.bodyText1,
                                         ),
                                       ],
                                     ),
@@ -439,8 +410,7 @@ class _DogWalkingReviewScreenState extends BaseRouteState {
                                 ],
                               ),
                               Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
                                   Row(
                                     children: [
@@ -450,9 +420,7 @@ class _DogWalkingReviewScreenState extends BaseRouteState {
                                           width: 60,
                                           child: Text(
                                             'Cookies',
-                                            style: Theme.of(context)
-                                                .primaryTextTheme
-                                                .bodyText1,
+                                            style: Theme.of(context).primaryTextTheme.bodyText1,
                                           ),
                                         ),
                                       ),
@@ -460,9 +428,7 @@ class _DogWalkingReviewScreenState extends BaseRouteState {
                                         padding: EdgeInsets.only(left: 15),
                                         child: Text(
                                           '4 days',
-                                          style: Theme.of(context)
-                                              .primaryTextTheme
-                                              .subtitle2,
+                                          style: Theme.of(context).primaryTextTheme.subtitle2,
                                         ),
                                       ),
                                     ],
@@ -470,23 +436,18 @@ class _DogWalkingReviewScreenState extends BaseRouteState {
                                   Padding(
                                     padding: EdgeInsets.only(right: 10),
                                     child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceAround,
+                                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                                       children: [
                                         Text(
                                           'Base Price',
-                                          style: Theme.of(context)
-                                              .primaryTextTheme
-                                              .subtitle2,
+                                          style: Theme.of(context).primaryTextTheme.subtitle2,
                                         ),
                                         SizedBox(
                                           width: 10,
                                         ),
                                         Text(
                                           'Rs2800',
-                                          style: Theme.of(context)
-                                              .primaryTextTheme
-                                              .bodyText1,
+                                          style: Theme.of(context).primaryTextTheme.bodyText1,
                                         ),
                                       ],
                                     ),
@@ -506,24 +467,19 @@ class _DogWalkingReviewScreenState extends BaseRouteState {
                                       Container(
                                         margin: EdgeInsets.all(5),
                                         child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
+                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                           children: [
                                             Row(
                                               children: [
                                                 Padding(
-                                                  padding:
-                                                      EdgeInsets.only(left: 15),
+                                                  padding: EdgeInsets.only(left: 15),
                                                   child: Row(
                                                     children: [
                                                       Container(
                                                         width: 60,
                                                         child: Text(
                                                           'Meals',
-                                                          style: Theme.of(
-                                                                  context)
-                                                              .primaryTextTheme
-                                                              .bodyText1,
+                                                          style: Theme.of(context).primaryTextTheme.bodyText1,
                                                         ),
                                                       ),
                                                       SizedBox(
@@ -531,9 +487,7 @@ class _DogWalkingReviewScreenState extends BaseRouteState {
                                                       ),
                                                       Text(
                                                         '16 meals',
-                                                        style: Theme.of(context)
-                                                            .primaryTextTheme
-                                                            .subtitle2,
+                                                        style: Theme.of(context).primaryTextTheme.subtitle2,
                                                       )
                                                     ],
                                                   ),
@@ -541,15 +495,12 @@ class _DogWalkingReviewScreenState extends BaseRouteState {
                                               ],
                                             ),
                                             Padding(
-                                              padding:
-                                                  EdgeInsets.only(right: 10),
+                                              padding: EdgeInsets.only(right: 10),
                                               child: Row(
                                                 children: [
                                                   Text(
                                                     'Rs800',
-                                                    style: Theme.of(context)
-                                                        .primaryTextTheme
-                                                        .bodyText1,
+                                                    style: Theme.of(context).primaryTextTheme.bodyText1,
                                                   ),
                                                 ],
                                               ),
@@ -575,21 +526,17 @@ class _DogWalkingReviewScreenState extends BaseRouteState {
                                       Container(
                                         margin: EdgeInsets.only(left: 5),
                                         child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
+                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                           children: [
                                             Row(
                                               children: [
                                                 Padding(
-                                                  padding:
-                                                      EdgeInsets.only(left: 15),
+                                                  padding: EdgeInsets.only(left: 15),
                                                   child: Row(
                                                     children: [
                                                       Text(
                                                         'Total',
-                                                        style: Theme.of(context)
-                                                            .primaryTextTheme
-                                                            .headline1,
+                                                        style: Theme.of(context).primaryTextTheme.headline1,
                                                       ),
                                                     ],
                                                   ),
@@ -597,15 +544,12 @@ class _DogWalkingReviewScreenState extends BaseRouteState {
                                               ],
                                             ),
                                             Padding(
-                                              padding:
-                                                  EdgeInsets.only(right: 10),
+                                              padding: EdgeInsets.only(right: 10),
                                               child: Row(
                                                 children: [
                                                   Text(
                                                     'Rs6400',
-                                                    style: Theme.of(context)
-                                                        .primaryTextTheme
-                                                        .headline1,
+                                                    style: Theme.of(context).primaryTextTheme.headline1,
                                                   ),
                                                 ],
                                               ),
@@ -664,9 +608,7 @@ class _DogWalkingReviewScreenState extends BaseRouteState {
               height: 315,
               decoration: BoxDecoration(
                   // color: Colors.cyan,
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(30),
-                      topRight: Radius.circular(30))),
+                  borderRadius: BorderRadius.only(topLeft: Radius.circular(30), topRight: Radius.circular(30))),
               child: Scaffold(
                 body: Wrap(
                   children: [
@@ -681,9 +623,7 @@ class _DogWalkingReviewScreenState extends BaseRouteState {
                               children: [
                                 Text(
                                   'Booking For',
-                                  style: Theme.of(context)
-                                      .primaryTextTheme
-                                      .headline1,
+                                  style: Theme.of(context).primaryTextTheme.headline1,
                                 ),
                               ],
                             ),
@@ -703,23 +643,17 @@ class _DogWalkingReviewScreenState extends BaseRouteState {
                                     horizontalTitleGap: 1,
                                     leading: Container(
                                       child: Padding(
-                                        padding:
-                                            const EdgeInsets.only(right: 0),
+                                        padding: const EdgeInsets.only(right: 0),
                                         child: CircleAvatar(
                                             radius: 40,
                                             // backgroundColor: Colors.red,
-                                            backgroundImage: AssetImage(
-                                                'assets/dogimage2.png')),
+                                            backgroundImage: AssetImage('assets/dogimage2.png')),
                                       ),
                                     ),
                                     title: Row(
                                       children: [
-                                        Text('Fluffy',
-                                            style: Theme.of(context)
-                                                .primaryTextTheme
-                                                .bodyText1),
-                                        Icon(Icons.male,
-                                            color: Color(0xff8f8f8f))
+                                        Text('Fluffy', style: Theme.of(context).primaryTextTheme.bodyText1),
+                                        Icon(Icons.male, color: Color(0xff8f8f8f))
                                       ],
                                     ),
                                     subtitle: Text('2 year 1 Month'),
@@ -732,23 +666,15 @@ class _DogWalkingReviewScreenState extends BaseRouteState {
                                         },
                                         child: Container(
                                           decoration: BoxDecoration(
-                                              border: Border.all(
-                                                  width: 1,
-                                                  color: Theme.of(context)
-                                                      .primaryColor),
+                                              border: Border.all(width: 1, color: Theme.of(context).primaryColor),
                                               shape: BoxShape.circle,
-                                              color: _isChecked
-                                                  ? Theme.of(context)
-                                                      .primaryColor
-                                                  : Colors.transparent),
+                                              color: _isChecked ? Theme.of(context).primaryColor : Colors.transparent),
                                           height: 18,
                                           width: 17,
                                           child: Center(
                                             child: Icon(
                                               Icons.check,
-                                              color: _isChecked
-                                                  ? Colors.white
-                                                  : Colors.transparent,
+                                              color: _isChecked ? Colors.white : Colors.transparent,
                                               size: 12,
                                             ),
                                           ),
@@ -764,23 +690,17 @@ class _DogWalkingReviewScreenState extends BaseRouteState {
                                     horizontalTitleGap: 1,
                                     leading: Container(
                                       child: Padding(
-                                        padding:
-                                            const EdgeInsets.only(right: 0),
+                                        padding: const EdgeInsets.only(right: 0),
                                         child: CircleAvatar(
                                             radius: 40,
                                             // backgroundColor: Colors.red,
-                                            backgroundImage:
-                                                AssetImage('assets/home3.png')),
+                                            backgroundImage: AssetImage('assets/home3.png')),
                                       ),
                                     ),
                                     title: Row(
                                       children: [
-                                        Text('Puppy',
-                                            style: Theme.of(context)
-                                                .primaryTextTheme
-                                                .bodyText1),
-                                        Icon(Icons.male,
-                                            color: Color(0xff8f8f8f))
+                                        Text('Puppy', style: Theme.of(context).primaryTextTheme.bodyText1),
+                                        Icon(Icons.male, color: Color(0xff8f8f8f))
                                       ],
                                     ),
                                     subtitle: Text('2 year 6 Month'),
@@ -793,23 +713,15 @@ class _DogWalkingReviewScreenState extends BaseRouteState {
                                         },
                                         child: Container(
                                           decoration: BoxDecoration(
-                                              border: Border.all(
-                                                  width: 1,
-                                                  color: Theme.of(context)
-                                                      .primaryColor),
+                                              border: Border.all(width: 1, color: Theme.of(context).primaryColor),
                                               shape: BoxShape.circle,
-                                              color: _isChecked1
-                                                  ? Theme.of(context)
-                                                      .primaryColor
-                                                  : Colors.transparent),
+                                              color: _isChecked1 ? Theme.of(context).primaryColor : Colors.transparent),
                                           height: 18,
                                           width: 17,
                                           child: Center(
                                             child: Icon(
                                               Icons.check,
-                                              color: _isChecked1
-                                                  ? Colors.white
-                                                  : Colors.transparent,
+                                              color: _isChecked1 ? Colors.white : Colors.transparent,
                                               size: 12,
                                             ),
                                           ),
@@ -866,9 +778,7 @@ class _DogWalkingReviewScreenState extends BaseRouteState {
                     Container(
                       decoration: BoxDecoration(
                           // color: Colors.cyan,
-                          borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(30),
-                              topRight: Radius.circular(30))),
+                          borderRadius: BorderRadius.only(topLeft: Radius.circular(30), topRight: Radius.circular(30))),
                       child: Column(
                         children: [
                           Container(
@@ -879,9 +789,7 @@ class _DogWalkingReviewScreenState extends BaseRouteState {
                               children: [
                                 Text(
                                   'Select Number',
-                                  style: Theme.of(context)
-                                      .primaryTextTheme
-                                      .headline1,
+                                  style: Theme.of(context).primaryTextTheme.headline1,
                                 ),
                               ],
                             ),
@@ -907,8 +815,7 @@ class _DogWalkingReviewScreenState extends BaseRouteState {
                             children: [
                               Card(
                                 elevation: 3,
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(50.0)),
+                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50.0)),
                                 child: CircleAvatar(
                                   backgroundColor: Colors.white,
                                   child: Text('1'),
@@ -917,8 +824,7 @@ class _DogWalkingReviewScreenState extends BaseRouteState {
                               ),
                               Card(
                                 elevation: 3,
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(50.0)),
+                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50.0)),
                                 child: CircleAvatar(
                                   backgroundColor: Colors.white,
                                   child: Text('2'),
@@ -927,15 +833,10 @@ class _DogWalkingReviewScreenState extends BaseRouteState {
                               ),
                               Card(
                                 elevation: 3,
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(50.0)),
+                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50.0)),
                                 child: CircleAvatar(
-                                  backgroundColor:
-                                      Theme.of(context).primaryColor,
-                                  child: Text('3',
-                                      style: Theme.of(context)
-                                          .primaryTextTheme
-                                          .button),
+                                  backgroundColor: Theme.of(context).primaryColor,
+                                  child: Text('3', style: Theme.of(context).primaryTextTheme.button),
                                   radius: 30,
                                 ),
                               ),
@@ -1040,8 +941,7 @@ class _DogWalkingReviewScreenState extends BaseRouteState {
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(15.0))),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(15.0))),
               content: Stack(
                 clipBehavior: Clip.none,
                 children: [
@@ -1058,22 +958,17 @@ class _DogWalkingReviewScreenState extends BaseRouteState {
                               Center(
                                   child: Text(
                                 "Added to Cart",
-                                style: Theme.of(context)
-                                    .primaryTextTheme
-                                    .headline1,
+                                style: Theme.of(context).primaryTextTheme.headline1,
                               )),
                               Center(
                                   child: Text(
                                 "Thank you for choosing whiskers",
-                                style: Theme.of(context)
-                                    .primaryTextTheme
-                                    .bodyText1,
+                                style: Theme.of(context).primaryTextTheme.bodyText1,
                               )),
                               Container(
                                 height: 150,
                                 width: 200,
-                                child:
-                                    Image.asset('assets/alertdialogimage.png'),
+                                child: Image.asset('assets/alertdialogimage.png'),
                               ),
                             ],
                           ),
@@ -1087,10 +982,8 @@ class _DogWalkingReviewScreenState extends BaseRouteState {
                     child: GestureDetector(
                       onTap: () {},
                       child: Container(
-                        decoration: BoxDecoration(
-                            border: Border.all(width: 1, color: Colors.white),
-                            shape: BoxShape.circle,
-                            color: Colors.transparent),
+                        decoration:
+                            BoxDecoration(border: Border.all(width: 1, color: Colors.white), shape: BoxShape.circle, color: Colors.transparent),
                         height: 28,
                         width: 25,
                         child: Center(

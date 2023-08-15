@@ -1,15 +1,12 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:pet_user_app/models/businessLayer/baseRoute.dart';
 
 class DogWalkingBookingProccessFilterScreen extends BaseRoute {
-  DogWalkingBookingProccessFilterScreen({a, o})
-      : super(a: a, o: o, r: 'DogWalkingBookingProccessFilterScreen');
+  DogWalkingBookingProccessFilterScreen({a, o}) : super(a: a, o: o, r: 'DogWalkingBookingProccessFilterScreen');
   @override
-  _DogWalkingBookingProccessFilterScreenState createState() =>
-      new _DogWalkingBookingProccessFilterScreenState();
+  _DogWalkingBookingProccessFilterScreenState createState() => new _DogWalkingBookingProccessFilterScreenState();
 }
 
 class _DogWalkingBookingProccessFilterScreenState extends BaseRouteState {
@@ -310,10 +307,7 @@ class _DogWalkingBookingProccessFilterScreenState extends BaseRouteState {
                                 child: Icon(
                                   FontAwesomeIcons.minus,
                                   size: 10,
-                                  color: Theme.of(context)
-                                      .primaryTextTheme
-                                      .subtitle2
-                                      .color,
+                                  color: Theme.of(context).primaryTextTheme.subtitle2.color,
                                 ),
                               ),
                             ),
@@ -340,10 +334,7 @@ class _DogWalkingBookingProccessFilterScreenState extends BaseRouteState {
                                 child: Icon(
                                   Icons.add,
                                   size: 15,
-                                  color: Theme.of(context)
-                                      .primaryTextTheme
-                                      .subtitle2
-                                      .color,
+                                  color: Theme.of(context).primaryTextTheme.subtitle2.color,
                                 ),
                               ),
                             )
@@ -375,15 +366,12 @@ class _DogWalkingBookingProccessFilterScreenState extends BaseRouteState {
                                   height: 25,
                                   width: 85,
                                   child: Padding(
-                                    padding: const EdgeInsets.only(
-                                        top: 3, bottom: 3, left: 5, right: 5),
+                                    padding: const EdgeInsets.only(top: 3, bottom: 3, left: 5, right: 5),
                                     child: Row(
                                       children: [
                                         Text(
-                                          '11 Feb 2021',
-                                          style: Theme.of(context)
-                                              .textTheme
-                                              .subtitle1,
+                                          '12 JUL 2021',
+                                          style: Theme.of(context).textTheme.subtitle1,
                                         ),
                                       ],
                                     ),
@@ -394,10 +382,7 @@ class _DogWalkingBookingProccessFilterScreenState extends BaseRouteState {
                               child: Icon(
                                 Icons.calendar_today,
                                 size: 15,
-                                color: Theme.of(context)
-                                    .primaryTextTheme
-                                    .subtitle2
-                                    .color,
+                                color: Theme.of(context).primaryTextTheme.subtitle2.color,
                               ),
                             )
                           ],
@@ -422,10 +407,7 @@ class _DogWalkingBookingProccessFilterScreenState extends BaseRouteState {
                           child: Container(
                             width: 50,
                             height: 25,
-                            child: Center(
-                                child: Text('${sliderVal.toInt()} KM',
-                                    style:
-                                        Theme.of(context).textTheme.subtitle1)),
+                            child: Center(child: Text('${sliderVal.toInt()} KM', style: Theme.of(context).textTheme.subtitle1)),
                           ),
                         ),
                       )
@@ -445,11 +427,9 @@ class _DogWalkingBookingProccessFilterScreenState extends BaseRouteState {
                           inactiveTrackColor: Color(0xFF8F8F8F),
                           trackHeight: 2.0,
                           thumbColor: Theme.of(context).primaryColor,
-                          thumbShape:
-                              RoundSliderThumbShape(enabledThumbRadius: 8.0),
+                          thumbShape: RoundSliderThumbShape(enabledThumbRadius: 8.0),
                           overlayColor: Colors.purple.withAlpha(32),
-                          overlayShape:
-                              RoundSliderOverlayShape(overlayRadius: 14.0),
+                          overlayShape: RoundSliderOverlayShape(overlayRadius: 14.0),
                         ),
                         child: Slider(
                           // onChangeEnd: ,
@@ -474,16 +454,12 @@ class _DogWalkingBookingProccessFilterScreenState extends BaseRouteState {
                             padding: const EdgeInsets.only(left: 10),
                             child: Text(
                               '0 Km',
-                              style:
-                                  Theme.of(context).primaryTextTheme.subtitle2,
+                              style: Theme.of(context).primaryTextTheme.subtitle2,
                             ),
                           ),
                           Padding(
                             padding: const EdgeInsets.only(right: 10),
-                            child: Text('30 KM',
-                                style: Theme.of(context)
-                                    .primaryTextTheme
-                                    .subtitle2),
+                            child: Text('30 KM', style: Theme.of(context).primaryTextTheme.subtitle2),
                           )
                         ],
                       ),
@@ -515,26 +491,18 @@ class _DogWalkingBookingProccessFilterScreenState extends BaseRouteState {
                                 )),
                               ),
                             ),
-                            Text('to',
-                                style: Theme.of(context)
-                                    .primaryTextTheme
-                                    .subtitle2),
+                            Text('to', style: Theme.of(context).primaryTextTheme.subtitle2),
                             Card(
                               elevation: 3,
                               child: Container(
                                 width: 50,
                                 height: 25,
-                                child: Center(
-                                    child: Text('Rs.$endRangeVal',
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .subtitle1)),
+                                child: Center(child: Text('Rs.$endRangeVal', style: Theme.of(context).textTheme.subtitle1)),
                               ),
                             ),
                             Text(
                               '/KM',
-                              style:
-                                  Theme.of(context).primaryTextTheme.subtitle2,
+                              style: Theme.of(context).primaryTextTheme.subtitle2,
                             )
                           ],
                         ),
@@ -555,11 +523,9 @@ class _DogWalkingBookingProccessFilterScreenState extends BaseRouteState {
                           inactiveTrackColor: Color(0xFF8F8F8F),
                           trackHeight: 2.0,
                           thumbColor: Theme.of(context).primaryColor,
-                          thumbShape:
-                              RoundSliderThumbShape(enabledThumbRadius: 8.0),
+                          thumbShape: RoundSliderThumbShape(enabledThumbRadius: 8.0),
                           overlayColor: Colors.purple.withAlpha(32),
-                          overlayShape:
-                              RoundSliderOverlayShape(overlayRadius: 14.0),
+                          overlayShape: RoundSliderOverlayShape(overlayRadius: 14.0),
                         ),
                         child: RangeSlider(
                           values: sliderVal5,
@@ -588,16 +554,12 @@ class _DogWalkingBookingProccessFilterScreenState extends BaseRouteState {
                             padding: const EdgeInsets.only(left: 10),
                             child: Text(
                               'Rs.0',
-                              style:
-                                  Theme.of(context).primaryTextTheme.subtitle2,
+                              style: Theme.of(context).primaryTextTheme.subtitle2,
                             ),
                           ),
                           Padding(
                             padding: const EdgeInsets.only(right: 10),
-                            child: Text('Rs.1000',
-                                style: Theme.of(context)
-                                    .primaryTextTheme
-                                    .subtitle2),
+                            child: Text('Rs.1000', style: Theme.of(context).primaryTextTheme.subtitle2),
                           )
                         ],
                       ),
@@ -638,8 +600,7 @@ class _DogWalkingBookingProccessFilterScreenState extends BaseRouteState {
                             padding: const EdgeInsets.only(left: 7),
                             child: Text(
                               '$ratingVal+',
-                              style:
-                                  Theme.of(context).primaryTextTheme.subtitle2,
+                              style: Theme.of(context).primaryTextTheme.subtitle2,
                             ),
                           )
                         ],

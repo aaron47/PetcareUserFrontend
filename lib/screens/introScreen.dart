@@ -49,7 +49,13 @@ class _IntroScreenState extends BaseRouteState {
 
           pages: [
             PageViewModel(
-                decoration: PageDecoration(titleTextStyle: Theme.of(context).primaryTextTheme.headline5, descriptionPadding: EdgeInsets.only(left: 28, right: 28), titlePadding: EdgeInsets.only(top: 15, bottom: 10, right: 35, left: 35), contentMargin: EdgeInsets.only(bottom: 35), imageFlex: 2, bodyTextStyle: Theme.of(context).primaryTextTheme.caption),
+                decoration: PageDecoration(
+                    titleTextStyle: Theme.of(context).primaryTextTheme.headline5,
+                    descriptionPadding: EdgeInsets.only(left: 28, right: 28),
+                    titlePadding: EdgeInsets.only(top: 15, bottom: 10, right: 35, left: 35),
+                    contentMargin: EdgeInsets.only(bottom: 35),
+                    imageFlex: 2,
+                    bodyTextStyle: Theme.of(context).primaryTextTheme.caption),
                 image: Container(
                   // padding: EdgeInsets.all(50),
                   // height: 300,
@@ -61,10 +67,16 @@ class _IntroScreenState extends BaseRouteState {
                     fit: BoxFit.cover,
                   ),
                 ),
-                title: 'Pet Boarding',
-                body: 'Hire verified pet lovers to watch your furry friends when you are away'),
+                title: 'Hébergement',
+                body: 'Engagez des amoureux d\'animaux vérifiés pour surveiller vos amis à quatre pattes lorsque vous êtes absent'),
             PageViewModel(
-                decoration: PageDecoration(titleTextStyle: Theme.of(context).primaryTextTheme.headline5, descriptionPadding: EdgeInsets.only(left: 28, right: 28), titlePadding: EdgeInsets.only(top: 15, bottom: 10, right: 35, left: 35), contentMargin: EdgeInsets.only(bottom: 35), imageFlex: 2, bodyTextStyle: Theme.of(context).primaryTextTheme.caption),
+                decoration: PageDecoration(
+                    titleTextStyle: Theme.of(context).primaryTextTheme.headline5,
+                    descriptionPadding: EdgeInsets.only(left: 28, right: 28),
+                    titlePadding: EdgeInsets.only(top: 15, bottom: 10, right: 35, left: 35),
+                    contentMargin: EdgeInsets.only(bottom: 35),
+                    imageFlex: 2,
+                    bodyTextStyle: Theme.of(context).primaryTextTheme.caption),
                 image: Container(
                   // padding: EdgeInsets.all(50),
                   // height: 300,
@@ -76,10 +88,16 @@ class _IntroScreenState extends BaseRouteState {
                     fit: BoxFit.cover,
                   ),
                 ),
-                title: 'Dog Walking',
-                body: 'Hire verified pet lovers to watch your furry friends when you are away'),
+                title: 'Promenade',
+                body: 'Engagez des amoureux d\'animaux vérifiés pour surveiller vos amis à quatre pattes lorsque vous êtes absent'),
             PageViewModel(
-                decoration: PageDecoration(titleTextStyle: Theme.of(context).primaryTextTheme.headline5, descriptionPadding: EdgeInsets.only(left: 28, right: 28), titlePadding: EdgeInsets.only(top: 15, bottom: 10, right: 35, left: 35), contentMargin: EdgeInsets.only(bottom: 35), imageFlex: 2, bodyTextStyle: Theme.of(context).primaryTextTheme.caption),
+                decoration: PageDecoration(
+                    titleTextStyle: Theme.of(context).primaryTextTheme.headline5,
+                    descriptionPadding: EdgeInsets.only(left: 28, right: 28),
+                    titlePadding: EdgeInsets.only(top: 15, bottom: 10, right: 35, left: 35),
+                    contentMargin: EdgeInsets.only(bottom: 35),
+                    imageFlex: 2,
+                    bodyTextStyle: Theme.of(context).primaryTextTheme.caption),
                 image: Container(
                   // padding: EdgeInsets.all(50),
                   // height: 300,
@@ -91,10 +109,16 @@ class _IntroScreenState extends BaseRouteState {
                     fit: BoxFit.cover,
                   ),
                 ),
-                title: 'Veterinary',
-                body: 'Hire verified pet lovers to watch your furry friends when you are away'),
+                title: 'Vétérinaire',
+                body: 'Engagez des amoureux d\'animaux vérifiés pour surveiller vos amis à quatre pattes lorsque vous êtes absent'),
             PageViewModel(
-                decoration: PageDecoration(titleTextStyle: Theme.of(context).primaryTextTheme.headline5, descriptionPadding: EdgeInsets.only(left: 28, right: 28), titlePadding: EdgeInsets.only(top: 15, bottom: 15, right: 35, left: 35), contentMargin: EdgeInsets.only(bottom: 35), imageFlex: 2, bodyTextStyle: Theme.of(context).primaryTextTheme.caption),
+                decoration: PageDecoration(
+                    titleTextStyle: Theme.of(context).primaryTextTheme.headline5,
+                    descriptionPadding: EdgeInsets.only(left: 28, right: 28),
+                    titlePadding: EdgeInsets.only(top: 15, bottom: 15, right: 35, left: 35),
+                    contentMargin: EdgeInsets.only(bottom: 35),
+                    imageFlex: 2,
+                    bodyTextStyle: Theme.of(context).primaryTextTheme.caption),
                 image: Container(
                   // padding: EdgeInsets.all(50),
                   // height: 300,
@@ -107,7 +131,7 @@ class _IntroScreenState extends BaseRouteState {
                   ),
                 ),
                 title: 'Store',
-                body: 'Hire verified pet lovers to watch your furry friends when you are away'),
+                body: 'Engagez des amoureux d\'animaux vérifiés pour surveiller vos amis à quatre pattes lorsque vous êtes absent'),
           ],
         ),
         selectedPage == 0 || selectedPage == 1 || selectedPage == 2
@@ -147,7 +171,7 @@ class _IntroScreenState extends BaseRouteState {
                                   )));
                         },
                         child: Text(
-                          "Let's Start!",
+                          "Commencer",
                         ))),
               )
             : SizedBox()

@@ -40,10 +40,7 @@ class _LogInScreen1State extends BaseRouteState {
                     margin: EdgeInsets.only(top: 100),
                     width: MediaQuery.of(context).size.width,
                     height: MediaQuery.of(context).size.height * .40,
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                            image: AssetImage('assets/signIn.png'),
-                            fit: BoxFit.fill)),
+                    decoration: BoxDecoration(image: DecorationImage(image: AssetImage('assets/signIn.png'), fit: BoxFit.fill)),
                   ),
                   Padding(
                     padding: EdgeInsets.only(top: 80),
@@ -63,7 +60,7 @@ class _LogInScreen1State extends BaseRouteState {
                               return null;
                             },
                             decoration: InputDecoration(
-                              hintText: 'Enter your email address',
+                              hintText: 'Entrez votre adresse e-mail.',
                               // prefixIcon: Icon(Icons.mail),
                               contentPadding: EdgeInsets.only(top: 5, left: 10),
                             ),
@@ -181,8 +178,7 @@ class _LogInScreen1State extends BaseRouteState {
                                   o: widget.observer,
                                 )));
                       },
-                      child: Text('New here?',
-                          style: Theme.of(context).primaryTextTheme.headline4),
+                      child: Text('Vous êtes nouveau ici?', style: Theme.of(context).primaryTextTheme.headline4),
                     ),
                     GestureDetector(
                       onTap: () {
@@ -193,7 +189,7 @@ class _LogInScreen1State extends BaseRouteState {
                                 )));
                       },
                       child: Text(
-                        ' Sign Up',
+                        ' Créer un compte',
                         style: TextStyle(
                           decoration: TextDecoration.underline,
                           fontSize: 15,
@@ -203,13 +199,16 @@ class _LogInScreen1State extends BaseRouteState {
                     )
                   ],
                 ),
-                Padding(
-                  padding: EdgeInsets.only(bottom: 15, top: 10),
-                  child: Text(
-                    'Skip for now',
-                    style: Theme.of(context).primaryTextTheme.subtitle1,
-                  ),
+                SizedBox(
+                  height: 40,
                 )
+                // Padding(
+                //   padding: EdgeInsets.only(bottom: 15, top: 10),
+                //   child: Text(
+                //     'Skip for now',
+                //     style: Theme.of(context).primaryTextTheme.subtitle1,
+                //   ),
+                // )
               ],
             ),
           ],
