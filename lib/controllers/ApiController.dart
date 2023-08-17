@@ -46,6 +46,8 @@ class ApiController extends GetxController {
     String gender,
     String role,
     String phone,
+    String imageLink,
+    String address,
     String password,
   ) async {
     isLoading.value = true;
@@ -54,6 +56,8 @@ class ApiController extends GetxController {
           fullName: fullName,
           email: email,
           phone: phone,
+          imageLink: imageLink,
+          address: address,
           password: password,
           gender: gender,
           role: role);

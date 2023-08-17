@@ -26,8 +26,11 @@ class _SIgnUpScreenState extends BaseRouteState {
   final TextEditingController _fullNameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _phoneController = TextEditingController();
+  final TextEditingController _imageLinkController = TextEditingController();
+  final TextEditingController _addressController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  final TextEditingController _confirmPasswordController = TextEditingController();
+  final TextEditingController _confirmPasswordController =
+      TextEditingController();
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>(); // Add this key
 
@@ -104,6 +107,38 @@ class _SIgnUpScreenState extends BaseRouteState {
                     },
                     decoration: InputDecoration(
                       hintText: 'Full Name',
+                      contentPadding: EdgeInsets.only(top: 5, left: 10),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(top: 50),
+                  child: TextFormField(
+                    controller: _imageLinkController,
+                    validator: (value) {
+                      if (value.isEmpty) {
+                        return 'Veuillez entrer un lien de votre image!';
+                      }
+                      return null;
+                    },
+                    decoration: InputDecoration(
+                      hintText: 'Lien de votre image',
+                      contentPadding: EdgeInsets.only(top: 5, left: 10),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(top: 50),
+                  child: TextFormField(
+                    controller: _addressController,
+                    validator: (value) {
+                      if (value.isEmpty) {
+                        return 'Veuillez entrer votre adresse!';
+                      }
+                      return null;
+                    },
+                    decoration: InputDecoration(
+                      hintText: 'Address',
                       contentPadding: EdgeInsets.only(top: 5, left: 10),
                     ),
                   ),
@@ -215,18 +250,22 @@ class _SIgnUpScreenState extends BaseRouteState {
                 width: MediaQuery.of(context).size.width,
                 child: TextButton(
                     // style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Theme.of(context).primaryColor)),
-                    onPressed: () {
+                    onPressed: () async {
                       if (_formKey.currentState.validate()) {
-                        apiController.signUpUser(
+                        await apiController.signUpUser(
                           _fullNameController.text,
                           _emailController.text,
                           _selectedGender.toLowerCase(),
                           _selectedRole.toLowerCase(),
                           _phoneController.text,
+                          _imageLinkController.text,
+                          _addressController.text,
                           _passwordController.text,
+
+
                         );
                         Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => BottomNavigationWidget(
+                            builder: (context) => LogInScreen1(
                                   a: widget.analytics,
                                   o: widget.observer,
                                 )));
@@ -240,7 +279,8 @@ class _SIgnUpScreenState extends BaseRouteState {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('Vous avez déjà un compte ?', style: Theme.of(context).primaryTextTheme.headline4),
+                    Text('Vous avez déjà un compte ?',
+                        style: Theme.of(context).primaryTextTheme.headline4),
                     GestureDetector(
                       onTap: () {
                         Navigator.of(context).push(MaterialPageRoute(

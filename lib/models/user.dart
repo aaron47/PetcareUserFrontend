@@ -12,12 +12,14 @@ class User {
   final String role;
   final String phone;
   final String gender;
+  final String imageLink;
 
   User({
     @required this.fullName,
     @required this.email,
     @required this.role,
     @required this.phone,
+    @required this.imageLink,
     @required this.gender,
   });
 
@@ -27,6 +29,7 @@ class User {
         role: json["role"],
         phone: json["phone"],
         gender: json["gender"],
+        imageLink: json["imageLink"],
       );
 
   Map<String, dynamic> toJson() => {
@@ -35,5 +38,6 @@ class User {
         "role": role,
         "phone": phone,
         "gender": gender,
+        "imageLink": imageLink,
       };
 }

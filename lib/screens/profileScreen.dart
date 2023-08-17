@@ -87,8 +87,8 @@ class _ProfileScreenState extends BaseRouteState {
                         padding: const EdgeInsets.only(left: 28),
                         child: CircleAvatar(
                             radius: 80,
-                            backgroundImage:
-                                AssetImage('assets/splashScreen.png')),
+                            backgroundImage: NetworkImage(
+                                apiController.user.value.imageLink)),
                       ),
                       Padding(
                         padding: EdgeInsets.only(left: 25),
@@ -354,7 +354,9 @@ class _ProfileScreenState extends BaseRouteState {
                   height: 132,
                   child: Obx(() {
                     if (apiController.isLoading.value) {
-                      return Center(child: CircularProgressIndicator()); // Show loading indicator
+                      return Center(
+                          child:
+                              CircularProgressIndicator()); // Show loading indicator
                     } else {
                       return ListView.builder(
                         shrinkWrap: true,
@@ -366,10 +368,10 @@ class _ProfileScreenState extends BaseRouteState {
                             onTap: () {
                               Navigator.of(context).push(MaterialPageRoute(
                                   builder: (context) => PetProfileScreen(
-                                    a: widget.analytics,
-                                    o: widget.observer,
-                                    pet: pet,
-                                  )));
+                                        a: widget.analytics,
+                                        o: widget.observer,
+                                        pet: pet,
+                                      )));
                             },
                             child: Padding(
                               padding: const EdgeInsets.only(
