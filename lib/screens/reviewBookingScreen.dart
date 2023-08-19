@@ -569,20 +569,23 @@ class _ReviewBookingScreenState extends BaseRouteState {
           ],
         ),
       )),
-      bottomNavigationBar: BottomAppBar(
-        elevation: 0,
-        child: Container(
-            // color: Colors.red,
-            height: 45,
-            padding: EdgeInsets.only(left: 15, right: 15),
-            width: MediaQuery.of(context).size.width,
-            child: TextButton(
-                onPressed: () {
-                  addToCartDialogBox(context);
-                },
-                child: Text(
-                  "Réservée",
-                ))),
+      bottomNavigationBar: Container(
+        margin: const EdgeInsets.only(bottom: 25),
+        child: BottomAppBar(
+          elevation: 0,
+          child: Container(
+              // color: Colors.red,
+              height: 45,
+              padding: EdgeInsets.only(left: 15, right: 15),
+              width: MediaQuery.of(context).size.width,
+              child: TextButton(
+                  onPressed: () {
+                    addToCartDialogBox(context);
+                  },
+                  child: Text(
+                    "Réservée",
+                  ))),
+        ),
       ),
     );
   }

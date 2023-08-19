@@ -5,6 +5,7 @@ import 'package:pet_user_app/screens/chatScreen.dart';
 class OrderDetailScreen extends BaseRoute {
   // OrderDetailScreen() : super();
   OrderDetailScreen({a, o}) : super(a: a, o: o, r: 'OrderDetailScreen');
+
   @override
   _OrderDetailScreenState createState() => new _OrderDetailScreenState();
 }
@@ -76,7 +77,10 @@ class _OrderDetailScreenState extends BaseRouteState {
                                       Stack(children: [
                                         Container(
                                           decoration: BoxDecoration(
-                                              image: DecorationImage(image: AssetImage('assets/home3.png'), fit: BoxFit.cover),
+                                              image: DecorationImage(
+                                                  image: AssetImage(
+                                                      'assets/home3.png'),
+                                                  fit: BoxFit.cover),
                                               color: Colors.red,
                                               borderRadius: BorderRadius.all(
                                                 Radius.circular(10),
@@ -134,7 +138,10 @@ class _OrderDetailScreenState extends BaseRouteState {
                                       Stack(children: [
                                         Container(
                                           decoration: BoxDecoration(
-                                              image: DecorationImage(image: AssetImage('assets/home3.png'), fit: BoxFit.cover),
+                                              image: DecorationImage(
+                                                  image: AssetImage(
+                                                      'assets/home3.png'),
+                                                  fit: BoxFit.cover),
                                               color: Colors.red,
                                               borderRadius: BorderRadius.all(
                                                 Radius.circular(10),
@@ -182,51 +189,56 @@ class _OrderDetailScreenState extends BaseRouteState {
           ),
         ),
       ),
-      bottomNavigationBar: BottomAppBar(
-        elevation: 0,
-        child: Container(
-          height: 100,
-          width: MediaQuery.of(context).size.width,
-          child: Column(
-            children: [
-              Container(
+      bottomNavigationBar: Container(
+        margin: EdgeInsets.only(bottom: 25),
+        child: BottomAppBar(
+          elevation: 0,
+          child: Container(
+            height: 100,
+            width: MediaQuery.of(context).size.width,
+            child: Column(
+              children: [
+                Container(
+                    // color: Colors.red,
+                    height: 45,
+                    padding: EdgeInsets.only(left: 15, right: 15),
+                    width: MediaQuery.of(context).size.width,
+                    child: TextButton(
+                        onPressed: () {
+                          print('Hello');
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => ChatScreen(
+                                    a: widget.analytics,
+                                    o: widget.observer,
+                                  )));
+                        },
+                        child: Text(
+                          "Message",
+                        ))),
+                SizedBox(
+                  height: 10,
+                ),
+                Container(
                   // color: Colors.red,
                   height: 45,
                   padding: EdgeInsets.only(left: 15, right: 15),
                   width: MediaQuery.of(context).size.width,
                   child: TextButton(
-                      onPressed: () {
-                        print('Hello');
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => ChatScreen(
-                                  a: widget.analytics,
-                                  o: widget.observer,
-                                )));
-                      },
-                      child: Text(
-                        "Message",
-                      ))),
-              SizedBox(
-                height: 10,
-              ),
-              Container(
-                  // color: Colors.red,
-                  height: 45,
-                  padding: EdgeInsets.only(left: 15, right: 15),
-                  width: MediaQuery.of(context).size.width,
-                  child: TextButton(
-                      onPressed: () {
-                        print('Hello');
-                        // Navigator.of(context).po(MaterialPageRoute(
-                        //     builder: (context) => ReviewBookingScreen(
-                        //           a: widget.analytics,
-                        //           o: widget.observer,
-                        //         )));
-                      },
-                      child: Text(
-                        "Call",
-                      ))),
-            ],
+                    onPressed: () {
+                      print('Hello');
+                      // Navigator.of(context).po(MaterialPageRoute(
+                      //     builder: (context) => ReviewBookingScreen(
+                      //           a: widget.analytics,
+                      //           o: widget.observer,
+                      //         )));
+                    },
+                    child: Text(
+                      "Call",
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),

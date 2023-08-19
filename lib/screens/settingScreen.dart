@@ -60,9 +60,10 @@ class _SettingScreenState extends BaseRouteState {
                       Padding(
                         padding: const EdgeInsets.only(left: 28),
                         child: CircleAvatar(
-                            radius: 80,
-                            backgroundImage:
-                                AssetImage('assets/splashScreen.png')),
+                          radius: 80,
+                          backgroundImage:
+                              NetworkImage(apiController.user.value.imageLink),
+                        ),
                       ),
                       Padding(
                         padding: EdgeInsets.only(left: 25),

@@ -578,25 +578,28 @@ class _PetBoardoingDetailScreenState extends BaseRouteState {
           ],
         ),
       )),
-      bottomNavigationBar: BottomAppBar(
-        elevation: 0,
-        child: Container(
-            // color: Colors.red,
-            height: 45,
-            padding: EdgeInsets.only(left: 15, right: 15),
-            width: MediaQuery.of(context).size.width,
-            child: TextButton(
-                onPressed: () {
-                  print('Hello');
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => ReviewBookingScreen(
-                            a: widget.analytics,
-                            o: widget.observer,
-                          )));
-                },
-                child: Text(
-                  "Réservez maintenant à 70 DT / jour",
-                ))),
+      bottomNavigationBar: Container(
+        margin: const EdgeInsets.only(bottom: 25),
+        child: BottomAppBar(
+          elevation: 0,
+          child: Container(
+              // color: Colors.red,
+              height: 45,
+              padding: EdgeInsets.only(left: 15, right: 15),
+              width: MediaQuery.of(context).size.width,
+              child: TextButton(
+                  onPressed: () {
+                    print('Hello');
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => ReviewBookingScreen(
+                              a: widget.analytics,
+                              o: widget.observer,
+                            )));
+                  },
+                  child: Text(
+                    "Réservez maintenant à 70 DT / jour",
+                  ))),
+        ),
       ),
     );
   }

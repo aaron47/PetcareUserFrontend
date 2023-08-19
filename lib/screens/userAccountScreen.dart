@@ -61,7 +61,7 @@ class _UserAccountScreenState extends BaseRouteState {
                                     MediaQuery.of(context).size.height * 0.17),
                               ),
                               image: DecorationImage(
-                                  image: AssetImage('assets/splashScreen.png'),
+                                  image: NetworkImage(apiController.user.value.imageLink),
                                   fit: BoxFit.cover),
                               border: new Border.all(
                                 color: Theme.of(context).primaryColor,

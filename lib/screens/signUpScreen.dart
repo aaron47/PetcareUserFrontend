@@ -21,7 +21,6 @@ class _SIgnUpScreenState extends BaseRouteState {
   final ApiController apiController = Get.put(ApiController());
 
   final genders = ["Male", "Female"];
-  final roles = ["Sitter", "Owner"];
 
   final TextEditingController _fullNameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
@@ -35,12 +34,10 @@ class _SIgnUpScreenState extends BaseRouteState {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>(); // Add this key
 
   String _selectedGender;
-  String _selectedRole;
 
   @override
   void initState() {
     _selectedGender = genders.first;
-    _selectedRole = roles.first;
     super.initState();
   }
 
@@ -72,7 +69,6 @@ class _SIgnUpScreenState extends BaseRouteState {
         padding: EdgeInsets.only(left: 15, right: 15),
         child: SingleChildScrollView(
             child: Container(
-          // height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
           // color: Colors.red,
           child: Form(
@@ -149,15 +145,6 @@ class _SIgnUpScreenState extends BaseRouteState {
                     padding: EdgeInsets.only(top: 20),
                     child: CustomDropDownWidget(this.genders, (value) {
                       this._selectedGender = value;
-                    }),
-                  ),
-                ),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Padding(
-                    padding: EdgeInsets.only(top: 20),
-                    child: CustomDropDownWidget(this.roles, (value) {
-                      this._selectedRole = value;
                     }),
                   ),
                 ),
@@ -239,7 +226,7 @@ class _SIgnUpScreenState extends BaseRouteState {
         )),
       ),
       bottomNavigationBar: Container(
-        height: 155,
+        height: 120,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -256,7 +243,7 @@ class _SIgnUpScreenState extends BaseRouteState {
                           _fullNameController.text,
                           _emailController.text,
                           _selectedGender.toLowerCase(),
-                          _selectedRole.toLowerCase(),
+                          "owner",
                           _phoneController.text,
                           _imageLinkController.text,
                           _addressController.text,
