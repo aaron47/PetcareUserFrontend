@@ -1,6 +1,0 @@
-io/flutter/plugins/GeneratedPluginRegistrant.java
- io.flutter.plugins.GeneratedPluginRegistrant
-com/example/pet_user_app/MainActivity.java
- com.example.pet_user_app.MainActivity
-com/example/pet_user_app/BuildConfig.java
- com.example.pet_user_app.BuildConfig
